@@ -1,0 +1,61 @@
+@import "styles/theme";
+
+.Sidenav {
+  background-color: $secondary-color;
+  color: white;
+  max-width: 15em;
+  flex-grow: 0;
+  flex-basis: 20em;
+  flex-shrink: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-top: 2.5ex;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+
+    .logo {
+      animation: App-logo-spin infinite 2s linear;
+      height: 64px;
+      flex-basis: 48px;
+      flex-shrink: 1;
+      flex-grow: 0;
+    }
+
+    .title {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: $primary-color;
+      h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 0em;
+        margin-top: 0.5em;
+      }
+    }
+  }
+  .separator {
+    height: 4ex;
+  }
+  .navigations {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(60deg); }
+}

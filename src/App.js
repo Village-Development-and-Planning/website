@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+
+import './App.scss';
+
+import Sidenav from './layout/Sidenav';
+import Page from './layout/Page'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-title">
-            <h1>Participatory Tracking - Admin</h1>
-          </div>
-          <div>
-            <div>Surveys</div>
-            <div>Surveyors</div>
-          </div>
-        </header>
-      </div>
+      <BrowserRouter basename="/admin">
+        <div className="App">
+          <Sidenav />
+          <Page />
+        </div>
+      </BrowserRouter>
     );
   }
 }
