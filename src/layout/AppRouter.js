@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 const appRoutes = [
-  {route: 'surveys', component: require('../pages/Survey').default}
+  {
+    route: 'surveys',
+    list: require('../pages/surveys/List').default,
+    show: require('../pages/surveys/Show').default,
+  }
 ]
 
 /**
@@ -13,9 +17,14 @@ export default class AppRouter extends Component {
     return (
       <Switch> {
         appRoutes.map(
-          (r) => <Route path={`/${r.route}`} component={r.component}/>
+          (r) => [
+            <Route key={r.route} path={`/${r.route}/:entityId`} 
+              component={r.show}/>,
+            <Route key={r.route} path={`/${r.route}`} 
+              component={r.list}/>,     
+          ]
         )
-      } </Switch>
+      }</Switch>
     );
   }
 }

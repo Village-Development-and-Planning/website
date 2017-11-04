@@ -22,5 +22,6 @@ module.exports = {
       }
     ],
     "no-invalid-this": 0,
+    "require-jsdoc": 0,
   }
 };
