@@ -6,6 +6,7 @@ const appRoutes = [
     route: 'surveys',
     list: require('../pages/surveys/List').default,
     show: require('../pages/surveys/Show').default,
+    new: require('../pages/surveys/New').default,
   }
 ]
 
@@ -18,10 +19,12 @@ export default class AppRouter extends Component {
       <Switch> {
         appRoutes.map(
           (r) => [
-            <Route key={r.route} path={`/${r.route}/:entityId`} 
+            r.new && <Route key={r.route} path={`/${r.route}/new`} 
+              component={r.new}/>,
+            r.show && <Route key={r.route} path={`/${r.route}/:entityId`} 
               component={r.show}/>,
-            <Route key={r.route} path={`/${r.route}`} 
-              component={r.list}/>,     
+            r.list && <Route key={r.route} path={`/${r.route}`} 
+              component={r.list}/>,
           ]
         )
       }</Switch>

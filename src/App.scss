@@ -5,12 +5,6 @@
   flex-direction: row;
   align-items: stretch;
   height: 100%;
-
-  .content {
-    max-width: 50em;
-    flex-shrink: 0;
-    flex-grow: 1;
-  }
 }
 
 @keyframes App-logo-spin {

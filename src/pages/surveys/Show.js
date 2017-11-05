@@ -1,28 +1,16 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
-import fetch from '../../utils/fetch';
+import React from 'react';
+import ShowPage from '../base/Show';
 
-export default class SurveyPage extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: 'Loading...',
-    }
-  }
-  componentDidMount() {
-    const entityId = this.props.match.params.entityId;
-    fetch(`/cms/surveys/${entityId}`)
-    .then((res) => this.setState({entity: res}))
-  }
-
+export default class SurvyeyPage extends ShowPage {
   render() {
     if (this.state.entity) {
       return ([
-        <h4 key="header">Survey: {this.state.entity.name}</h4>
+        <h4 key="header">{this.entityName}: {this.state.entity.name}</h4>
       ]);
     } else {
-      return (<p>{this.state.message}</p>);
+      return super.render();
     }
   }
-}
+
+};
+SurvyeyPage.entityName = 'Survey';

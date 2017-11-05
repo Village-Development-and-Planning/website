@@ -1,0 +1,18 @@
+@import "styles/theme";
+
+.Topbar {
+  background-color: $secondary-color;
+  color: white;
+
+  display: flex;
+
+  .title {
+    flex-grow: 2;
+  }
+
+  .actions {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}
