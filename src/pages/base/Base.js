@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export default class BasePage extends Component {
   
@@ -10,6 +11,8 @@ export default class BasePage extends Component {
     this._setupVariable('entityName', 'Entity');
     this._setupVariable('collectionName', this.entityName + 's');
     this._setupVariable('routeName', this.collectionName.toLowerCase());
+
+    this._setupVariable('layout', false);
   }
 
   _setupVariable(name, def) {
@@ -20,5 +23,9 @@ export default class BasePage extends Component {
 
   render() {
     return (<p>{this.state.message}</p>);
+  }
+
+  static contextTypes = {
+    topbar: PropTypes.func,
   }
 }

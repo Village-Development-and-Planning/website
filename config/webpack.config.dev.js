@@ -228,6 +228,25 @@ module.exports = {
               }
             ],
           },
+          {
+            test: /\.pug$/,
+            include: paths.appSrc,
+            use: [
+              {
+                loader: require.resolve('babel-loader'),
+                options: {
+                  
+                  // This is a feature of `babel-loader` for webpack (not Babel itself).
+                  // It enables caching results in ./node_modules/.cache/babel-loader/
+                  // directory for faster rebuilds.
+                  cacheDirectory: true,
+                },    
+              },
+              {
+                loader: require.resolve('pug-loader'),
+              },
+            ]
+          }
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.

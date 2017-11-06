@@ -4,8 +4,9 @@ export default function(url, opts) {
   }, opts);
   return fetch(url, opts)
   .then((res) => {
-    const json = res.json();
-    console.log(json);
-    return json;
+    return res.json().then((data) => {
+      console.log(data);
+      return data;
+    })
   });
 }

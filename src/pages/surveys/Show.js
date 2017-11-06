@@ -3,10 +3,20 @@ import ShowPage from '../base/Show';
 
 export default class SurvyeyPage extends ShowPage {
   render() {
-    if (this.state.entity) {
-      return ([
-        <h4 key="header">{this.entityName}: {this.state.entity.name}</h4>
-      ]);
+    let entity = this.state.entity;
+    if (entity) {
+      return (
+        <div>
+          <h4>Name</h4>
+          <p>{entity.name}</p>
+
+          <h4>Description</h4>
+          <p>{entity.description}</p>
+
+          <h4>Enabled</h4>
+          <p>{entity.enabled ? 'Yes' : 'No'}</p>
+        </div>
+      );
     } else {
       return super.render();
     }

@@ -1,15 +1,18 @@
 import React from 'react';
 import NewPage from '../base/New';
+import Form from '../base/Form';
 
 export default class SurvyeyPage extends NewPage {
+
   render() {
     if (this.state.entity) {
       return (
-        <form 
+        <Form
           method="POST" 
           encType="multipart/form-data"
           action="/cms/surveys/"
-          ref={(f) => (this.form = f)}>
+          ref={(f) => (this.form = f)}
+        >
           <label>
             Name
             <input type="text" name="surveyName"/>
@@ -25,7 +28,7 @@ export default class SurvyeyPage extends NewPage {
           <button type="submit">
             Create
           </button>
-        </form>
+        </Form>
       );
     } else {
       return super.render();

@@ -1,16 +1,32 @@
 import React, {Component} from 'react';
+import ActionButton from './ActionButton';
 import './Topbar.scss';
 
-export default class AppRouter extends Component {
+export default class Topbar extends Component {
+  constructor(...args) {
+    super(...args);
+    this.state = {
+      title: "Administration",
+      actions: [],
+      userAction: (<ActionButton to="/hello">Sign out</ActionButton>),
+    };
+  }
+
+  setTitle(title) {
+    this.setState({title})
+  }
+  setActions(actions) {
+    this.setState({actions})
+  }
   render() {
     return (
       <div className="Topbar">
         <div className="title">
-          <h4>Action happening</h4>
+          <h4>{this.state.title}</h4>
         </div>
         <div className="actions">
-          <h5>Delete</h5>
-          <h5>Create</h5>
+          {this.state.actions}
+          {this.state.userAction}
         </div>
       </div>
     );
