@@ -1,15 +1,17 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import fetch from '../../utils/fetch';
 import Base from './Base';
 import ActionButton from '../../layout/ActionButton';
 
 export default class ListPage extends Base {
-  
-  componentDidMount() {
-    fetch(`/cms/${this.routeName}`)
-      .then((res) => this.setState({entities: res}))
 
+  setupObject() {
+    return fetch(`/cms/${this.routeName}`)
+      .then((r) => ({entities: r}));
+  }
+  
+  setupUI() {
     let topbar = this.context.topbar;
     if (topbar) {
       topbar().setTitle(`Listing ${this.collectionName}`);
@@ -17,7 +19,7 @@ export default class ListPage extends Base {
         <ActionButton to={`/${this.routeName}/new`} key="create">
           Create
         </ActionButton>,
-      ])
+      ]);
     }
   }
 

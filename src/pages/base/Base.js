@@ -7,12 +7,26 @@ export default class BasePage extends Component {
     super(...args);
     this.state = {
       message: 'Loading...',
-    }
+    };
     this._setupVariable('entityName', 'Entity');
     this._setupVariable('collectionName', this.entityName + 's');
     this._setupVariable('routeName', this.collectionName.toLowerCase());
 
     this._setupVariable('layout', false);
+  }
+
+  componentDidMount() {
+    if (this.setupObject) {
+      let objPromise = this.setupObject();      
+      if (objPromise.then) {
+        objPromise.then((upd) => this.setState(upd));
+      }
+    }
+    this.setupUI();
+  }
+
+  setupUI() {
+
   }
 
   _setupVariable(name, def) {

@@ -5,11 +5,14 @@ import ActionButton from '../../layout/ActionButton';
 
 export default class ShowPage extends Base {
   
-  componentDidMount() {
+  setupObject() {
     const entityId = this.props.match.params.entityId;
-    fetch(`/cms/${this.routeName}/${entityId}`)
-    .then((res) => this.setState({entity: res}));
+    return fetch(`/cms/${this.routeName}/${entityId}`)
+      .then((r) => ({entity: r}));
+  }
 
+  setupUI() {
+    const entityId = this.props.match.params.entityId;
     let topbar = this.context.topbar;
     if (topbar) {
       topbar().setTitle(`Showing ${this.entityName}`);

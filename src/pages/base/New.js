@@ -3,11 +3,15 @@ import Base from './Base';
 
 export default class NewPage extends Base {
   
-  componentDidMount() {
-    fetch(`/cms/${this.routeName}/new`)
-    .then((res) => this.setState({entity: res}))
+  setupObject() {
+    return fetch(`/cms/${this.routeName}/new`)
+      .then((r) => ({entity: r}));
+  }
+
+  setupUI() {
     if (this.context.topbar) {
       this.context.topbar().setTitle(`Creating ${this.entityName}`);
     }
   }
+  
 }

@@ -4,6 +4,10 @@ import Form from '../base/Form';
 
 export default class SurvyeyPage extends NewPage {
 
+  handleSubmit(response) {
+    this.setState({response});
+  }
+
   render() {
     if (this.state.entity) {
       return (
@@ -11,7 +15,7 @@ export default class SurvyeyPage extends NewPage {
           method="POST" 
           encType="multipart/form-data"
           action="/cms/surveys/"
-          ref={(f) => (this.form = f)}
+          handleSubmit={this.handleSubmit.bind(this)}
         >
           <label>
             Name
@@ -27,7 +31,16 @@ export default class SurvyeyPage extends NewPage {
           </label>
           <button type="submit">
             Create
-          </button>
+          </button><br/>
+          <label>
+            Response
+            <pre>
+              {JSON.stringify(
+                this.state.response, 
+                null, 2,
+              )}
+            </pre>
+          </label>
         </Form>
       );
     } else {
