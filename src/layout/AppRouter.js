@@ -7,8 +7,9 @@ const appRoutes = [
     list: require('../pages/surveys/List').default,
     show: require('../pages/surveys/Show').default,
     new: require('../pages/surveys/New').default,
+    edit: require('../pages/surveys/Edit').default,
   }
-]
+];
 
 /**
  * App admin page router
@@ -21,6 +22,8 @@ export default class AppRouter extends Component {
           (r) => [
             r.new && <Route key={r.route} path={`/${r.route}/new`} 
               component={r.new}/>,
+            r.edit && <Route key={r.route} path={`/${r.route}/:entityId/edit`} 
+              component={r.edit}/>,
             r.show && <Route key={r.route} path={`/${r.route}/:entityId`} 
               component={r.show}/>,
             r.list && <Route key={r.route} path={`/${r.route}`} 

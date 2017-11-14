@@ -1,6 +1,6 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import './ActionButton.scss'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import './ActionButton.scss';
 
 export default class ActionButton extends React.Component {
   render() {

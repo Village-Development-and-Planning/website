@@ -17,7 +17,7 @@ export default class ShowPage extends Base {
     if (topbar) {
       topbar().setTitle(`Showing ${this.entityName}`);
       topbar().setActions([
-        <ActionButton to={`/${this.routeName}/dummy`} key="edit">
+        <ActionButton to={`/${this.routeName}/${entityId}/edit`} key="edit">
           Edit
         </ActionButton>,
         <ActionButton 

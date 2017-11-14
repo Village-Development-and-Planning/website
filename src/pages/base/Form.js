@@ -7,7 +7,7 @@ export default class Form extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    fetch(this.props.action, {
+    (this.props.handleRequest || fetch)(this.props.action, {
       method: this.props.method || 'POST',
       body: new FormData(this.form),
     }).then((res) => {

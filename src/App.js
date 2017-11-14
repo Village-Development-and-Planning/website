@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 
 import Sidenav from './layout/Sidenav';
-import Page from './layout/Page'
+import Page from './layout/Page';
 
 class App extends Component {
   render() {

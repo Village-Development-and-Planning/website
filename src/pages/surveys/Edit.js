@@ -1,21 +1,29 @@
 import React from 'react';
-import NewPage from '../base/New';
+import EditPage from '../base/Edit';
 import Form from './Form';
 
-export default class SurvyeyPage extends NewPage {
+export default class SurvyeyPage extends EditPage {
 
   handleSubmit(response) {
     this.setState({response});
   }
 
   render() {
-    if (this.state.entity) {
+    const entityId = this.props.match.params.entityId;
+    const entity = this.state.entity;
+    console.log(entity);
+    if (entity) {
       return (
-        <Form 
-          action="/cms/surveys" 
+        <Form
+          method="PATCH"
+          action={`/cms/${this.routeName}/${entityId}`}
           handleSubmit={this.handleSubmit.bind(this)}
+          objName={entity.name}
+          objDescription={entity.description}
+          objEnabled={entity.enabled}
+          actionName='Update'
         >
-          <label>
+      <label>
             Response
             <pre>
               {JSON.stringify(

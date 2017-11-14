@@ -13,10 +13,10 @@ export default class Topbar extends Component {
   }
 
   setTitle(title) {
-    this.setState({title})
+    this.setState({title});
   }
   setActions(actions) {
-    this.setState({actions})
+    this.setState({actions});
   }
   render() {
     return (

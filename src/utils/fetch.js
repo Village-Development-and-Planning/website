@@ -7,6 +7,6 @@ export default function(url, opts) {
     return res.json().then((data) => {
       console.log(data);
       return data;
-    })
+    });
   });
 }
