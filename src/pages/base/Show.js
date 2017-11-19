@@ -8,7 +8,7 @@ export default class ShowPage extends Base {
   setupObject() {
     const entityId = this.props.match.params.entityId;
     return fetch(`/cms/${this.routeName}/${entityId}`)
-      .then((r) => ({entity: r}));
+      .then((entity) => ({entity}));
   }
 
   setupUI() {
@@ -16,19 +16,24 @@ export default class ShowPage extends Base {
     let topbar = this.context.topbar;
     if (topbar) {
       topbar().setTitle(`Showing ${this.entityName}`);
-      topbar().setActions([
-        <ActionButton to={`/${this.routeName}/${entityId}/edit`} key="edit">
-          Edit
-        </ActionButton>,
-        <ActionButton 
-          key="delete"
-          onClick={() => {
-            fetch(`/cms/${this.routeName}/${entityId}`, {method: 'DELETE'});
-          }}
-        >
-          Delete
-        </ActionButton>,
-      ]);
+      topbar().setActions(this._actions());
     }
+  }
+
+  _actions() {
+    const entityId = this.props.match.params.entityId;    
+    return [
+      <ActionButton to={`/${this.routeName}/${entityId}/edit`} key="edit">
+        Edit
+      </ActionButton>,
+      <ActionButton 
+        key="delete"
+        onClick={() => {
+          fetch(`/cms/${this.routeName}/${entityId}`, {method: 'DELETE'});
+        }}
+      >
+        Delete
+      </ActionButton>,
+    ];
   }
 }

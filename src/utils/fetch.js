@@ -4,8 +4,9 @@ export default function(url, opts) {
   }, opts);
   return fetch(url, opts)
   .then((res) => {
+    if (!res.ok)
+      return Promise.reject(res);
     return res.json().then((data) => {
-      console.log(data);
       return data;
     });
   });

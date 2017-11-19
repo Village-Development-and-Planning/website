@@ -29,7 +29,7 @@ export default class ListPage extends Base {
         this.state.entities.map((e) => {
           return (
             <p key={e._id}>
-              <Link to={`/${this.routeName}/${e._id}`}>{e.name}</Link>
+              <Link to={`/${this.routeName}/${e._id}`}>{e.name || '[Unnamed]'}</Link>
             </p>
           );
         })
