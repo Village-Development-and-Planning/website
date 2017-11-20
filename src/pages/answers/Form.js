@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from '../base/Form';
-import fetch from '../../utils/fetch';
 
 export default class AnswerPage extends React.Component {
   constructor(...args) {
@@ -8,13 +7,10 @@ export default class AnswerPage extends React.Component {
     this.state = {response: null};
   }
 
-  handleRequest(action, opts) {
-    return fetch(action, opts);
-  }
-
-  handleSubmit(response) {
+  setResponse(response) {
     this.setState({response});
   }
+
 
   render() {
     return (
@@ -22,8 +18,11 @@ export default class AnswerPage extends React.Component {
         method={this.props.method || 'POST'}
         encType="multipart/form-data"
         action={this.props.action}
-        handleRequest={this.handleRequest.bind(this)}
-        handleSubmit={this.handleSubmit.bind(this)}
+        handleRequest={
+          this.props.handleRequest 
+          && this.props.handleRequest.bind(this)
+        }
+        handleSubmit={this.setResponse.bind(this)}
       >
         <label>
           Name
@@ -48,7 +47,8 @@ export default class AnswerPage extends React.Component {
             name="respondents"
             defaultValue={this.props.entity && this.props.entity.respondents}
           /><br/>
-        </label>        
+        </label>
+        {this.props.children}     
         <button type="submit">
           {this.props.actionName || 'Create'}
         </button><br/>

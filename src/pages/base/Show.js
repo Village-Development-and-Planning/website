@@ -12,7 +12,6 @@ export default class ShowPage extends Base {
   }
 
   setupUI() {
-    const entityId = this.props.match.params.entityId;
     let topbar = this.context.topbar;
     if (topbar) {
       topbar().setTitle(`Showing ${this.entityName}`);

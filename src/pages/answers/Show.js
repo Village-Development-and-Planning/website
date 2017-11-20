@@ -40,7 +40,7 @@ export default class AnswerPage extends ShowPage {
           <p>{entity.description}</p>
 
           <h4>Survey</h4>
-          <p>{entity.survey.name}</p>
+          <p>{entity.surveyEntity.name}</p>
           
           <h4>Answer Object</h4>
           <p>
