@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 
-import Sidenav from './layout/Sidenav';
-import Page from './layout/Page';
+import PageCombo from './layout/PageCombo';
+import Login from './layout/Login';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter basename="/admin">
-        <div className="App">
-          <Sidenav />
-          <Page />
-        </div>
+          <Switch>
+            <Route path="/" exact component={PageCombo}/>
+            <Route path="/login" component={Login}/>
+          </Switch>
       </BrowserRouter>
     );
   }

@@ -1,0 +1,116 @@
+.container {
+  display: flex; /* or inline-flex */
+  flex-direction: row ;
+}
+
+.container .infobox{
+  text-align:justify;
+}
+
+.container>div{
+  margin:10px;
+}
+
+footer{
+  text-align:center;
+}
+
+.login {
+  margin:10px;
+  background-color: white;
+  overflow:hidden;
+  border:2px dashed #ccc;
+}
+
+
+.loginForm {
+  width:400px;
+  background: #F9F9F9;
+  padding: 50px 25px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.loginForm fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  padding: 0;
+  width: 100%;
+}
+
+.loginForm input[type="text"],
+.loginForm input[type="password"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+header, footer{
+  height:50px;
+  padding:10px 0;
+}
+
+
+.loginForm h3{
+
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.loginForm button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.loginForm button[type="submit"]:hover {
+  background: #73A047;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    flex-direction: column ;
+  }
+
+  .container .infobox{
+    width:inherit;
+    min-width:inherit;
+  }
+  .loginForm{
+    width:100%;
+  }
+}
