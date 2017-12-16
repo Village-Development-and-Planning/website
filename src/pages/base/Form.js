@@ -2,9 +2,6 @@ import React from 'react';
 import fetch from '../../utils/fetch';
 
 export default class Form extends React.Component {
-  componentDidMount() {
-  }
-
   handleSubmit(evt) {
     evt.preventDefault();
     (this.props.handleRequest || fetch)(this.props.action, {
@@ -20,7 +17,7 @@ export default class Form extends React.Component {
     return (
       <form {...{action, encType, method}}
         ref={(f) => (this.form = f)}
-        onSubmit={this.handleSubmit.bind(this)}
+        onSubmit={(e) => this.handleSubmit(e)}
       >
         {this.props.children}
       </form>

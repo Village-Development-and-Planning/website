@@ -10,7 +10,11 @@ export default class AnswerPage extends NewPage {
     const givenName = formData.get('name');
     formData.delete('json');
     const promises=[];
-    const messages=[];
+
+    const status = {message: 'Uploading files...', total: 0, done: 0};
+    status.total = this.uploadFileInput.files.length;
+    const messages=[status];
+    this.form.setResponse(messages);
     for (let i=0; i<this.uploadFileInput.files.length; i++) {
       let file = this.uploadFileInput.files[i];
       formData.delete('dataFile');
@@ -21,23 +25,18 @@ export default class AnswerPage extends NewPage {
 
       promises.push(
         fetch(action, opts)
-          .then((answer) => {
-            if (answer.entity && answer.entity._id) {
-              answer.entity = answer.entity._id;
-            }
-            return answer;
-          })
           .catch((res) => res.json())
           .then((r) => {
             console.log(r);
             r = {file: file.name, data: r};
             messages.push(r);
+            status.done++;
             this.form.setResponse(messages);
             return r;
           })
       );
     }
-    return Promise.all(promises);
+    return Promise.all(messages);
   }
 
   render() {
