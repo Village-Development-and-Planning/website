@@ -1,0 +1,35 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+@mixin tablet {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+.cta>div{
+  flex-grow:1;
+  flex-basis: 0;
+  border:1px solid grey;
+  margin:10px;
+  padding:10px;
+  img{
+    width:120px;
+
+    @include tablet{
+      width:80px;
+      margin:0 0;
+      display: inline;
+      vertical-align: middle;
+    }
+    @include desktop {
+      width:120px;
+      margin:0 auto;
+      display: block;
+
+    }
+  }
+}
