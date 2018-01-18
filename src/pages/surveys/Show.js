@@ -1,7 +1,17 @@
 import React from 'react';
 import ShowPage from '../base/Show';
+import ActionButton from '../../layout/ActionButton';
 
 export default class SurvyeyPage extends ShowPage {
+  _actions() {
+    const entityId = this.props.match.params.entityId;    
+    return [
+      <ActionButton 
+        key="downloadCSV"
+      ><a href={`/cms/surveys/${entityId}/download`}>
+        Download</a></ActionButton>,
+    ].concat(super._actions());
+  }
   render() {
     let entity = this.state.entity;
     if (entity) {

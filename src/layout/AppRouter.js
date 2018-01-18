@@ -8,7 +8,14 @@ const appRoutes = [
     show: require('../pages/surveys/Show').default,
     new: require('../pages/surveys/New').default,
     edit: require('../pages/surveys/Edit').default,
-  }
+  },
+  {
+    route: 'answers',
+    list: require('../pages/answers/List').default,
+    show: require('../pages/answers/Show').default,
+    new: require('../pages/answers/New').default,
+    edit: require('../pages/answers/Edit').default,
+  },  
 ];
 
 /**
