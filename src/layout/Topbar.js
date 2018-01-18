@@ -25,15 +25,6 @@ export default class Topbar extends Component {
         {this.state.actions}
         {this.state.userAction}
       </Header>
-      // <div className="Topbar">
-      //   <div className="title">
-      //     <h4>{this.state.title}</h4>
-      //   </div>
-      //   <div className="actions">
-      //     {this.state.actions}
-      //     {this.state.userAction}
-      //   </div>
-      // </div>
     );
   }
 }

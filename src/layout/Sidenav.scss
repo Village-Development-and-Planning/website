@@ -4,7 +4,7 @@
   background-color: $secondary-color;
   color: white;
     
-  @media screen and (max-width: $bp-medium-width) {
+  @media screen and (max-width: $bp-medium-width - 1) {
     width: 0px;
     display: none;
   }
@@ -17,7 +17,8 @@
 
   @media screen {
     img {
-      width: 48px; height: 48px;
+      width: 36px; 
+      height: 36px;
     }
   }
 
@@ -25,8 +26,8 @@
     and (min-width: $bp-medium-width) 
     and (min-height: $bp-medium-height) {
       img {
-        width: 64px;
-        height: 64px;
+        width: 48px;
+        height: 48px;
       }
   }
 
@@ -34,8 +35,8 @@
     and (min-width: $bp-large-width) 
     and (min-height: $bp-large-height) {
       img {
-        height: 96px;
-        width: 96px;
+        height: 80px;
+        width: 80px;
       }
   }
 

@@ -5,7 +5,7 @@ import './Header.scss';
 export default class Header extends Component {
   render() {
     return (
-      <nav className="Header">
+      <div className="Header">
         <AppLogo/>
         <titles>
           <h1>தமிழ்நாடு அரசு</h1>
@@ -14,7 +14,7 @@ export default class Header extends Component {
         <user-actions>
           {this.props.children}
         </user-actions>                
-      </nav>
+      </div>
     );
   }
 }

@@ -13,22 +13,24 @@ export default class ShowPage extends Base {
 
   setupUI() {
     const entityId = this.props.match.params.entityId;
-    let topbar = this.context.topbar;
+    const topbar = this.context.topbar;
+
+    this.actions = this.actions || this.props.actions || [
+      <ActionButton to={`/${this.routeName}/${entityId}/edit`} key="edit">
+        Edit
+      </ActionButton>,
+      <ActionButton 
+        key="delete"
+        onClick={() => {
+          fetch(`/cms/${this.routeName}/${entityId}`, {method: 'DELETE'});
+        }}
+      >
+        Delete
+      </ActionButton>,
+    ];
     if (topbar) {
       topbar().setTitle(`Showing ${this.entityName}`);
-      topbar().setActions([
-        <ActionButton to={`/${this.routeName}/${entityId}/edit`} key="edit">
-          Edit
-        </ActionButton>,
-        <ActionButton 
-          key="delete"
-          onClick={() => {
-            fetch(`/cms/${this.routeName}/${entityId}`, {method: 'DELETE'});
-          }}
-        >
-          Delete
-        </ActionButton>,
-      ]);
+      topbar().setActions(this.actions);
     }
   }
 }
