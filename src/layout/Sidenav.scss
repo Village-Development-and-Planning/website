@@ -3,7 +3,43 @@
 .Sidenav {
   background-color: $secondary-color;
   color: white;
-  max-width: 20em;
+    
+  @media screen and (max-width: $bp-medium-width) {
+    width: 0px;
+    display: none;
+  }
+
+  @media screen
+    and (min-width: $bp-medium-width) {
+      width: 10%;
+  }  
+
+
+  @media screen {
+    img {
+      width: 48px; height: 48px;
+    }
+  }
+
+  @media screen
+    and (min-width: $bp-medium-width) 
+    and (min-height: $bp-medium-height) {
+      img {
+        width: 64px;
+        height: 64px;
+      }
+  }
+
+  @media screen 
+    and (min-width: $bp-large-width) 
+    and (min-height: $bp-large-height) {
+      img {
+        height: 96px;
+        width: 96px;
+      }
+  }
+
+
   flex-grow: 0;
   flex-shrink: 1;
 
@@ -14,47 +50,16 @@
   a {
     color: white;
     text-decoration: none;
-    margin-top: 2.5ex;
+    margin-top: 2.5ex;    
   }
 
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-right: 1em;
-
-    .logo {
-      animation: App-logo-spin infinite 2s linear;
-      height: 64px;
-      flex-basis: 48px;
-      flex-shrink: 1;
-      flex-grow: 0;
-    }
-
-    .title {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      color: $primary-color;
-      h1,h2,h3,h4,h5,h6 {
-        margin-bottom: 0em;
-        margin-top: 0.5em;
-      }
-    }
-  }
-  .separator {
-    height: 4ex;
-  }
-  .navigations {
+  .Navigations {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: center;
     text-align: center;
-  }
-}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(60deg); }
+  }
 }

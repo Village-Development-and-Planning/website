@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './App.scss';
 
-import PageCombo from './layout/PageCombo';
+import Main from './layout/Main';
 import Login from './layout/Login';
 import CTA from './layout/CTA';
 import Download from './layout/Download';
@@ -18,7 +18,7 @@ class App extends Component {
           <Route path="/download" component={Download}/>
           <Route path="/login" component={Login}/>
           <Route path="/cta" component={CTA}/>
-          <Route component={PageCombo}/>
+          <Route component={Main}/>
         </Switch>
       </BrowserRouter>
     );

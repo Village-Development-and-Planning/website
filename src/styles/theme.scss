@@ -1,6 +1,9 @@
 $primary-color: #B498C2;
 $secondary-color: #254117;
 
-body, #root {
-  height: 100vh;
-}
+$bp-medium-width: 640px;
+$bp-medium-height: 400px;
+
+$bp-large-width: 1024px;
+$bp-large-height: 600px;
+

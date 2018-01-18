@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ActionButton from './ActionButton';
+import Header from '../components/Header/Header';
 import './Topbar.scss';
 
 export default class Topbar extends Component {
@@ -20,15 +21,19 @@ export default class Topbar extends Component {
   }
   render() {
     return (
-      <div className="Topbar">
-        <div className="title">
-          <h4>{this.state.title}</h4>
-        </div>
-        <div className="actions">
-          {this.state.actions}
-          {this.state.userAction}
-        </div>
-      </div>
+      <Header>
+        {this.state.actions}
+        {this.state.userAction}
+      </Header>
+      // <div className="Topbar">
+      //   <div className="title">
+      //     <h4>{this.state.title}</h4>
+      //   </div>
+      //   <div className="actions">
+      //     {this.state.actions}
+      //     {this.state.userAction}
+      //   </div>
+      // </div>
     );
   }
 }

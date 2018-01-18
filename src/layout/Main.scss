@@ -1,0 +1,15 @@
+.Horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.Vertical {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Content {
+  padding: 4px;
+}

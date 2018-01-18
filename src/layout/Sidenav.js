@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { Link } from 'react-router-dom';
 import './Sidenav.scss';
+
+import download from '../images/download.png';
+import survey from '../images/survey.png';
 
 class Sidenav extends Component {
   render() {
     return (
       <div className="Sidenav">
-        <div className="header">
-          <img src={logo} className="logo" alt="logo" />
-          <div className="title">
-            <h3>P-Tracking</h3>
-            <h4>Administraion</h4>
-          </div>
-        </div>
-        <div className="separator"/>
-        <nav className="navigations">
-          <Link to="/surveys">Surveys</Link>
-          <Link to="/surveyors">Surveyors</Link>
-          <Link to="/answers">Answers</Link>
+        <nav className="Navigations">
+          <Link to="/surveys">
+            <img src={survey} alt="List Surveys"/>
+          </Link>
+          <Link to="/surveyors">
+            <img src={download} alt="List Surveys"/>
+          </Link>
+          <Link to="/answers">
+            <img src={download} alt="List Surveys"/>
+          </Link>
         </nav>
       </div>
     );
