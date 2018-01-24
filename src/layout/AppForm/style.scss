@@ -1,0 +1,56 @@
+@import "styles/theme";
+
+:local .AppForm {
+  padding: 1ex 0.5em;
+
+  :global(.title) {
+    margin-bottom: 1ex;
+  }
+
+  input[type="text"], textarea {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 0.5ex;
+    margin-bottom: 1ex;
+    padding: 0.5ex 0.5em;
+    border: inset 1pt $primary-color;
+  }
+
+  button {
+    margin: 1ex 0;
+    font-size: 1.2em;
+    max-width: 20em;
+    padding: 0.5ex 2em;
+    align-self: center;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+
+    margin: 0.5ex 0;
+
+    &:global(.row) {
+      flex-direction: row;
+    }
+  }
+}
+
+:local .Response {
+
+  :global .error {
+    color: red;    
+  }
+  :global .success {
+    color: $primary-color;
+  }
+  :global .progress {
+    color: darkorange; 
+  }
+  
+}

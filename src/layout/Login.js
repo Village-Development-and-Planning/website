@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
+import Footer from './Footer';
+
 import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
 import LoginForm from '../components/LoginForm/LoginForm';
 import Responsive from '../components/Responsive/Responsive';
 

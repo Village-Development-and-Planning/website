@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import Footer from './Footer';
 import Responsive from '../components/Responsive/Responsive';
-import CTAColumn from '../components/CTAColumn/CTAColumn';
+import CTAColumn from './ActionButton';
 
 import './CTA.scss';
 
@@ -13,7 +13,7 @@ export default class Login extends Component {
       <div>
         <Header/>
         <Responsive classes="container cta">
-          <CTAColumn type="download"/>
+          <CTAColumn text="download"/>
           <CTAColumn type="visualization"/>
           <CTAColumn type="export"/>
           <CTAColumn type="validate"/>

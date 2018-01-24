@@ -1,0 +1,28 @@
+@import "styles/theme";
+
+:local .ActionButton {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  text-decoration: none;
+  text-decoration-line: none;
+
+  border: outset 1pt $secondary-color;
+  margin: 0.5ex 0;
+  padding: 0.5ex 0.5em;
+
+  cursor: pointer;
+
+  img {
+    margin-bottom: 0.5ex;
+    height: 4ex;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}

@@ -1,0 +1,50 @@
+@import "styles/theme";
+
+:local .ActionPanel {
+
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $bp-large-width) {
+    flex-basis: 45%;      
+  }  
+  flex-basis: 95%;
+
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: black;
+
+  margin: 1ex 2.5%;
+  padding: 0.5ex 0.5em;
+
+  border: outset 1pt $primary-color;
+
+  cursor: pointer;
+
+  h3 {
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+    font-variant: small-caps;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+
+  img {
+    background-color: $primary-color;
+    margin-bottom: 0.5ex;
+    height: 16ex;
+  }
+
+  div {
+    text-align: justify;
+    padding: 0 1em;
+  }
+
+  &:hover {
+    img {
+      background-color: $secondary-color;
+    }
+  }
+}

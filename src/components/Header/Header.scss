@@ -1,12 +1,10 @@
 @import "../../styles/theme.scss";
 
-.Header {
+:local .Header {
   display: flex;
   flex-direction: row;
   align-items: center;
   border-bottom: 1pt solid $secondary-color;
-
-  padding: 0.5em 1em;
 
   titles {
     display: flex;

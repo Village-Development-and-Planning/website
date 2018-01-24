@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import Footer from './Footer';
 import Responsive from '../components/Responsive/Responsive';
 import Dropdown from '../components/Dropdown/Dropdown';
 

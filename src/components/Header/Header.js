@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import AppLogo from './AppLogo';
-import './Header.scss';
+import { Header as styleHeader } from './Header.scss';
 
 export default class Header extends Component {
   render() {
     return (
-      <div className="Header">
+      <div className={styleHeader}>
         <AppLogo/>
         <titles>
           <h1>தமிழ்நாடு அரசு</h1>
