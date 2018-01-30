@@ -4,6 +4,7 @@ import Responsive from '../../layout/Responsive';
 import ActionPanel from '../../layout/ActionPanel';
 
 import upload from '../../images/upload.png';
+import img_upload from '../../images/img_upload.png';
 import plan from '../../images/plan.png';
 
 export default () => <Responsive>
@@ -28,4 +29,15 @@ export default () => <Responsive>
       Upload responses from mobile app.
     </div>
   </ActionPanel>
+
+    <ActionPanel
+        to="/artifacts/new"
+        image={img_upload}
+        altText="Upload Artifacts"
+        text="Upload Artifacts"
+    >
+        <div>
+            Upload Artifacts.
+        </div>
+    </ActionPanel>
 </Responsive>;

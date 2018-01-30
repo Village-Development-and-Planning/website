@@ -5,6 +5,8 @@ import uploadRoutes from './upload';
 
 import cmsSurveysRoutes from '../cms/surveys';
 import cmsAnswersRoutes from '../cms/answers';
+import cmsArtifactsRoutes from '../cms/artifacts';
+
 
 const landing = <Route
   path="/" exact key="/"
@@ -19,6 +21,7 @@ export default class AppRouter extends Component {
           ...uploadRoutes,
           ...cmsSurveysRoutes,
           ...cmsAnswersRoutes,
+          ...cmsArtifactsRoutes,
           landing,
         ]}
       </Switch>
