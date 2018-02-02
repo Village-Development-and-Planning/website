@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
 import ActionButton from '../ActionButton';
-import { Topbar, Logo, Titles, Actions } from './Topbar.scss';
+import { Topbar, Logo, Titles } from './Topbar.scss';
 import { Link } from 'react-router-dom';
 import imgLogo from '../../images/tn_logo.svg';
+import User from '../../components/User';
 
 export default class extends Component {
   constructor(...args) {
@@ -16,10 +17,8 @@ export default class extends Component {
   }
 
   setTitle(title) {
-    this.setState({title});
   }
   setActions(actions) {
-    this.setState({actions});
   }
 
   render() {
@@ -32,11 +31,7 @@ export default class extends Component {
           <h2>தமிழ்நாடு அரசு</h2>
           <h2>TN VDP / P-Tracking</h2>
         </div>
-        <div className={Actions}>
-          {this.state.actions}
-        </div>
-        {/* {this.state.actions}
-        {this.state.userAction} */}
+        <User/>
       </header>
     );
   }

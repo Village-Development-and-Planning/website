@@ -19,7 +19,7 @@ export default () => <Responsive>
     text="Upload Survey & Related Data"
   >
     <div>
-      Create a new Survey using CSV file.
+      Create surveys, Upload survey response data
     </div>
   </ActionPanel>
 
@@ -56,7 +56,7 @@ export default () => <Responsive>
     text="Export Survey Responses"
   >
     <div>
-      Download mobile (Android) survey; and connector (Win 7.0 and above) applications.
+      Export Survey Responses
     </div>
   </ActionPanel>
 

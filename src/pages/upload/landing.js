@@ -14,7 +14,7 @@ export default () => <Responsive>
     text="Create Survey"
   >
     <div>
-      Create a new Survey using CSV file.
+      Create a new Survey from CSV file.
     </div>
   </ActionPanel>
 
