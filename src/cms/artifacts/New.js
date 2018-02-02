@@ -15,4 +15,4 @@ export default class ArtifactPage extends NewPage {
     }
 
 };
-ArtifactPage.entityName = 'Artifacts';
+ArtifactPage.entityName = 'Artifact';

@@ -31,11 +31,15 @@ export default class AnswerPage extends Form {
 
     for (let i=0; i<this.uploadFileInput.files.length; i++) {
       let file = this.uploadFileInput.files[i];
-      formData.delete('dataFile');
-      formData.append('dataFile', file);
+      formData.delete('data');
+      formData.append('data', file);
 
       formData.delete('name');
-      formData.append('name', `${givenName || 'File'}-${file.name}`);
+      let name = `${givenName || 'Image'}`;      
+      if (this.uploadFileInput.files.length !== 1) {
+        name = `${name}-${i+1}`;
+      }
+      formData.append('name', name);
 
       promises.push(
         fetch(action, opts).then(() => {

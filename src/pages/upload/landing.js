@@ -30,14 +30,28 @@ export default () => <Responsive>
     </div>
   </ActionPanel>
 
-    <ActionPanel
-        to="/artifacts/new"
-        image={img_upload}
-        altText="Upload Artifacts"
-        text="Upload Artifacts"
-    >
-        <div>
-            Upload Artifacts.
-        </div>
-    </ActionPanel>
+  <ActionPanel
+      to="/artifacts/new"
+      image={img_upload}
+      altText="Upload Artifacts"
+      text="Upload Artifacts"
+  >
+      <div>
+          Upload Artifacts.
+      </div>
+  </ActionPanel>
+
+  <ActionPanel
+      to="/upload/asdf"
+      image={img_upload}
+      altText="Upload Survey Support Data"
+      text="Upload Support Data"
+  >
+      <div>
+          Upload Support Data.
+      </div>
+  </ActionPanel>
+
+
+
 </Responsive>;
