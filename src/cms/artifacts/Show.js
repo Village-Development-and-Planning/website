@@ -1,12 +1,14 @@
 import React from 'react';
 import ShowPage from '../base/Show';
 
+import {Artifact} from './Show.scss';
+
 export default class Show extends ShowPage {
   render() {
     let entity = this.state.entity;
     if (entity) {
       return (
-        <div>
+        <div className={Artifact}>
           <h4>Name</h4>
           <p>{entity.name}</p>
 

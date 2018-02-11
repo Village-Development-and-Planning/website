@@ -32,7 +32,7 @@ class Sidenav extends Component {
             text="Upload"
           />
           <ActionButton
-            to="/surveys"
+            to="/download"
             image={download}
             altText="Download Survey Applications"
             text="Download"

@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 import uploadRoutes from './upload';
+import downloadRoutes from './download';
 
-import cmsSurveysRoutes from '../cms/surveys';
-import cmsAnswersRoutes from '../cms/answers';
-import cmsArtifactsRoutes from '../cms/artifacts';
+import cmsRoutes from '../cms';
 
 
 const landing = <Route
@@ -18,10 +17,10 @@ export default class AppRouter extends Component {
     return (
       <Switch>
         {[
+          ...cmsRoutes,
+
           ...uploadRoutes,
-          ...cmsSurveysRoutes,
-          ...cmsAnswersRoutes,
-          ...cmsArtifactsRoutes,
+          ...downloadRoutes,
           landing,
         ]}
       </Switch>

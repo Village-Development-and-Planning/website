@@ -25,7 +25,7 @@ export default () => <Responsive>
 
   <ActionPanel
     key="download-apps"
-    to="/surveys/new"
+    to="/download"
     image={download}
     altText="Download Survey Applications"
     text="Download Survey Applications"
