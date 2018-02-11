@@ -1,0 +1,29 @@
+import React from 'react';
+import ShowPage from '../base/Show';
+
+export default class Show extends ShowPage {
+  render() {
+    let entity = this.state.entity;
+    if (entity) {
+      return (
+        <div>
+          <h4>Name</h4>
+          <p>{entity.name}</p>
+
+          <h4>Description</h4>
+          <p>{entity.description}</p>
+
+          <h4>Image</h4>
+          <img 
+            src={`data:${entity.mimeType};base64,${entity.dataBase64}`}
+            alt={entity.name}
+          />
+        </div>
+      );
+    } else {
+      return super.render();
+    }
+  }
+
+};
+Show.entityName = 'Artifact';

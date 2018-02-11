@@ -54,9 +54,13 @@ export default class AnswerPage extends Form {
   }
 
   render() {
-    this.children = this.props.children || [
+    if (this.props.multiple === undefined)
+      this.multiple = true;
+    else
+      this.multiple = !!this.props.multiple;
+    console.log(this.props.multiple, this.multiple);
+    this.children = this.props.children || <React.Fragment>
       <h4 key='header' className="title">{this.props.title}</h4>
-      ,
       <label key="name">
         <p>Name</p>
         <input
@@ -66,7 +70,6 @@ export default class AnswerPage extends Form {
           placeholder="Enter name"
         />
       </label>
-      ,
       <label key="description">
         <p>Description</p>
         <input
@@ -76,19 +79,17 @@ export default class AnswerPage extends Form {
           placeholder="Enter  description"
         />
       </label>
-      ,
       <label key="type">
         <p>Type</p>
         <select name="type">
           <option>image</option>
         </select>
       </label>
-      ,
       <label key="img-upload">
         <p>Image(s) Upload</p>
-        <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple/>
+        <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>
       </label>
-    ];
+    </React.Fragment>;
     return super.render();
   }
 };

@@ -11,8 +11,9 @@ export default class AnswerPage extends Form {
     const verb = done ? "Uploaded" : "Uploading...";
     const message = `${verb} ${this.stats.count} / ${this.stats.total}`;
     return <Response 
-      statusClass={className} statusMessage={message} key="status"
-    />;
+      statusClass={className} statusMessage={message} key="status">
+        {this.stats.done.map((fname) => <p>Uploaded {fname}</p>)}
+    </Response>;
   }  
 
   handleRequest(action, opts) {
@@ -22,7 +23,8 @@ export default class AnswerPage extends Form {
 
     const promises=[];
     this.stats = {
-      total: this.uploadFileInput.files.length, 
+      total: this.uploadFileInput.files.length,
+      done: [], 
       count: 0
     };
     this.setState({response: this._statsComponent()});
@@ -35,12 +37,15 @@ export default class AnswerPage extends Form {
       formData.delete('name');
       formData.append('name', `${givenName || 'File'}-${file.name}`);
 
-      promises.push(
-        fetch(action, opts).then(() => {
-          this.stats.count++;
-          this.setState({response: this._statsComponent()});
-        })
-      );
+      ((fname) => {
+        promises.push(
+          fetch(action, opts).then(() => {
+            this.stats.count++;
+            this.stats.done.push(fname);
+            this.setState({response: this._statsComponent()});
+          })
+        );
+      })(file.name);
     }
     return Promise.all(promises).then(
       () => ({component: this._statsComponent(true)})
@@ -48,9 +53,8 @@ export default class AnswerPage extends Form {
   }
 
   render() {
-    this.children = this.props.children || [
+    this.children = this.props.children || <React.Fragment>
       <h4 key='header' className="title">Uploading answers...</h4>      
-    ,
       <label key="name">
         <p>Name / Identifier</p>
         <input 
@@ -60,7 +64,6 @@ export default class AnswerPage extends Form {
           placeholder="Enter answer identifier"
         />
       </label>
-    ,
       <label key="json-files">
         <p>Answer JSON files</p>
         <input 
@@ -68,7 +71,7 @@ export default class AnswerPage extends Form {
           type="file" name="json" multiple
         />
       </label>
-    ];
+    </React.Fragment>;
     return super.render();
   }
 };

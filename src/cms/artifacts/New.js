@@ -3,8 +3,6 @@ import NewPage from '../base/New';
 import Form from './Form';
 
 export default class ArtifactPage extends NewPage {
-
-
     render() {
       return (
         <Form
@@ -13,6 +11,5 @@ export default class ArtifactPage extends NewPage {
         />
       );
     }
-
 };
 ArtifactPage.entityName = 'Artifact';
