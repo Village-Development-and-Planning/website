@@ -1,20 +1,11 @@
 import React, {Component} from 'react';
 
-import ActionButton from '../ActionButton';
 import { Topbar, Logo, Titles } from './Topbar.scss';
 import { Link } from 'react-router-dom';
 import imgLogo from '../../images/tn_logo.svg';
 import User from '../../components/User';
 
 export default class extends Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      title: "Administration",
-      actions: [],
-      userAction: (<ActionButton to="/hello">Sign out</ActionButton>),
-    };
-  }
 
   setTitle(title) {
   }

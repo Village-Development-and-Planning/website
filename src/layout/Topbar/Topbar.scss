@@ -29,6 +29,10 @@
 :local .Titles {
   flex-grow: 1;
   padding: 0.5ex 0.5em;
+
+  h1, h2, h3 {
+    margin: 0 0;
+  }
 }
 
 :local .Actions {
