@@ -12,7 +12,7 @@ export default class AnswerPage extends Form {
     const message = `${verb} ${this.stats.count} / ${this.stats.total}`;
     return <Response 
       statusClass={className} statusMessage={message} key="status">
-        {this.stats.done.map((fname) => <p>Uploaded {fname}</p>)}
+        {this.stats.done.map((fname) => <p>{fname}</p>)}
     </Response>;
   }  
 
@@ -31,17 +31,27 @@ export default class AnswerPage extends Form {
 
     for (let i=0; i<this.uploadFileInput.files.length; i++) {
       let file = this.uploadFileInput.files[i];
-      formData.delete('dataFile');
-      formData.append('dataFile', file);
+
+      if (file.name === 'info.json') {
+        this.stats.count++;
+        this.stats.done.push(`Ignored ${file.name}`);
+        continue;
+      }
+
+      formData.delete('data-file');
+      formData.append('data-file', file);
 
       formData.delete('name');
       formData.append('name', `${givenName || 'File'}-${file.name}`);
 
       ((fname) => {
         promises.push(
-          fetch(action, opts).then(() => {
+          fetch(action, opts).then((res) => {
             this.stats.count++;
-            this.stats.done.push(fname);
+            if (res.entity && res.entity.existing)
+              this.stats.done.push(`Already Uploaded ${fname}`);
+            else
+              this.stats.done.push(`Uploaded ${fname}`);
             this.setState({response: this._statsComponent()});
           })
         );

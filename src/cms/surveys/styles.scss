@@ -1,0 +1,16 @@
+@import "styles/theme";
+
+:local .AnswersTable {
+  th, td {
+    padding: 1ex 0.5em;
+  }
+  thead {
+    background-color: $secondary-color;
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background-color: $contrast-background-color;
+    }
+  }
+}

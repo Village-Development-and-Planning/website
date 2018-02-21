@@ -11,6 +11,10 @@ export default [
     require('./Edit').default,
   ],
   [
+    'surveys/:entityId/answers',
+    require('./Answers').default,
+  ],
+  [
     'surveys/:entityId',
     require('./Show').default,
   ],

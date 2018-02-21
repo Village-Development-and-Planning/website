@@ -4,6 +4,7 @@ import fetch from '../../utils/fetch';
 import Response from './Response';
 import {AppForm} from './style.scss';
 
+export {Response};
 export default class Form extends React.Component {
 
   constructor(...args) {
@@ -20,23 +21,26 @@ export default class Form extends React.Component {
             </button>
     );
     this.state = {response: false};
+
   }
 
   handleError(err) {
-    if (!err.component) {
-      err.component = <Response 
-        statusClass="error" key="status"
-        statusMessage={`${err.status}: ${err.statusText}`}
-      />;
+    if (this.props.handleError) {
+      return this.props.handleError(err);
     }
-    return err;
+    return err.component || <Response 
+      statusClass="error" key="status"
+      statusMessage={`${err.status}: ${err.statusText}`}
+    />;
   }
 
   handleResponse(res) {
+    if (this.props.handleResponse) {
+      res = this.props.handleResponse(res);
+    }
     if (!res) return;
     if (!res.component) {
       res.component = <Response 
-        statusClass="success" key="status"
         statusMessage="Success!"
       />;
     }
@@ -46,7 +50,7 @@ export default class Form extends React.Component {
   
   handleRequest(...args) {
     this._disableSubmit();
-    return fetch(...args);
+    return (this.props.handleRequest || fetch)(...args);
   }
 
   onSubmit(evt) {
@@ -66,7 +70,9 @@ export default class Form extends React.Component {
         ref={(f) => (this.form = f)}
         onSubmit={(e) => this.onSubmit(e)}
         className={this.props.className || AppForm}
+        acceptCharset="utf-8"
       >
+        <input type="hidden" name="_charset_" value="utf-8"/>
         {this.children}
         {this.submit}
         {this.state.response}

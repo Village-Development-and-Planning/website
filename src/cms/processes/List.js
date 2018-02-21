@@ -5,11 +5,12 @@ export default class List extends ListPage {
     return super.setupObject().then(
       (res) => {
         res.entities.forEach((s) => {
-          s.displayName = `${s.uid} - ${s.name}`;
+          s.displayName = `${s.status} - ${s.name}`;
         });             
         return res;
       }
     );    
   }  
 };
-List.entityName = 'Location';
+List.entityName = 'Process';
+List.routeName = 'processes';
