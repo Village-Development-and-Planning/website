@@ -6,6 +6,8 @@
   }
   thead {
     background-color: $secondary-color;
+    max-height: 10ex;
+    overflow: scroll;
   }
 
   tbody {

@@ -18,8 +18,10 @@ export default class SurveyAnswers extends Base {
         <thead>
           {[0,1].map((idx) => {
             return <tr key={idx}>
-              {this.entities[idx].map((el) => 
-                <th key={el}>{el}</th>
+              {this.entities[idx].map((el, idx) => 
+                <th key={idx}>
+                  <div className="HeaderCell">{el}</div>
+                </th>
               )}
             </tr>;
           })}

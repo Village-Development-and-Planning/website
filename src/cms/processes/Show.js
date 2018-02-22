@@ -22,6 +22,10 @@ export default class Show extends ShowPage {
           <h4>Output</h4>
           <code><pre>{entity.stdout}
           </pre></code>
+
+          <h4>Error Log</h4>
+          <code><pre>{entity.stderr}
+          </pre></code>
         </div>
       );
     } else {
