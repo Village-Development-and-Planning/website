@@ -53,7 +53,7 @@
   }
   ````
 
-  Aggregates Object:
+  Aggregate Object:
 
   ````json
   {
@@ -96,20 +96,24 @@
   }
   ````
 
-## Household/Panchayat
+## Household/Location
 
-  For UI, refer sheet for HH Block Level.  The component is the building blocks, which we'll list for the UI.
+  These components are used to provide location specific data on the surveying.  We need components for Panchayat, Block, and District.  These are shown in sheets:  HH Block, HH District, HH State, respectively (component will be used as a list.)  
+  
+  All three components have the same structure.  The aggregate, and the weekAggregates parameters change in structure.
 
-  Usage:
 
   ````html
-  <PanchayatAggregate 
+  <PanchayatAggregate
     location={locationObj} 
     aggregate={aggregateObj}
+    weekAggregates={weekAggregates}
   />
   ````
 
-  Location JSON
+### Location JSON
+
+  The location JSON structure is the same for all locations, and is as follows:
 
   ````json
   {
@@ -143,7 +147,9 @@
   }
   ````
 
-  Aggregates Object:
+### Aggregate Object
+
+  The aggregate object contains the data for the survey answer stats, and the GPS stats.  The sample JSON for a Panchayat (also called Village) is shown below.  The structure is the same for Blocks and Districts, except the `type` changes accordingly.
 
   ````json
   {
@@ -170,6 +176,19 @@
         "value": 56,
         "count": 56
       },
+      "avgTime": {
+        "value": 84000,
+        "count": 56
+      },
+      "gpsReadings": {
+        "value": { 
+          // Histogram style data
+          "<lat1>,<long1>": 3, 
+          "<lat2>,<long2>": 4,
+          ...
+         },
+        "count": 56
+      }
     },
   }
   ````
