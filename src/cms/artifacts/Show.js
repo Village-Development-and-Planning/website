@@ -20,6 +20,7 @@ export default class Show extends ShowPage {
             src={`data:${entity.mimeType};base64,${entity.dataBase64}`}
             alt={entity.name}
           />
+          <p>Mime type: {entity.mimeType}</p>
         </div>
       );
     } else {

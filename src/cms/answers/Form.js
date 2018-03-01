@@ -4,7 +4,7 @@ import fetch from '../../utils/fetch';
 
 import Response from '../../layout/AppForm/Response';
 
-export default class AnswerPage extends Form {
+export default class AnswerForm extends Form {
 
   _statsComponent(done) {
     const className = done ? "success" : "progress";

@@ -20,6 +20,17 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
+    to="/surveys"
+    image={plan}
+    altText="List Surveys"
+    text="List Surveys"
+  >
+    <div>
+      View / edit / delete surveys.
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
     to="/answers/new"
     image={upload}
     altText="Upload Responses"
@@ -31,27 +42,69 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-      to="/artifacts/new"
+    to="/artifacts/new"
+    image={img_upload}
+    altText="Upload Artifacts"
+    text="Upload Artifacts"
+  >
+    <div>
+        Upload Artifacts.
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
+    to="/artifacts"
+    image={img_upload}
+    altText="List Artifacts"
+    text="List Artifacts"
+  >
+    <div>
+      View / edit / delete Artifacts.
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
+      to="/locations/new"
       image={img_upload}
-      altText="Upload Artifacts"
-      text="Upload Artifacts"
+      altText="Upload Location Data"
+      text="Upload Location Data"
   >
       <div>
-          Upload Artifacts.
+          Upload Location Data.
       </div>
   </ActionPanel>
 
   <ActionPanel
-      to="/upload/asdf"
-      image={img_upload}
-      altText="Upload Survey Support Data"
-      text="Upload Support Data"
+    to="/locations"
+    image={img_upload}
+    altText="List Locations"
+    text="List Locations"
   >
-      <div>
-          Upload Support Data.
-      </div>
+    <div>
+      View / edit / delete Locations.
+    </div>
   </ActionPanel>
 
-
+  <ActionPanel
+      to="/surveyors/new"
+      image={img_upload}
+      altText="Upload Surveyors Data"
+      text="Upload Surveyors Data"
+  >
+      <div>
+          Upload Surveyors Data.
+      </div>
+  </ActionPanel>
+  
+  <ActionPanel
+    to="/surveyors"
+    image={img_upload}
+    altText="List Surveyors"
+    text="List Surveyors"
+  >
+    <div>
+      View / edit / delete Surveyors.
+    </div>
+  </ActionPanel>
 
 </Responsive>;

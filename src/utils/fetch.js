@@ -8,6 +8,6 @@ export default function(url, opts) {
       return Promise.reject(res);
     return res.json().then((data) => {
       return data;
-    });
+    }).catch((err) => console.log('Error parsing json.', err) || {});
   });
 }

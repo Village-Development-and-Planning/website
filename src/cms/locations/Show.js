@@ -24,6 +24,11 @@ export default class Show extends ShowPage {
           <code><pre>
             {JSON.stringify(entity.payload, null, 2)}
           </pre></code>
+
+          <h4>Aggregates</h4>
+          <code><pre>
+            {JSON.stringify(entity.aggregates, null, 2)}
+          </pre></code>
         </div>
       );
     } else {

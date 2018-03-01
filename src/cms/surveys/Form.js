@@ -39,7 +39,7 @@ export default class extends Form {
           <input 
             type="text" 
             name="respondents"
-            defaultValue={this.props.entity && this.props.entity.respondents}
+            defaultValue={(this.props.entity && this.props.entity.respondents) || 'none'}
           />
         </label>        
     ,

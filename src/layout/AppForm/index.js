@@ -28,10 +28,10 @@ export default class Form extends React.Component {
     if (this.props.handleError) {
       return this.props.handleError(err);
     }
-    return err.component || <Response 
+    return {component: err.component || <Response 
       statusClass="error" key="status"
       statusMessage={`${err.status}: ${err.statusText}`}
-    />;
+    />};
   }
 
   handleResponse(res) {
