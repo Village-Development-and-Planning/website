@@ -1,6 +1,6 @@
 import React from 'react';
 import ShowPage from '../base/Show';
-
+import YAML from 'js-yaml';
 
 export default class Show extends ShowPage {
   render() {
@@ -27,7 +27,7 @@ export default class Show extends ShowPage {
 
           <h4>Aggregates</h4>
           <code><pre>
-            {JSON.stringify(entity.aggregates, null, 2)}
+            {YAML.safeDump(entity.aggregates)}
           </pre></code>
         </div>
       );

@@ -1,5 +1,6 @@
 import React from 'react';
 import ShowPage from '../base/Show';
+import YAML from 'js-yaml';
 
 import Form, {Response} from '../../layout/AppForm';
 
@@ -60,7 +61,7 @@ export default class SurvyeyShow extends ShowPage {
           </Form>
 
           <h4>Aggregates</h4>
-          <code><pre>{JSON.stringify(entity.aggregates, null, 2)}</pre></code>
+          <code><pre>{YAML.safeDump(entity.aggregates)}</pre></code>
         </div>
       );
     } else {
