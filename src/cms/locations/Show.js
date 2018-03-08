@@ -27,7 +27,10 @@ export default class Show extends ShowPage {
 
           <h4>Aggregates</h4>
           <code><pre>
-            {YAML.safeDump(entity.aggregates)}
+            {YAML.safeDump(entity.aggregates.map(
+              ({type, key, data, metadata=null}) => 
+              ({type, key, data, metadata})
+            ))}
           </pre></code>
         </div>
       );
