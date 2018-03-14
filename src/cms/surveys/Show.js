@@ -60,6 +60,9 @@ export default class SurvyeyShow extends ShowPage {
           <Form actionName="Reset Processing" action={`/cms/surveys/${entity._id}/reset`}>
           </Form>
 
+          <h4>Post-processing</h4>
+          <code><pre>{YAML.safeDump(entity.postProcessing)}</pre></code>
+
           <h4>Aggregates</h4>
           <code><pre>{YAML.safeDump(entity.aggregates)}</pre></code>
         </div>
