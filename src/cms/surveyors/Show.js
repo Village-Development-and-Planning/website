@@ -1,10 +1,14 @@
 import React from 'react';
 import ShowPage from '../base/Show';
-import YAML from 'js-yaml';
+import SurveyorAggregate from './SurveyorAggregate';
 
 export default class Show extends ShowPage {
   render() {
-    let entity = this.state.entity;    
+    let entity = this.state.entity;
+    let surveyorData = {};
+
+
+
     if (entity) {
       let householdStats = entity.aggregates 
       && entity.aggregates.find((agg) => (
@@ -12,40 +16,21 @@ export default class Show extends ShowPage {
         && (agg.key.search('/') === -1)
       ));
       if (householdStats) {
-        householdStats = householdStats.data;        
-        let total = householdStats.numSurveys.value;
-        let answered = householdStats.numAnswered.value;        
-        householdStats = <React.Fragment>
-          <h4>Household Statistics</h4>
-          <p>Total surveyed: {total}<br/>
-          Answered surveys: {answered} ({answered/total*100}%)</p>
-        </React.Fragment>;
+        householdStats = householdStats.data;
+        surveyorData.total =  householdStats.numSurveys.value;
+        surveyorData.answered = householdStats.numAnswered.value;
       }
+        surveyorData.name = entity.name;
+        surveyorData.username = entity.username;
+        surveyorData.roles = (entity.roles || []).join(', ');
       return (
-        <div>
-          <h4>Name</h4>
-          <p>{entity.name}</p>
 
-          <h4>Code / Username</h4>
-          <p>{entity.username}</p>
 
-          <h4>Roles</h4>
-          <p>{(entity.roles || []).join(', ')}</p>          
-          {householdStats}
+          <div>
+              <h3><span>Panchayat Name</span><span>Block Name</span><span>District Name</span></h3>
+              {entity.aggregates.map(aggregateData => <SurveyorAggregate surveyor={surveyorData}  aggregate={aggregateData}/>)}
 
-          <h4>Payload</h4>
-          <code><pre>
-            {JSON.stringify(entity.payload, null, 2)}
-          </pre></code>
-
-          <h4>Aggregates</h4>
-          <code><pre>
-            {YAML.safeDump(entity.aggregates.map(
-              ({type, key, metadata, data}) =>
-                ({type, key, metadata, data})
-            ))}
-          </pre></code>
-        </div>
+          </div>
       );
     } else {
       return super.render();

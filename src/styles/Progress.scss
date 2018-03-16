@@ -1,0 +1,53 @@
+:local .Progress{
+  position: relative;
+  margin:20px;
+  @media screen and (max-width: 780px) {
+    width:80%;
+    height: 50px;
+  }
+
+  >span,strong{
+    position: absolute;
+    top:25%;
+
+  }
+  >span{
+    right:1%;
+  }
+  strong{
+    left:1%;
+  }
+  p>span{
+    position: absolute;
+    right: 0;
+  }
+  progress{
+
+    @media screen and (max-width: 780px) {
+      width:100%;
+    }
+
+    width:600px;
+    height:50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    //Gecko, Firefox, Trident and Internet Explorer("Edge")
+    //background color
+    background-color: red;
+    //Trident and Internet Explorer("Edge")
+    //color
+    color: green;
+
+
+  }
+  //WebKit and Blink
+  //background color
+  ::-webkit-progress-bar {background-color: red; width: 100%;}
+  // color
+  ::-webkit-progress-value {background-color: green !important;}
+  //Gecko and Firefox
+  //color
+  ::-moz-progress-bar {background-color: green !important;}
+}
