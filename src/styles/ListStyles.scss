@@ -1,0 +1,37 @@
+:local .ListStyles{
+
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 10px;
+
+  h3{
+    span{
+      padding: 0 20px;
+    }
+  }
+
+  ul{
+    list-style: none;
+    padding: 10px;
+
+    li{
+      display: flex;
+      margin: 4px;
+
+      label{
+        padding: 5px;
+        width: 350px;
+      }
+      span{
+        padding: 5px;
+        width:25px;
+      }
+    }
+  }
+}
+
+.warnStyle{
+  background-color: red;
+}
+
+
