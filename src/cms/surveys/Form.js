@@ -33,17 +33,7 @@ export default class extends Form {
             placeholder="Enter survey description"
           />
         </label>
-    ,
-        <label key="respondents">
-          <p>Respondents</p>
-          <input 
-            type="text" 
-            name="respondents"
-            defaultValue={(this.props.entity && this.props.entity.respondents) || 'none'}
-          />
-        </label>        
-    ,
-        
+    ,        
         <label className="row" key="enabled">
           <p>Enabled? &nbsp; </p>
           <input 

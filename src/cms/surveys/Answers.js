@@ -7,7 +7,7 @@ import {AnswersTable} from './styles.scss';
 export default class SurveyAnswers extends Base {
   setupObject() {
     const entityId =  this.props.match.params.entityId;
-    return fetch(`/cms/${this.routeName}/${entityId}/answers`)
+    return fetch(`/cms/${this.routeName}/${entityId}/answers${this.props.location.search || ''}`)
       .then((entities) => ({entities}));      
   }
 
