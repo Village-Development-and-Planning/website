@@ -2,23 +2,25 @@ import React from 'react';
 import ShowPage from '../base/Show';
 import YAML from 'js-yaml';
 
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
+
 export default class Show extends ShowPage {
   render() {
     let entity = this.state.entity;
     if (entity) {
       return (
         <div>
-          <h4>Name</h4>
-          <p>{entity.name}</p>
-
-          <h4>Type</h4>
-          <p>{entity.type}</p>
-
-          <h4>Code</h4>
-          <p>{entity.code}</p>
-
-          <h4>Unique ID</h4>
-          <p>{entity.uid}</p>
+          <h4>{entity.type}</h4>
+          <p>{entity.uid} - {entity.name}</p>
+          <div id="map" style={{width: "60em", height: "60ex"}}/>          
 
           <h4>Payload</h4>
           <code><pre>
@@ -39,5 +41,47 @@ export default class Show extends ShowPage {
     }
   }
 
+  componentDidUpdate() {
+    const entity = this.state.entity;
+    if (!entity) return;
+
+    const aggregates = entity.aggregates;
+    if (!aggregates) return;
+
+    const agg = aggregates.find(({type}) => (type.endsWith('/Household')));
+    if (!agg) return;
+
+    const locations = agg.data && agg.data.locations;
+    if (!locations || !locations.value || !locations.count) return;
+    let avgLat = 0, avgLong = 0, len = 0;
+
+    const markers = [];
+    const map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    for(let key of Object.keys(locations.value)) {
+      let [lat, long] = key.split(',');
+      if (!lat || !long) continue;
+      lat = parseInt(lat, 10) / 10000;
+      long = parseInt(long, 10) / 10000;
+      avgLat += lat;
+      avgLong += long;
+      len = len + 1;
+      markers.push(
+        L.marker(
+          [lat, long]
+        ).addTo(map)
+      );
+    }
+    avgLat /= len;
+    avgLong /= len;
+
+    map.fitBounds(
+      (new L.featureGroup(markers)).getBounds().pad(0.1)
+    );
+  }
+  
 };
 Show.entityName = 'Location';
