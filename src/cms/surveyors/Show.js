@@ -7,8 +7,6 @@ export default class Show extends ShowPage {
     let entity = this.state.entity;
     let surveyorData = {};
 
-
-
     if (entity) {
       let householdStats = entity.aggregates 
       && entity.aggregates.find((agg) => (

@@ -12,6 +12,7 @@ export default class SurveyorAggregate extends Component{
     render() {
         let answeredSurveys = this.props.aggregate.data.numAnswered.value;
         let totalSurveys =  this.props.aggregate.data.numSurveys.value;
+	    let totalUnAnsweredSurveys =  totalSurveys - answeredSurveys;
 
         let answeredPercentage = Math.round(answeredSurveys/totalSurveys*100);
         let unAnsweredPercentage = 100- answeredPercentage;
@@ -65,7 +66,7 @@ export default class SurveyorAggregate extends Component{
                     </li>
                     <li>
                         <label>Total</label>
-                        <span>{unAnsweredPercentage}</span>
+                        <span>{totalUnAnsweredSurveys}</span>
 
                     </li>
                 </ul>
