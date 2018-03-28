@@ -64,9 +64,9 @@ export default class Show extends ShowPage {
 			      surveyorData.roles = (surveyor.roles || []).join(', ');
 
 
-			      return surveyor.aggregates.map(aggregateData => <SurveyorAggregate surveyor={surveyorData}  aggregate={aggregateData}/>)
+			      return  <SurveyorAggregate surveyor={surveyorData}  aggregate={householdStats}/>
 
-			      })}}
+			      })}
 
 	      </div>
       );

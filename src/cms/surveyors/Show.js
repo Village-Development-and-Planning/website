@@ -26,7 +26,7 @@ export default class Show extends ShowPage {
 
           <div>
               <h3><span>Panchayat Name</span><span>Block Name</span><span>District Name</span></h3>
-              {entity.aggregates.map(aggregateData => <SurveyorAggregate surveyor={surveyorData}  aggregate={aggregateData}/>)}
+             <SurveyorAggregate surveyor={surveyorData}  aggregate={householdStats}/>
 
           </div>
       );
