@@ -5,13 +5,7 @@ import { get } from 'lodash';
 import fetch from "../../utils/fetch";
 import SurveyorAggregate from './../surveyors/SurveyorAggregate';
 
-
-import L from 'leaflet';
-
 export default class Show extends ShowPage {
-
-
-
 	setupObject() {
 		const entityId = this.props.match.params.entityId;
 		return fetch(`/cms/${this.routeName}/${entityId}`)
@@ -66,7 +60,7 @@ export default class Show extends ShowPage {
 			      surveyorData.roles = (surveyor.roles || []).join(', ');
 
 
-			      return  <SurveyorAggregate surveyor={surveyorData}  aggregate={householdStats}/>
+			      return  <SurveyorAggregate surveyor={surveyorData}  aggregate={householdStats}/>;
 
 			      })}
 
@@ -77,47 +71,47 @@ export default class Show extends ShowPage {
     }
   }
 
-  componentDidUpdate() {
-    const entity = this.state.entity;
-    if (!entity) return;
+  // componentDidUpdate() {
+  //   const entity = this.state.entity;
+  //   if (!entity) return;
 
-    const aggregates = entity.aggregates;
-    if (!aggregates) return;
+  //   const aggregates = entity.aggregates;
+  //   if (!aggregates) return;
 
-    const agg = aggregates.find(({type}) => (type.endsWith('/Household')));
-    if (!agg) return;
+  //   const agg = aggregates.find(({type}) => (type.endsWith('/Household')));
+  //   if (!agg) return;
 
-    const locations = agg.data && agg.data.locations;
-    if (!locations || !locations.value || !locations.count) return;
-    let avgLat = 0, avgLong = 0, len = 0;
+  //   const locations = agg.data && agg.data.locations;
+  //   if (!locations || !locations.value || !locations.count) return;
+  //   let avgLat = 0, avgLong = 0, len = 0;
 
-    const markers = [];
-    const map = L.map('map');
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+  //   const markers = [];
+  //   const map = L.map('map');
+  //   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  //   }).addTo(map);
 
-    for(let key of Object.keys(locations.value)) {
-      let [lat, long] = key.split(',');
-      if (!lat || !long) continue;
-      lat = parseInt(lat, 10) / 10000;
-      long = parseInt(long, 10) / 10000;
-      avgLat += lat;
-      avgLong += long;
-      len = len + 1;
-      markers.push(
-        L.marker(
-          [lat, long]
-        ).addTo(map)
-      );
-    }
-    avgLat /= len;
-    avgLong /= len;
+  //   for(let key of Object.keys(locations.value)) {
+  //     let [lat, long] = key.split(',');
+  //     if (!lat || !long) continue;
+  //     lat = parseInt(lat, 10) / 10000;
+  //     long = parseInt(long, 10) / 10000;
+  //     avgLat += lat;
+  //     avgLong += long;
+  //     len = len + 1;
+  //     markers.push(
+  //       L.marker(
+  //         [lat, long]
+  //       ).addTo(map)
+  //     );
+  //   }
+  //   avgLat /= len;
+  //   avgLong /= len;
 
-    map.fitBounds(
-      (new L.featureGroup(markers)).getBounds().pad(0.1)
-    );
-  }
+  //   map.fitBounds(
+  //     (new L.featureGroup(markers)).getBounds().pad(0.1)
+  //   );
+  // }
   
 };
 Show.entityName = 'Location';
