@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import Responsive from '../../layout/Responsive';
 import {ListStyles} from '../../styles/ListStyles.scss';
 import {Progress} from '../../styles/Progress.scss';
+import { get as _get} from 'lodash';
+
 
 export default class SurveyorAggregate extends Component{
 
@@ -10,11 +12,12 @@ export default class SurveyorAggregate extends Component{
 
 
     render() {
-        let answeredSurveys = this.props.aggregate.data.numAnswered.value;
-        let totalSurveys =  this.props.aggregate.data.numSurveys.value;
+        let answeredSurveys = _get(this.props.aggregate,"numAnswered.value",0);
+        let totalSurveys =  _get(this.props.aggregate,"numSurveys.value",0);
+	    let totalUnAnsweredSurveys =  totalSurveys - answeredSurveys;
 
-        let answeredPercentage = Math.round(answeredSurveys/totalSurveys*100);
-        let unAnsweredPercentage = 100- answeredPercentage;
+        let answeredPercentage = totalSurveys !== 0 ? Math.round(answeredSurveys/totalSurveys*100) : 0;
+        let unAnsweredPercentage = 100 - answeredPercentage;
 
         return (
             <section className ={ListStyles} >
@@ -51,21 +54,21 @@ export default class SurveyorAggregate extends Component{
                 <ul>
                     <li>
                         <label>No. of Households reported 'not willing'</label>
-                        <span>{this.props.aggregate.data.numNotWilling.value}</span>
+                        <span>{_get(this.props.aggregate,"numNotWilling.value",0)}</span>
 
                     </li>
                     <li>
                         <label>No. of Households reported 'not there'</label>
-                        <span>{this.props.aggregate.data.numNotHere.value}</span>
+                        <span>{_get(this.props.aggregate,"numNotHere.value",0)}</span>
 
                     </li>
                     <li>
                         <label>No. of Households reported 'dead'</label>
-                        <span>{this.props.aggregate.data.numNotAlive.value}</span>
+                        <span>{_get(this.props.aggregate,"numNotAlive.value",0)}</span>
                     </li>
                     <li>
                         <label>Total</label>
-                        <span>{unAnsweredPercentage}</span>
+                        <span>{totalUnAnsweredSurveys}</span>
 
                     </li>
                 </ul>
