@@ -9,7 +9,14 @@ import { get as _get} from 'lodash';
 export default class SurveyorAggregate extends Component{
 
 
-
+    _avg(agg) {
+        if (!agg) return null;
+        if (typeof agg !== 'object') return null;
+        const count = _get(agg, 'count', 0);
+        const value = _get(agg, 'value', 0);
+        if (!count) return null;
+        return (value/count);
+    }
 
     render() {
         let answeredSurveys = _get(this.props.aggregate,"numAnswered.value",0);
@@ -18,6 +25,23 @@ export default class SurveyorAggregate extends Component{
 
         let answeredPercentage = totalSurveys !== 0 ? Math.round(answeredSurveys/totalSurveys*100) : 0;
         let unAnsweredPercentage = 100 - answeredPercentage;
+
+        let averageTimeMS = this._avg(_get(this.props.aggregate, 'averageTime')) 
+            || 0;
+        averageTimeMS = averageTimeMS / 1000 / 60;
+        if (averageTimeMS) {
+            averageTimeMS = `${Math.round(averageTimeMS)} minutes`;
+        } else {
+            averageTimeMS = '-';
+        }
+
+        let timeFive = _get(this.props.aggregate, "timeFive.value", answeredSurveys);
+        let timeFifteen = _get(this.props.aggregate, "timeFifteen.value", answeredSurveys);
+        timeFive = answeredSurveys - timeFive;
+        timeFifteen = answeredSurveys - timeFifteen;
+
+        let timeFifteenPercent = Math.round(timeFifteen/answeredSurveys * 100);
+        let timeFivePercent = Math.round(timeFive/answeredSurveys * 100);
 
         return (
             <section className ={ListStyles} >
@@ -75,17 +99,17 @@ export default class SurveyorAggregate extends Component{
                 <ul>
                     <li>
                         <label>No. of completed surveys done in less than 15 minutes</label>
-                        <span>__</span>
+                        <span>{timeFifteen} ({timeFifteenPercent} %)</span>
 
                     </li>
                     <li>
                         <label>No. of completed surveys done in less than 5 minutes</label>
-                        <span>__</span>
+                        <span>{timeFive} ({timeFivePercent} %)</span>
 
                     </li>
                     <li>
                         <label>Average time per survey</label>
-                        <span>__</span>
+                        <span>{averageTimeMS}</span>
 
                     </li>
                 </ul>
