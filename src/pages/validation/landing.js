@@ -7,7 +7,6 @@ import home from '../../images/home.png';
 import validate from '../../images/validate.png';
 
 export default () => <Responsive>
-
   <ActionPanel
     to="/validation/mapping"
     key="mapping"

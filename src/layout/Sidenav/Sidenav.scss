@@ -1,7 +1,7 @@
 @import "styles/theme";
 
 :local .Sidenav {
-  @media screen and (max-width: $bp-medium-width - 1) {
+  @media screen and (max-width: $bp-large-width - 1) {
     display: none;
   }
 

@@ -38,8 +38,4 @@
 :local .Actions {
   align-self: flex-end;
   display: flex;
-
-  @media screen and (max-width: $bp-medium-width - 1) {
-    display: none;
-  }
 }

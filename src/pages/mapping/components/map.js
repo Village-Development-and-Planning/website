@@ -17,7 +17,7 @@ export default class extends Component {
       map.setView([10.8, 77], 6);
       return;
     }
-    locations.forEach(l => console.log(l) || l.addTo(map));
+    locations.forEach(l => l.addTo(map));
     map.fitBounds((new L.featureGroup(locations)).getBounds());
   }
   render() {
