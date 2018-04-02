@@ -38,7 +38,7 @@ class Sidenav extends Component {
             text="Download"
           />
           <ActionButton
-            to="/surveys/new"
+            to="/validation"
             image={validate}
             altText="Validate Survey Responses"
             text="Validate"

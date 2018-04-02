@@ -1,0 +1,38 @@
+@import "styles/theme";
+
+:local .Panchayat {
+    border: 1pt solid black;
+    padding: 0.5ex 0.5em;
+}
+
+:local .Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    h1,h2,h3 {
+        margin: 1ex 1em;
+    }
+}
+
+:local .Detail {
+    width: 40%;
+    @media screen and (max-width: $bp-large-width - 1) {
+        width: 100%;
+    }
+}
+:local .FTable {
+    display: flex;
+    flex-direction: row;
+    &> :first-child {
+        flex: 90% 0 0;
+    }
+}
+
+:local .Map {
+    width: 40%;
+    height: 50ex;
+    padding: 1ex 1em;
+    @media screen and (max-width: $bp-large-width - 1) {
+        width: 100%;
+    }
+}

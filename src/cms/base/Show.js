@@ -15,7 +15,7 @@ export default class ShowPage extends Base {
     let topbar = this.context.topbar;
     if (topbar) {
       topbar().setTitle(`Showing ${this.entityName}`);
-      topbar().setActions(this._actions());
+      //topbar().setActions(this._actions());
     }
   }
 

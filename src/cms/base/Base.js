@@ -18,8 +18,13 @@ export default class BasePage extends Component {
   componentDidMount() {
     if (this.setupObject) {
       let objPromise = this.setupObject();      
-      if (objPromise.then) {
-        objPromise.then((upd) => this.setState(upd));
+      if (objPromise && objPromise.then) {
+        objPromise.then(
+          (upd) => this.setState(upd),
+          (res) => this.setState({
+            message: `Error ${res.status || '???'}: ${res.statusText}`,
+          })
+        );
       }
     }
     this.setupUI();

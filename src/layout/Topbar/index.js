@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import { Topbar, Logo, Titles } from './Topbar.scss';
 import { Link } from 'react-router-dom';
 import imgLogo from '../../images/tn_logo.svg';
-import User from '../../components/User';
+import User from '../User';
 
 export default class extends Component {
 

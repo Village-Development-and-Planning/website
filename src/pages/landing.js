@@ -37,7 +37,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/surveys/new"
+    to="/validation"
     key="validate-responses"
     image={validate}
     altText="Validate Survey Data"
