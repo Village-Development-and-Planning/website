@@ -10,7 +10,6 @@ export default () => <Responsive>
   <ActionPanel
     href="/static/VDP-Android.apk"
     image={download}
-    altText="Download App"
     text="Download Mobile App"
   >
     <div>

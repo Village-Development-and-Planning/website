@@ -21,7 +21,6 @@ export default () => <Responsive>
       to={`/validation/household/district/${loc.path}`}
       key={loc.path}
       image={validate}
-      altText={loc.name}
       text={loc.name}
     >
     </ActionPanel>
@@ -30,7 +29,6 @@ export default () => <Responsive>
     to="/validation/household/state"
     key="state"
     image={validate}
-    altText={'State statistics'}
     text="TN"
   />
 </Responsive>;

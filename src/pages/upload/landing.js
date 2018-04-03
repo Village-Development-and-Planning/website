@@ -11,7 +11,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/surveys/new"
     image={plan}
-    altText="Create Survey"
     text="Create Survey"
   >
     <div>
@@ -22,7 +21,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/surveys"
     image={plan}
-    altText="List Surveys"
     text="List Surveys"
   >
     <div>
@@ -33,7 +31,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/answers/new"
     image={upload}
-    altText="Upload Responses"
     text="Upload Responses"    
   >
     <div>
@@ -44,7 +41,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/artifacts/new"
     image={img_upload}
-    altText="Upload Artifacts"
     text="Upload Artifacts"
   >
     <div>
@@ -55,7 +51,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/artifacts"
     image={img_upload}
-    altText="List Artifacts"
     text="List Artifacts"
   >
     <div>
@@ -66,7 +61,6 @@ export default () => <Responsive>
   <ActionPanel
       to="/locations/new"
       image={img_upload}
-      altText="Upload Location Data"
       text="Upload Location Data"
   >
       <div>
@@ -77,7 +71,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/locations"
     image={img_upload}
-    altText="List Locations"
     text="List Locations"
   >
     <div>
@@ -88,7 +81,6 @@ export default () => <Responsive>
   <ActionPanel
       to="/surveyors/new"
       image={img_upload}
-      altText="Upload Surveyors Data"
       text="Upload Surveyors Data"
   >
       <div>
@@ -99,7 +91,6 @@ export default () => <Responsive>
   <ActionPanel
     to="/surveyors"
     image={img_upload}
-    altText="List Surveyors"
     text="List Surveyors"
   >
     <div>

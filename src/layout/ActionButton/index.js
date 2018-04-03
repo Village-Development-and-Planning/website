@@ -7,7 +7,6 @@ export default class extends Component {
     if (this.props.to) {
       return (
         <Link className={ActionButton} to={this.props.to}>
-          <img src={this.props.image} alt={this.props.altText} />
           <div>{this.props.text}</div>
         </Link>
       );

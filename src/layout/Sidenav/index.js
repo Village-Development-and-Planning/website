@@ -22,43 +22,36 @@ class Sidenav extends Component {
           <ActionButton
             to="/"
             image={home}
-            altText="Home"
             text="Home"
           />
           <ActionButton
             to="/upload"
             image={upload}
-            altText="Upload Survey and Related Data"
             text="Upload"
           />
           <ActionButton
             to="/download"
             image={download}
-            altText="Download Survey Applications"
             text="Download"
           />
           <ActionButton
             to="/validation"
             image={validate}
-            altText="Validate Survey Responses"
             text="Validate"
           />
           <ActionButton
             to="/surveys/new"
             image={exportImg}
-            altText="Export Survey Resopnses"
             text="Export"
           />
           <ActionButton
             to="/surveys/new"
             image={visualization}
-            altText="Visualize Survey Responses"
             text="Visualizations"
           />
           <ActionButton
             to="/surveys/new"
             image={plan}
-            altText="View Action Plan"
             text="Plan"
           />
         </div>

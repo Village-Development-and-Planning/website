@@ -33,7 +33,6 @@ export default () => <Responsive>
       to={`/validation/mapping/${loc.path}`}
       key={loc.path}
       image={validate}
-      altText={loc.name}
       text={loc.name}
     >
     </ActionPanel>

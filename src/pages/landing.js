@@ -15,11 +15,10 @@ export default () => <Responsive>
     key="new-survey"
     to="/upload"
     image={upload}
-    altText="Create Survey"
-    text="Upload Survey & Related Data"
+    text="Create Surveys"
   >
     <div>
-      Create surveys, Upload survey response data
+      Upload your survey, survey images, surveyors, and geographic area to be covered.
     </div>
   </ActionPanel>
 
@@ -27,12 +26,21 @@ export default () => <Responsive>
     key="download-apps"
     to="/download"
     image={download}
-    altText="Download Survey Applications"
-    text="Download Survey Applications"
+    text="Download Survey Application"
   >
     <div>
-      Download mobile and 
-      connector applications.
+      Install your tatblet or mobile based application on its device.
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
+    key="upload-app-data"
+    to="/upload"
+    image={upload}
+    text="Upload Data"
+  >
+    <div>
+      Sync the data collected to the server
     </div>
   </ActionPanel>
 
@@ -40,11 +48,10 @@ export default () => <Responsive>
     to="/validation"
     key="validate-responses"
     image={validate}
-    altText="Validate Survey Data"
-    text="Validate Survey Data"
+    text="Validate Data"
   >
     <div>
-      Perform validations.
+      Check and monitor the quality of data collected.
     </div>
   </ActionPanel>
 
@@ -52,11 +59,10 @@ export default () => <Responsive>
     to="/surveys/new"
     key="export-responses"
     image={exportImg}
-    altText="Export Survey Data"
-    text="Export Survey Responses"
+    text="Export Data"
   >
     <div>
-      Export Survey Responses
+      Generate a CSV file that can be imported into various analytical tools.
     </div>
   </ActionPanel>
 
@@ -64,11 +70,10 @@ export default () => <Responsive>
     to="/surveys/new"
     image={visualization}
     key="visualization-responses"
-    altText="Visualizations"
-    text="Visualize Survey Data"
+    text="Visualize Data"
   >
     <div>
-      Visualize survey data.
+      View pictorial representations of the data collected.
     </div>
   </ActionPanel>
 
@@ -76,11 +81,10 @@ export default () => <Responsive>
     to="/surveys/new"
     image={plan}
     key="planning"
-    altText="Planning and Action"
     text="Planning"
   >
     <div>
-      View and modify action plan.
+      Upload and view village action plans.
     </div>
   </ActionPanel>
 </Responsive>;

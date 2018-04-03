@@ -11,7 +11,6 @@ export default () => <Responsive>
     to="/validation/mapping"
     key="mapping"
     image={validate}
-    altText="Validate Mapping Data"
     text="Validate Mapping Data"
   >
     <div>
@@ -23,7 +22,6 @@ export default () => <Responsive>
     to="/validation/household"
     key="household"
     image={home}
-    altText="Validate Household data"
     text="Validate Household data"
   >
     <div>

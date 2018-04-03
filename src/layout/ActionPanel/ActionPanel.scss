@@ -4,41 +4,36 @@
 
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: $bp-large-width) {
-    flex-basis: 43%;      
-  }  
-  flex-basis: 95%;
+  flex: 0 0 18em;
+  height: 15em;
 
   align-items: center;
   justify-content: center;
 
   text-decoration: none;
   color: black;
-
-  margin: 1ex 2.5%;
+  border: 1pt solid black;
+  margin: 1ex auto;
   padding: 0.5ex 0.5em;
-
-  border: outset 1pt $primary-color;
 
   cursor: pointer;
 
   h3 {
     color: black;
     text-align: center;
-    font-size: 1.5em;
-    font-variant: small-caps;
     margin-top: 1ex;
     margin-bottom: 1ex;
+    font-weight: bold;
   }
 
   img {
     background-color: $primary-color;
     margin-bottom: 0.5ex;
-    height: 16ex;
+    height: 8em;
   }
 
   div {
-    text-align: justify;
+    text-align: center;
     padding: 0 1em;
   }
 
