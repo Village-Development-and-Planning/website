@@ -6,36 +6,31 @@ import validate from '../../images/validate.png';
 
 const locations = [
   {
-    "name": "PENNAGARAM",
-    "path": "09_03"
+    "name": "THENI",
+    "path": "21"
   },
   {
-    "name": "PAPPIREDDIPATTI",
-    "path": "09_06"
+    "name": "DHARMAPURI",
+    "path": "09"
   },
-  {
-    "name": "PALACODE",
-    "path": "09_08"
-  },
-  {
-    "name": "AUNDIPATTI",
-    "path": "21_01"
-  },
-  {
-    "name": "K MYLADUMPARAI",
-    "path": "21_02"
-  }
 ];
 
 export default () => <Responsive>
   {locations.map(
     loc => <ActionPanel
-      to={`/validation/mapping/${loc.path}`}
+      to={`/validation/household/district/${loc.path}`}
       key={loc.path}
       image={validate}
       altText={loc.name}
       text={loc.name}
     >
     </ActionPanel>
-  )}  
+  )}
+  <ActionPanel
+    to="/validation/household/state"
+    key="state"
+    image={validate}
+    altText={'State statistics'}
+    text="TN"
+  />
 </Responsive>;

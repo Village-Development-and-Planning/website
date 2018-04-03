@@ -20,7 +20,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/locations"
+    to="/validation/household"
     key="household"
     image={home}
     altText="Validate Household data"

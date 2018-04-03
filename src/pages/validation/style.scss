@@ -1,6 +1,6 @@
 @import "styles/theme";
 
-:local .Panchayat {
+:local .Panchayat, :local .Stats {
     border: 1pt solid black;
     padding: 0.5ex 0.5em;
 }
@@ -36,5 +36,15 @@
 
     @media screen and (max-width: $bp-medium-width - 1) {
         flex-basis: 100%;
+    }
+}
+
+:local .Column {
+    padding: 2ex 1em;
+    border: 1pt solid black;
+    p:first-child {
+        margin: 0 -1em;
+        padding: 1em;
+        border-bottom: 1pt solid black;        
     }
 }

@@ -6,7 +6,7 @@ import Map from './map';
 import L from 'leaflet';
 
 import fetch from '../../../utils/fetch';
-import {Detail, FTable, Panchayat as PanchayatStyle} from '../style.scss';
+import {Detail, FTable, Panchayat as PanchayatStyle} from '../../validation/style.scss';
 
 export default class Panchayat extends ShowPage {
   _parseSurveyors(entity) {    
