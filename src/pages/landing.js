@@ -18,24 +18,24 @@ export default () => <Responsive>
     text="Create Surveys"
   >
     <div>
-      Upload your survey, survey images, surveyors, and geographic area to be covered.
+      Upload your survey, survey images, surveyors, and geographic area to be covered
     </div>
   </ActionPanel>
 
   <ActionPanel
     key="download-apps"
-    to="/download"
+    href="/static/VDP-Android.apk"        
     image={download}
     text="Download Survey Application"
   >
     <div>
-      Install your tatblet or mobile based application on its device.
+      Download and install application on your tablet or mobile device
     </div>
   </ActionPanel>
 
   <ActionPanel
     key="upload-app-data"
-    to="/upload"
+    to="/upload-data"
     image={upload}
     text="Upload Data"
   >
@@ -51,7 +51,7 @@ export default () => <Responsive>
     text="Validate Data"
   >
     <div>
-      Check and monitor the quality of data collected.
+      Check and monitor the quality of data collected
     </div>
   </ActionPanel>
 
@@ -62,7 +62,7 @@ export default () => <Responsive>
     text="Export Data"
   >
     <div>
-      Generate a CSV file that can be imported into various analytical tools.
+      Generate a CSV file that can be imported into various analytical tools
     </div>
   </ActionPanel>
 
@@ -73,7 +73,7 @@ export default () => <Responsive>
     text="Visualize Data"
   >
     <div>
-      View pictorial representations of the data collected.
+      View pictorial representations of the data collected
     </div>
   </ActionPanel>
 
@@ -84,7 +84,7 @@ export default () => <Responsive>
     text="Planning"
   >
     <div>
-      Upload and view village action plans.
+      Upload and view village action plans
     </div>
   </ActionPanel>
 </Responsive>;

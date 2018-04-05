@@ -20,7 +20,7 @@ export default class extends Component {
         </Link>
         <div className={Titles}>
           <h2>தமிழ்நாடு அரசு</h2>
-          <h2>TN VDP / P-Tracking</h2>
+          <h3>Participatory Tracking - Tamil Nadu Village Development Planning</h3>
         </div>
         <User/>
       </header>

@@ -27,12 +27,17 @@ class Sidenav extends Component {
           <ActionButton
             to="/upload"
             image={upload}
-            text="Upload"
+            text="Create Surveys"
           />
           <ActionButton
-            to="/download"
+            href="/static/VDP-Android.apk"        
             image={download}
             text="Download"
+          />
+          <ActionButton
+            to="/upload-data"
+            image={upload}
+            text="Upload Data"
           />
           <ActionButton
             to="/validation"

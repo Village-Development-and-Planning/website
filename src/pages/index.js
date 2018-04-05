@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 import uploadRoutes from './upload';
-import downloadRoutes from './download';
 import validationRoutes from './validation';
 
 import cmsRoutes from '../cms';
@@ -21,7 +20,6 @@ export default class AppRouter extends Component {
           ...cmsRoutes,
 
           ...uploadRoutes,
-          ...downloadRoutes,
           ...validationRoutes,
           landing,
         ]}

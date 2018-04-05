@@ -15,11 +15,18 @@
 }
 
 :local .Detail {
-    flex: 0% 1 1;
+    flex: 1 1 auto;
     @media screen and (max-width: $bp-medium-width - 1) {
         flex-basis: 100%;
     }
 }
+
+:local .AnswerBar {    
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 10em;    
+}
+
 :local .FTable {
     display: flex;
     flex-direction: row;
@@ -42,9 +49,41 @@
 :local .Column {
     padding: 2ex 1em;
     border: 1pt solid black;
+    flex-basis: auto;
     p:first-child {
         margin: 0 -1em;
         padding: 1em;
         border-bottom: 1pt solid black;        
     }
 }
+
+:local .Bar {
+    height: 24ex;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 1em;
+}
+
+:local .Caption {
+    text-align: center;
+}
+
+:local .Row {
+    display: flex;
+    overflow: scroll;    
+}
+
+:global .flagged {
+    background-color: red;
+    width: 2em;
+    color: white;
+    padding-bottom: 1px;
+    text-align: center;
+}
+:global .unflagged {
+    background-color: green;
+    width: 2em;
+    color: white;
+    padding-bottom: 1px;
+    text-align: center;    
+}    

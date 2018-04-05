@@ -11,10 +11,10 @@ export default () => <Responsive>
     to="/validation/mapping"
     key="mapping"
     image={validate}
-    text="Validate Mapping Data"
+    text="Mapping Data"
   >
     <div>
-      Mapping validations
+      Check and monitor mapping data
     </div>
   </ActionPanel>
 
@@ -22,10 +22,10 @@ export default () => <Responsive>
     to="/validation/household"
     key="household"
     image={home}
-    text="Validate Household data"
+    text="Household data"
   >
     <div>
-      Household validations
+      Check and monitor household data
     </div>
   </ActionPanel>
 </Responsive>;

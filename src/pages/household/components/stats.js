@@ -1,9 +1,11 @@
 import React from 'react';
 import ShowPage from '../../../cms/base/Show';
 import Responsive from '../../../layout/Responsive';
+import Bar from './bar-graph';
+import APBar from './answer-percentage-bar';
 
 import fetch from '../../../utils/fetch';
-import {Column, Detail, Stats as StatStyle} from '../../validation/style.scss';
+import style from '../../validation/style.scss';
 
 export default class Block extends ShowPage {
   _parseStats(entity) {
@@ -38,20 +40,27 @@ export default class Block extends ShowPage {
       if (!data || !data.numAnswered) continue;
       const numSurveys = data.numAnswered.count;
       const numAnswered = data.numAnswered.value;
-      let numSurveyors, numAnswerFlagged, numTimeFlagged;
-      let obj;
+      let numSurveyors, numAnswerFlagged, numTimeFlagged = 0, numFlagged = 0;
+      let obj, afValue;
       if ((obj = data.answerFlagged)) {
         numSurveyors = obj.count;
         numAnswerFlagged = numSurveyors - obj.value["0"];
+        afValue = obj.value;
       }
       if ((obj = data.timeFlagged)) {
         const count = obj.count;
         numTimeFlagged = count - obj.value["0"];
+        numFlagged = 0;
+        for (let key of Object.keys(obj.value)) {
+          if (key === '0') continue;
+          if (afValue[key]) numFlagged++;
+        }
       }
+      numFlagged = numAnswerFlagged + numTimeFlagged - numFlagged;
       weeklyStats.push({
         key, year, week,
         numSurveys, numAnswered,
-        numSurveyors, numAnswerFlagged, numTimeFlagged,
+        numSurveyors, numAnswerFlagged, numTimeFlagged, numFlagged,
       });
     }
     return weeklyStats.sort(
@@ -83,42 +92,24 @@ export default class Block extends ShowPage {
     numAnswered = parseInt(numAnswered, 10);
     numSurveys = parseInt(numSurveys, 10);
     let ansPercentage = Math.round(numAnswered / numSurveys * 1000) / 10;
-    return <div className={StatStyle}>
+    return <div className={style.Stats}>
       <Responsive>
-        <div className={Detail}>
+        <div className={style.Detail}>
           <h3>{entity.name}</h3>
           {stats && <p>
             Number of surveys: {numSurveys}<br/>
             Answered: {numAnswered} ({ansPercentage} %)
           </p>}
         </div>
+        <APBar percentage={ansPercentage}/>
       </Responsive>
-      <h4>Weekly Statistics</h4>      
+      <h4>Surveyor Statistics</h4>      
       {weeklyStats && 
-        <Responsive>
-          <div className={Column} key="header">
-            <p>Week</p>
-            <p>Surveys</p>
-            <p>Answered</p>
-            <p>Surveyors</p>
-            <p>Answer Flagged</p>
-            <p>Time Flagged</p>
-          </div>
+        <div className={style.Row}>
           {weeklyStats.map(
-            ({
-              week, year, key,
-              numAnswered, numSurveys,
-              numSurveyors, numAnswerFlagged, numTimeFlagged,
-            }) => <div className={Column} key={key}>
-              <p>{week}/{year}</p>
-              <p>{numSurveys}</p>
-              <p>{numAnswered}</p>
-              <p>{numSurveyors}</p>
-              <p>{numAnswerFlagged}</p>
-              <p>{numTimeFlagged}</p>
-            </div>
+            weekStats => <Bar {...weekStats}/>
           )}
-        </Responsive>
+        </div>
       }
     </div>;
   }
