@@ -21,10 +21,10 @@
     }
 }
 
-:local .AnswerBar {    
+:local .AnswerBar {
+    padding: 1ex 1em;    
     display: flex;
-    flex: 1 1 auto;
-    min-width: 10em;    
+    height: 10ex;
 }
 
 :local .FTable {
@@ -87,3 +87,11 @@
     padding-bottom: 1px;
     text-align: center;    
 }    
+
+:local .LocationBar {
+    display: flex;    
+    :local .SelectBox {
+        flex: 1 1 auto;
+        padding: 1ex 1em;
+    }
+}

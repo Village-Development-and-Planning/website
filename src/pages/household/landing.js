@@ -2,7 +2,10 @@ import React from 'react';
 
 import ActionPanel from '../../layout/ActionPanel';
 import Responsive from '../../layout/Responsive';
+import LocationSelect from './location-select';
+
 import validate from '../../images/validate.png';
+
 
 const locations = [
   {
@@ -15,20 +18,7 @@ const locations = [
   },
 ];
 
-export default () => <Responsive>
-  {locations.map(
-    loc => <ActionPanel
-      to={`/validation/household/district/${loc.path}`}
-      key={loc.path}
-      image={validate}
-      text={loc.name}
-    >
-    </ActionPanel>
-  )}
-  <ActionPanel
-    to="/validation/household/state"
-    key="state"
-    image={validate}
-    text="TN"
-  />
-</Responsive>;
+export default () => <React.Fragment>
+  <LocationSelect/>
+  <div/>
+</React.Fragment>;

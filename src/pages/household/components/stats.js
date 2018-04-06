@@ -98,7 +98,7 @@ export default class Block extends ShowPage {
           <h3>{entity.name}</h3>
           {stats && <p>
             Number of surveys: {numSurveys}<br/>
-            Answered: {numAnswered} ({ansPercentage} %)
+            Answered: {numAnswered}
           </p>}
         </div>
         <APBar percentage={ansPercentage}/>
