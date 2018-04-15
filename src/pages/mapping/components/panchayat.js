@@ -9,14 +9,13 @@ import fetch from '../../../utils/fetch';
 import {Detail, FTable, Panchayat as PanchayatStyle} from '../../validation/style.scss';
 
 export default class Panchayat extends ShowPage {
-  _parseSurveyors(entity) {    
-    const aType = 'LocationAggregate/PANCHAYAT/MappingSurveyors';
+  _parseSurveyors(entity) {
     if (!entity || !entity.aggregates) return;
     const mAgg = entity.aggregates.find(
-      a => (a.type === aType)
+      a => (a.type && a.type.endsWith('/MappingSurveyors'))
     );
     let ids;
-    ids = mAgg 
+    ids = mAgg
       && (ids = mAgg.data)
       && (ids = ids.idSpec)
       && (ids = ids.value)
@@ -28,10 +27,9 @@ export default class Panchayat extends ShowPage {
   }
 
   _parseLocations(entity) {
-    const aType = 'LocationAggregate/PANCHAYAT/Mapping';
     if (!entity || !entity.aggregates) return;
     const mAgg = entity.aggregates.find(
-      a => (a.type === aType)
+      a => (a.type && a.type.endsWith('/Mapping'))
     );
     if (!mAgg) return;
     const locations = [], items = [];
@@ -40,12 +38,12 @@ export default class Panchayat extends ShowPage {
         const data = mAgg.data[key];
         if (!data) return;
         items.push({key, name, data});
-        
+
         const locObj = mAgg.data[`${key}_locations`];
         if (!locObj) return;
-        const locs = this._locations(locObj.value);            
-        if (!locs) return;            
-        locs.forEach(l => locations.push(L.marker(l)));          
+        const locs = this._locations(locObj.value);
+        if (!locs) return;
+        locs.forEach(l => locations.push(L.marker(l)));
       }
     );
     return {items, locations};
@@ -68,7 +66,7 @@ export default class Panchayat extends ShowPage {
 
   render() {
     const {entity, items, locations, surveyor} = this.state;
-    if (!entity || !items) return super.render();  
+    if (!entity || !items) return super.render();
 
     return <div className={PanchayatStyle}>
       <Responsive>
@@ -81,9 +79,9 @@ export default class Panchayat extends ShowPage {
             <h4>Surveyor Name: <Link to={`/surveyors/${surveyor.username}`}>
               {surveyor.name}
             </Link></h4>
-          </React.Fragment>}          
+          </React.Fragment>}
         </div>
-        <Map locations={locations}/>
+        {locations && !!locations.length && <Map locations={locations}/>}
       </Responsive>
       <p>Summary Sheet of infrastructure available in the village:</p>
       {items.map(
@@ -91,15 +89,15 @@ export default class Panchayat extends ShowPage {
           <div>{name}</div>
           <div>{(data && data.count) || 0}</div>
         </div>
-      )}      
+      )}
     </div>;
   }
 
-  _locations(value) {    
+  _locations(value) {
     if (!value || (typeof value !== 'object')) return;
     let ret = [];
     Object.keys(value).forEach(
-      k => {        
+      k => {
         const l = this._location(k);
         if (l) ret.push(l);
       }
@@ -199,5 +197,5 @@ Object.assign(Panchayat, {
       "key": "garbage_bin",
       "name": "Garbage bins"
     }
-  ]    
+  ]
 });

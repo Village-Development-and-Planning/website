@@ -6,6 +6,14 @@ import Comp from './components/stats';
 import {Header} from './../validation/style.scss';
 
 export default class HouseholdBlockPage extends ShowPage {
+  componentDidUpdate() {
+    const entityId = this.props.match.params.entityId;
+    const entity = this.state && this.state.entity;
+    if (!entity || (entity.uid.replace(/\//g, '_') !== entityId)) {
+      this.componentDidMount();
+    }
+  }
+
   render() {
     const entity = this.state.entity;
     if (!entity) return super.render();
@@ -21,6 +29,7 @@ export default class HouseholdBlockPage extends ShowPage {
       </div>
     </React.Fragment>;
   }
+
 }
 
 Object.assign(HouseholdBlockPage, {

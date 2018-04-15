@@ -3,8 +3,8 @@ import React from 'react';
 import Responsive from '../../layout/Responsive';
 import ActionPanel from '../../layout/ActionPanel';
 import upload from '../../images/upload.png';
-import img_upload from '../../images/img_upload.png';
-import plan from '../../images/plan.png';
+// import img_upload from '../../images/img_upload.png';
+// import plan from '../../images/plan.png';
 
 export default () => <Responsive>
   <ActionPanel
@@ -28,6 +28,6 @@ export default () => <Responsive>
       Upload your survey, survey images, surveyors, and geographic area to be covered
     </div>
   </ActionPanel>
-  
+
 
 </Responsive>;

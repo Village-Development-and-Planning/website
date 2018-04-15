@@ -8,7 +8,6 @@ export default class AnswerPage extends EditPage {
   render() {
     const entityId = this.props.match.params.entityId;
     const entity = this.state.entity;
-    console.log(entity);
     if (entity) {
       return (
         <Form

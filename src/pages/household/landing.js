@@ -1,24 +1,32 @@
 import React from 'react';
+import LocationSelect from '../validation/location-select';
 
-import ActionPanel from '../../layout/ActionPanel';
-import Responsive from '../../layout/Responsive';
-import LocationSelect from './location-select';
+import StatePage from './state';
+import DistrictPage from './district';
 
-import validate from '../../images/validate.png';
+const hierarchy = 'DISTRICT BLOCK PANCHAYAT'.split(' ');
 
+export default class extends React.Component {
 
-const locations = [
-  {
-    "name": "THENI",
-    "path": "21"
-  },
-  {
-    "name": "DHARMAPURI",
-    "path": "09"
-  },
-];
+  onValueChange({keyLevel, values}) {
 
-export default () => <React.Fragment>
-  <LocationSelect/>
-  <div/>
-</React.Fragment>;
+    if (!keyLevel) {
+      this.setState({component: <StatePage/>});
+    } else if (keyLevel === 'DISTRICT') {
+      this.setState({
+        component: <DistrictPage
+          match={{params: {entityId: values[keyLevel].replace(/\//g, '_')}}}
+        />
+      });
+    }
+  }
+
+  render() {
+    const component = this.state ? this.state.component : <StatePage/>;
+    return <React.Fragment>
+      <LocationSelect hierarchy={hierarchy} onValueChange={this.onValueChange.bind(this)}/>
+      {component}
+    </React.Fragment>;
+  }
+
+}

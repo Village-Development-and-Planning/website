@@ -17,7 +17,6 @@ export default class Block extends ShowPage {
       )
     );
     if (!mAgg) return;
-    console.log(mAgg);
     const data = mAgg.data;
     if (!data || !data.numAnswered) return;
     const numSurveys = data.numAnswered.count;
@@ -35,7 +34,6 @@ export default class Block extends ShowPage {
       let [year, week] = key.split('/');      
       year = parseInt(year, 10);
       week = parseInt(week, 10);
-      console.log(year, week, agg.data);
       const data = agg.data;
       if (!data || !data.numAnswered) continue;
       const numSurveys = data.numAnswered.count;

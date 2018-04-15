@@ -1,40 +1,43 @@
 import React from 'react';
+import LocationSelect from '../validation/location-select';
 
-import ActionPanel from '../../layout/ActionPanel';
-import Responsive from '../../layout/Responsive';
-import validate from '../../images/validate.png';
+import Page from './block';
 
-const locations = [
-  {
-    "name": "PENNAGARAM",
-    "path": "09_03"
-  },
-  {
-    "name": "PAPPIREDDIPATTI",
-    "path": "09_06"
-  },
-  {
-    "name": "PALACODE",
-    "path": "09_08"
-  },
-  {
-    "name": "AUNDIPATTI",
-    "path": "21_01"
-  },
-  {
-    "name": "K MYLADUMPARAI",
-    "path": "21_02"
+const hierarchy = 'DISTRICT BLOCK'.split(' ');
+
+const stateComponent = <Page
+  level='STATE'
+  entity={{
+    uid: '',
+    payload: {STATE_NAME: 'Tamil Nadu'},
+    children: [
+      {uid: '21'},
+      {uid: '09'},
+    ]
+  }}
+/>;
+
+export default class extends React.Component {
+
+  onValueChange({keyLevel, values}) {
+    if (keyLevel) {
+      this.setState({
+        component: <Page
+          level={keyLevel}
+          match={{params: {entityId: values[keyLevel].replace(/\//g, '_')}}}
+        />
+      });
+    } else {
+      this.setState({component: stateComponent});
+    }
   }
-];
 
-export default () => <Responsive>
-  {locations.map(
-    loc => <ActionPanel
-      to={`/validation/mapping/${loc.path}`}
-      key={loc.path}
-      image={validate}
-      text={loc.name}
-    >
-    </ActionPanel>
-  )}  
-</Responsive>;
+  render() {
+    const component = this.state ? this.state.component : stateComponent;
+    return <React.Fragment>
+      <LocationSelect hierarchy={hierarchy} onValueChange={this.onValueChange.bind(this)}/>
+      {component}
+    </React.Fragment>;
+  }
+
+}

@@ -55,7 +55,6 @@ export default class AnswerPage extends Form {
       this.multiple = true;
     else
       this.multiple = !!this.props.multiple;
-    console.log(this.props.multiple, this.multiple);
     this.children = this.props.children || <React.Fragment>
       <h4 key='header' className="title">{this.props.title}</h4>
       <label key="name">

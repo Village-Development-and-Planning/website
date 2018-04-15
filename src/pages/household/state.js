@@ -1,12 +1,11 @@
 import React from 'react';
 
-import ShowPage from '../../cms/base/Show';
 import Comp from './components/stats';
 
 import {Header} from './../validation/style.scss';
 
-export default class HouseholdBlockPage extends ShowPage {
-  componentDidMount() {}  
+export default class StatePage extends React.Component {
+  componentDidMount() {}
   render() {
     return <React.Fragment>
       <div className={Header}>
@@ -17,7 +16,3 @@ export default class HouseholdBlockPage extends ShowPage {
     </React.Fragment>;
   }
 }
-
-Object.assign(HouseholdBlockPage, {
-  entityName: 'Location',
-});
