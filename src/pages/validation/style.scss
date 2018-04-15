@@ -22,7 +22,7 @@
 }
 
 :local .AnswerBar {
-    padding: 1ex 1em;    
+    padding: 1ex 1em;
     display: flex;
     height: 10ex;
 }
@@ -53,7 +53,7 @@
     p:first-child {
         margin: 0 -1em;
         padding: 1em;
-        border-bottom: 1pt solid black;        
+        border-bottom: 1pt solid black;
     }
 }
 
@@ -70,7 +70,7 @@
 
 :local .Row {
     display: flex;
-    overflow: scroll;    
+    overflow: scroll;
 }
 
 :global .flagged {
@@ -85,13 +85,27 @@
     width: 2em;
     color: white;
     padding-bottom: 1px;
-    text-align: center;    
-}    
+    text-align: center;
+}
 
 :local .LocationBar {
-    display: flex;    
+    display: flex;
     :local .SelectBox {
         flex: 1 1 auto;
         padding: 1ex 1em;
+    }
+}
+
+:local .FlagColumn {
+    border-right: 1pt solid black;
+    border-left: 1pt solid black;
+
+    padding: 1ex 1em;
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+        align-self: center;
+        border-bottom: 1pt solid black;
     }
 }

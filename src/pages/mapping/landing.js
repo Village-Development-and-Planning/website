@@ -1,7 +1,8 @@
 import React from 'react';
 import LocationSelect from '../validation/location-select';
 
-import Page from './block';
+import Page from '../validation/page';
+import Stats from './components/stats';
 
 const hierarchy = 'DISTRICT BLOCK'.split(' ');
 
@@ -9,12 +10,14 @@ const stateComponent = <Page
   level='STATE'
   entity={{
     uid: '',
+    name: 'Tamil Nadu',
     payload: {STATE_NAME: 'Tamil Nadu'},
     children: [
       {uid: '21'},
       {uid: '09'},
     ]
   }}
+  component={Stats}
 />;
 
 export default class extends React.Component {
@@ -25,6 +28,7 @@ export default class extends React.Component {
         component: <Page
           level={keyLevel}
           match={{params: {entityId: values[keyLevel].replace(/\//g, '_')}}}
+          component={Stats}
         />
       });
     } else {

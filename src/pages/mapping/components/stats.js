@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ShowPage from '../../../cms/base/Show';
 import Responsive from '../../../layout/Responsive';
-import Map from './map';
+import Map from '../../validation/map';
 import L from 'leaflet';
+import {_locations} from '../../validation/map-helpers';
 
 import fetch from '../../../utils/fetch';
 import {Detail, FTable, Panchayat as PanchayatStyle} from '../../validation/style.scss';
@@ -41,7 +42,7 @@ export default class Panchayat extends ShowPage {
 
         const locObj = mAgg.data[`${key}_locations`];
         if (!locObj) return;
-        const locs = this._locations(locObj.value);
+        const locs = _locations(locObj.value);
         if (!locs) return;
         locs.forEach(l => locations.push(L.marker(l)));
       }
@@ -93,25 +94,6 @@ export default class Panchayat extends ShowPage {
     </div>;
   }
 
-  _locations(value) {
-    if (!value || (typeof value !== 'object')) return;
-    let ret = [];
-    Object.keys(value).forEach(
-      k => {
-        const l = this._location(k);
-        if (l) ret.push(l);
-      }
-    );
-    return ret;
-  }
-
-  _location(key) {
-    let [lat, long] = key.split(',');
-    if (!lat || !long) return;
-    lat = parseInt(lat, 10) / 10000;
-    long = parseInt(long, 10) / 10000;
-    return [lat, long];
-  }
 }
 
 Object.assign(Panchayat, {

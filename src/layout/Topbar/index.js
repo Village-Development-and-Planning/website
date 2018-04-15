@@ -19,8 +19,14 @@ export default class extends Component {
           <img src={imgLogo} alt="TN Government Logo"/>
         </Link>
         <div className={Titles}>
-          <h2>தமிழ்நாடு அரசு</h2>
-          <h3>Participatory Tracking - Tamil Nadu Village Development Planning</h3>
+          <h2>
+            பங்கேற்புடன் கூடிய கண்காணிப்பு
+            <span className="full">தமிழ்நாடு கிராம வளர்ச்சிக்கான திட்டமிடல்</span>
+          </h2>
+          <h3>
+            Participatory Tracking
+            <span className="full">Tamil Nadu Village Development Planning</span>
+          </h3>
         </div>
         <User/>
       </header>

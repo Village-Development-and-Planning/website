@@ -1,12 +1,19 @@
 import React from 'react';
 
 import ShowPage from '../../cms/base/Show';
-import Comp from './components/stats';
-
 import {Header} from './../validation/style.scss';
 
-export default class HouseholdBlockPage extends ShowPage {
+export default class MappingBlockPage extends ShowPage {
   componentDidUpdate() {
+    if (!this.props.match && !this.props.entity) return;
+
+    if (this.props.entity) {
+      if (this.state && this.state.entity && (this.state.entity === this.props.entity)) {
+        return;
+      }
+      return this.componentDidMount();
+    }
+
     const entityId = this.props.match.params.entityId;
     const entity = this.state && this.state.entity;
     if (!entity || (entity.uid.replace(/\//g, '_') !== entityId)) {
@@ -14,8 +21,14 @@ export default class HouseholdBlockPage extends ShowPage {
     }
   }
 
+  setupObject() {
+    if (this.props.entity) return Promise.resolve({entity: this.props.entity});
+    return super.setupObject();
+  }
+
   render() {
     const entity = this.state.entity;
+    const Comp = this.props.component;
     if (!entity) return super.render();
     const {children} = entity;
     return <React.Fragment>
@@ -29,9 +42,8 @@ export default class HouseholdBlockPage extends ShowPage {
       </div>
     </React.Fragment>;
   }
-
 }
 
-Object.assign(HouseholdBlockPage, {
+Object.assign(MappingBlockPage, {
   entityName: 'Location',
 });

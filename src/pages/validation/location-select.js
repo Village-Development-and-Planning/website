@@ -82,6 +82,7 @@ export default class extends React.Component {
           <Select name={level} disabled={disabled}
             onChange={e => this._onValueChange(level, e)}
             value={value}
+            clearable={false}
             options={opts}
           />
         </label>;

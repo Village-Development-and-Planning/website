@@ -15,7 +15,7 @@ export default [
   //   component={require('../household/state').default}
   // />,
   <Route
-    path={routeName} key={routeName} exact
+    path={routeName} key={routeName}
     component={require('./landing').default}
   />
 ];

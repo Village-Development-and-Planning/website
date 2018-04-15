@@ -21,7 +21,7 @@ export default class Block extends ShowPage {
     if (!data || !data.numAnswered) return;
     const numSurveys = data.numAnswered.count;
     const numAnswered = data.numAnswered.value;
-    return {numSurveys, numAnswered};
+    return {mAgg, numSurveys, numAnswered};
   }
 
   _parseWeeklyStats(entity) {
@@ -31,35 +31,12 @@ export default class Block extends ShowPage {
       const type = agg.type;
       if (!type.endsWith('/Household/Weekly')) continue;
       const key = agg.key.slice(entity.uid.length+1);
-      let [year, week] = key.split('/');      
+      let [year, week] = key.split('/');
       year = parseInt(year, 10);
       week = parseInt(week, 10);
       const data = agg.data;
       if (!data || !data.numAnswered) continue;
-      const numSurveys = data.numAnswered.count;
-      const numAnswered = data.numAnswered.value;
-      let numSurveyors, numAnswerFlagged, numTimeFlagged = 0, numFlagged = 0;
-      let obj, afValue;
-      if ((obj = data.answerFlagged)) {
-        numSurveyors = obj.count;
-        numAnswerFlagged = numSurveyors - obj.value["0"];
-        afValue = obj.value;
-      }
-      if ((obj = data.timeFlagged)) {
-        const count = obj.count;
-        numTimeFlagged = count - obj.value["0"];
-        numFlagged = 0;
-        for (let key of Object.keys(obj.value)) {
-          if (key === '0') continue;
-          if (afValue[key]) numFlagged++;
-        }
-      }
-      numFlagged = numAnswerFlagged + numTimeFlagged - numFlagged;
-      weeklyStats.push({
-        key, year, week,
-        numSurveys, numAnswered,
-        numSurveyors, numAnswerFlagged, numTimeFlagged, numFlagged,
-      });
+      weeklyStats.push(this._parseWeekly({key, year, week, data}));
     }
     return weeklyStats.sort(
       (w1, w2) => {
@@ -68,8 +45,35 @@ export default class Block extends ShowPage {
         if (w1.week < w2.week) return -1;
         if (w1.week > w2.week) return 1;
         return 0;
-      }      
+      }
     );
+  }
+
+  _parseWeekly({key, year, week, data}) {
+    const numSurveys = data.numAnswered.count;
+    const numAnswered = data.numAnswered.value;
+    let numSurveyors, numAnswerFlagged, numTimeFlagged = 0, numFlagged = 0;
+    let obj, afValue;
+    if ((obj = data.answerFlagged)) {
+      numSurveyors = obj.count;
+      numAnswerFlagged = numSurveyors - obj.value["0"];
+      afValue = obj.value;
+    }
+    if ((obj = data.timeFlagged)) {
+      const count = obj.count;
+      numTimeFlagged = count - obj.value["0"];
+      numFlagged = 0;
+      for (let key of Object.keys(obj.value)) {
+        if (key === '0') continue;
+        if (afValue[key]) numFlagged++;
+      }
+    }
+    numFlagged = numAnswerFlagged + numTimeFlagged - numFlagged;
+    return ({
+      key, year, week,
+      numSurveys, numAnswered,
+      numSurveyors, numAnswerFlagged, numTimeFlagged, numFlagged,
+    });
   }
 
   setupObject() {
@@ -84,7 +88,7 @@ export default class Block extends ShowPage {
   }
 
   render() {
-    const {entity, stats, weeklyStats} = this.state;
+    const {entity, stats} = this.state;
     if (!entity) return super.render();
     let {numAnswered, numSurveys} = stats || {};
     numAnswered = parseInt(numAnswered, 10);
@@ -96,20 +100,40 @@ export default class Block extends ShowPage {
           <h3>{entity.name}</h3>
           {stats && <p>
             Number of surveys: {numSurveys}<br/>
-            Answered: {numAnswered}
+            Answered: {numAnswered} ({ansPercentage} %)
           </p>}
         </div>
-        <APBar percentage={ansPercentage}/>
+        {this.renderSecondComponent()}
       </Responsive>
-      <h4>Surveyor Statistics</h4>      
-      {weeklyStats && 
+      {this.renderWeeklyStats()}
+    </div>;
+  }
+
+  renderSecondComponent() {
+    const {stats} = this.state;
+    let {numAnswered, numSurveys} = stats || {};
+    numAnswered = parseInt(numAnswered, 10);
+    numSurveys = parseInt(numSurveys, 10);
+    let ansPercentage = Math.round(numAnswered / numSurveys * 1000) / 10;
+    return <APBar percentage={ansPercentage}/>;
+  }
+
+  renderWeeklyStats() {
+    const {weeklyStats} = this.state;
+    const message = this.weeklyStatsMessage || 'Surveyor Statistics';
+    if (!weeklyStats) return;
+    return <React.Fragment>
+      <h4>{message}</h4>
+      {weeklyStats &&
         <div className={style.Row}>
-          {weeklyStats.map(
-            weekStats => <Bar {...weekStats}/>
-          )}
+          {weeklyStats.map(this.renderWeekly.bind(this))}
         </div>
       }
-    </div>;
+    </React.Fragment>;
+  }
+
+  renderWeekly(weekStats) {
+    return <Bar {...weekStats}/>;
   }
 }
 
