@@ -13,18 +13,18 @@ import plan from '../images/plan.png';
 export default () => <Responsive>
   <ActionPanel
     key="new-survey"
-    to="/upload"
-    image={upload}
-    text="Create Surveys"
+    to="/upload-survey"
+    image={plan}
+    text="Surveys"
   >
     <div>
-      Upload your survey, survey images, surveyors, and geographic area to be covered
+      Upload survey, survey images, surveyors, and geographic area to be covered
     </div>
   </ActionPanel>
 
   <ActionPanel
     key="download-apps"
-    href="/static/VDP-Android.apk"        
+    href="/static/VDP-Android.apk"
     image={download}
     text="Download Survey Application"
   >
@@ -35,7 +35,7 @@ export default () => <Responsive>
 
   <ActionPanel
     key="upload-app-data"
-    to="/upload-data"
+    to="/answers/new"
     image={upload}
     text="Upload Data"
   >

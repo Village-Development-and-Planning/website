@@ -18,7 +18,7 @@ class Sidenav extends Component {
   render() {
     return (
       <div className={styleSidenav}>
-        <div className={Navigations}>          
+        <div className={Navigations}>
           <ActionButton
             to="/"
             image={home}
@@ -27,17 +27,12 @@ class Sidenav extends Component {
           <ActionButton
             to="/upload"
             image={upload}
-            text="Create Surveys"
+            text="Upload"
           />
           <ActionButton
-            href="/static/VDP-Android.apk"        
+            href="/static/VDP-Android.apk"
             image={download}
             text="Download"
-          />
-          <ActionButton
-            to="/upload-data"
-            image={upload}
-            text="Upload Data"
           />
           <ActionButton
             to="/validation"

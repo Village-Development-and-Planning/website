@@ -6,6 +6,8 @@ import {_locations} from '../../validation/map-helpers';
 import L from 'leaflet';
 import Map from '../../validation/map';
 
+import { Link } from 'react-router-dom';
+
 export default class extends Stats {
 
   _parseStats(entity) {
@@ -36,10 +38,10 @@ export default class extends Stats {
     return <div key={key} className={style.FlagColumn}>
       <h5>{week}/{year}</h5>
       {answerFlagged && answerFlagged.map(
-        c => <div key={`${c}/A`}>{c} (A)</div>
+        c => <Link key={`${c}/A`} to={`/surveyors/${c}`}>{c} (Ans)</Link>
       )}
       {timeFlagged && timeFlagged.map(
-        c => <div key={`${c}/T`}>{c} (T)</div>
+        c => <Link key={`${c}/T`} to={`/surveyors/${c}`}>{c} (Time)</Link>
       )}
     </div>;
   }

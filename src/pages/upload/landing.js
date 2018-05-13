@@ -5,10 +5,11 @@ import ActionPanel from '../../layout/ActionPanel';
 
 import img_upload from '../../images/img_upload.png';
 import plan from '../../images/plan.png';
+import upload from '../../images/upload.png';
 
 export default () => <Responsive>
   <ActionPanel
-    to="/surveys"
+    to="/upload-survey"
     image={plan}
     text="Surveys"
   >
@@ -18,33 +19,15 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/artifacts"
-    image={img_upload}
-    text="Artifacts"
+    key="upload-data"
+    to="/answers/new"
+    image={upload}
+    text="Upload data"
   >
     <div>
-      Create or edit images, etc.
+      Sync the data collected to the server
     </div>
   </ActionPanel>
 
-  <ActionPanel
-    to="/locations"
-    image={img_upload}
-    text="Locations"
-  >
-    <div>
-      View or update locations
-    </div>
-  </ActionPanel>
-  
-  <ActionPanel
-    to="/surveyors"
-    image={img_upload}
-    text="Surveyors"
-  >
-    <div>
-      View or update surveyors
-    </div>
-  </ActionPanel>
 
 </Responsive>;

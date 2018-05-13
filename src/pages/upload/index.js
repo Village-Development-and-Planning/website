@@ -9,7 +9,7 @@ export default [
     component={require('./landing.js').default}
   />,
   <Route
-    path="/upload-data/" key="/upload-data" exact
-    component={require('./data-landing.js').default}
+    path="/upload-survey/" key="/upload-survey" exact
+    component={require('./survey-landing.js').default}
   />
 ];
