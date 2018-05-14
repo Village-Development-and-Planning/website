@@ -4,7 +4,7 @@ import React from 'react';
 import ActionButton from '../../layout/ActionButton';
 
 export default class ShowPage extends Base {
-  
+
   setupObject() {
     const entityId = this.props.match.params.entityId;
     return fetch(`/cms/${this.routeName}/${entityId}`)
@@ -20,7 +20,7 @@ export default class ShowPage extends Base {
   }
 
   _actions() {
-    const entityId = this.props.match.params.entityId;    
+    const entityId = this.props.match.params.entityId;
     return [
       <ActionButton to={`/${this.routeName}/${entityId}/edit`} key="edit">
         Edit

@@ -19,39 +19,6 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    key="new-geographic"
-    to="/locations/new"
-    image={upload}
-    text="Upload Locations Data"
-  >
-    <div>
-      Upload locations CSV
-    </div>
-  </ActionPanel>
-
-  <ActionPanel
-    key="new-surveyor"
-    to="/surveyors/new"
-    image={upload}
-    text="Upload Surveyors Data"
-  >
-    <div>
-      Upload surveyors CSV
-    </div>
-  </ActionPanel>
-
-  <ActionPanel
-    key="new-artifact"
-    to="/artifacts/new"
-    image={upload}
-    text="Upload Images"
-  >
-    <div>
-      Upload images to be used in surveys
-    </div>
-  </ActionPanel>
-
-  <ActionPanel
     key="list-survey"
     to="/surveys"
     image={upload}
@@ -59,6 +26,39 @@ export default () => <Responsive>
   >
     <div>
       View existing surveys
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
+    key="new-artifact"
+    to="/artifacts"
+    image={upload}
+    text="Images &amp; other Artifacts"
+  >
+    <div>
+      View / edit / update images used in surveys
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
+    key="new-geographic"
+    to="/locations?type=DISTRICT"
+    image={upload}
+    text="Locations Data"
+  >
+    <div>
+      View / edit / update locations
+    </div>
+  </ActionPanel>
+
+  <ActionPanel
+    key="new-surveyor"
+    to="/surveyors"
+    image={upload}
+    text="Surveyors Data"
+  >
+    <div>
+      View / edit / update surveyors
     </div>
   </ActionPanel>
 

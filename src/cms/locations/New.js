@@ -11,14 +11,15 @@ export default class NewPage extends NewBase {
         >
           <h4 className="title">Upload Location Data</h4>
           <label>
-            <p><input 
+            <p><input
               type="checkbox"
-              name="delete-existing" 
+              name="delete-existing"
               value="1"
+              disabled="true"
               defaultChecked="true"
             />Delete existing locations?
             </p>
-          </label>        
+          </label>
           <label>
             <p>Locations CSV file</p>
             <input type="file" name="csv"/>

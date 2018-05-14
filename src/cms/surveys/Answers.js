@@ -2,13 +2,13 @@ import Base from '../base/Base';
 import fetch from '../../utils/fetch';
 import React from 'react';
 
-import {AnswersTable} from './styles.scss';
+import {Table as AnswersTable} from '../../styles/Table.scss';
 
 export default class SurveyAnswers extends Base {
   setupObject() {
     const entityId =  this.props.match.params.entityId;
     return fetch(`/cms/${this.routeName}/${entityId}/answers${this.props.location.search || ''}`)
-      .then((entities) => ({entities}));      
+      .then((entities) => ({entities}));
   }
 
   render() {
@@ -18,7 +18,7 @@ export default class SurveyAnswers extends Base {
         <thead>
           {[0,1].map((idx) => {
             return <tr key={idx}>
-              {this.entities[idx].map((el, idx) => 
+              {this.entities[idx].map((el, idx) =>
                 <th key={idx}>
                   <div className="HeaderCell">{el}</div>
                 </th>

@@ -1,6 +1,7 @@
 @import "styles/theme";
 
-:local .AnswersTable {
+:local .Table {
+  min-width: 100%;
   th, td {
     padding: 1ex 0.5em;
   }

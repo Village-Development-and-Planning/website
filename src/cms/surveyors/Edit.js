@@ -15,18 +15,26 @@ export default class Edit extends EditPage {
         <h4 className="title">Update Surveyor Information</h4>
         <label>
           <p>Name</p>
-          <input 
+          <input
             type="text" name="name"
             defaultValue={entity.name}
             placeholder="Enter name"
           />
         </label>
         <label>
-          <p>Code / Username</p>
-          <input 
+          <p>Code</p>
+          <input
             type="text" name="username"
             defaultValue={entity.username}
             placeholder="Enter username"
+          />
+        </label>
+        <label>
+          <p>Panchayat</p>
+          <input
+            type="text" name="panchayat"
+            defaultValue={entity.payload && entity.payload.PANCHAYAT_NAME}
+            placeholder="Select panchayat"
           />
         </label>
       </Form>;

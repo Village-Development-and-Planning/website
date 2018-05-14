@@ -14,9 +14,9 @@ export default class Form extends React.Component {
     this.action = this.props.action;
     this.children = this.props.children;
 
-    this.submit = this.props.submit 
+    this.submit = this.props.submit
       || (
-            <button type="submit">
+            <button type="submit" className="action">
               {this.props.actionName || 'Submit'}
             </button>
     );
@@ -28,7 +28,7 @@ export default class Form extends React.Component {
     if (this.props.handleError) {
       return this.props.handleError(err);
     }
-    return {component: err.component || <Response 
+    return {component: err.component || <Response
       statusClass="error" key="status"
       statusMessage={`${err.status}: ${err.statusText}`}
     />};
@@ -40,14 +40,14 @@ export default class Form extends React.Component {
     }
     if (!res) return;
     if (!res.component) {
-      res.component = <Response 
+      res.component = <Response
         statusMessage="Success!"
       />;
     }
     this._disableSubmit(false);
     this.setState({response: res.component});
   }
-  
+
   handleRequest(...args) {
     this._disableSubmit();
     return (this.props.handleRequest || fetch)(...args);
@@ -55,18 +55,18 @@ export default class Form extends React.Component {
 
   onSubmit(evt) {
     evt.preventDefault();
-    
+
     this.handleRequest.call(this, this.action, {
       method: this.method,
       body: new FormData(this.form),
     })
     .catch(this.handleError.bind(this))
-    .then(this.handleResponse.bind(this));    
+    .then(this.handleResponse.bind(this));
   }
 
   render() {
     return (
-      <form 
+      <form
         ref={(f) => (this.form = f)}
         onSubmit={(e) => this.onSubmit(e)}
         className={this.props.className || AppForm}
@@ -77,7 +77,7 @@ export default class Form extends React.Component {
         {this.submit}
         {this.state.response}
       </form>
-    );  
+    );
   }
 
   _disableSubmit(val=true) {
@@ -85,5 +85,5 @@ export default class Form extends React.Component {
     if (!btn) return;
     btn.disabled = val;
   }
-  
+
 }

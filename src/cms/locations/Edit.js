@@ -15,7 +15,7 @@ export default class Edit extends EditPage {
         <h4 className="title">Update Location Data</h4>
         <label>
           <p>Name</p>
-          <input 
+          <input
             type="text" name="name"
             defaultValue={entity.name}
             placeholder="Enter name"
@@ -23,18 +23,10 @@ export default class Edit extends EditPage {
         </label>
         <label>
           <p>Code</p>
-          <input 
+          <input
             type="text" name="code"
             defaultValue={entity.code}
             placeholder="Enter code"
-          />
-        </label>
-        <label>
-          <p>Unique ID</p>
-          <input 
-            type="text" name="name"
-            defaultValue={entity.uid}
-            placeholder="Enter uid"
           />
         </label>
       </Form>;

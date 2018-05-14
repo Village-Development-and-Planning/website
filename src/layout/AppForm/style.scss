@@ -1,7 +1,7 @@
 @import "styles/theme";
 
 :local .AppForm {
-  padding: 1ex 0.5em;
+  // padding: 1ex 0.5em;
 
   :global(.title) {
     margin-bottom: 1ex;
@@ -16,7 +16,7 @@
     border: inset 1pt $primary-color;
   }
 
-  button {
+  :global button.action {
     margin: 1ex 0;
     font-size: 1.2em;
     max-width: 20em;
@@ -44,13 +44,13 @@
 :local .Response {
 
   :global .error {
-    color: red;    
+    color: red;
   }
   :global .success {
     color: $primary-color;
   }
   :global .progress {
-    color: darkorange; 
+    color: darkorange;
   }
-  
+
 }

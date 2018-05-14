@@ -1,39 +1,32 @@
 import React from 'react';
 import ShowPage from '../base/Show';
-import SurveyorAggregate from './SurveyorAggregate';
 
 export default class Show extends ShowPage {
   render() {
     let entity = this.state.entity;
-    let surveyorData = {};
+    if (!entity) return super.render();
+    console.log(entity);
+    return (
+      <div>
+        <h4>Name</h4>
+        <p>{entity.name}</p>
 
-    if (entity) {
-      let householdStats = entity.aggregates 
-      && entity.aggregates.find((agg) => (
-        (agg.type.search('Household') !== -1)
-        && (agg.key.search('/') === -1)
-      ));
-      if (householdStats) {
-        householdStats = householdStats.data;
-        surveyorData.total =  householdStats.numSurveys.value;
-        surveyorData.answered = householdStats.numAnswered.value;
-      }
-        surveyorData.name = entity.name;
-        surveyorData.username = entity.username;
-        surveyorData.roles = (entity.roles || []).join(', ');
-      return (
+        <h4>Code</h4>
+        <p>{entity.username}</p>
 
+        <h4>Survey</h4>
+        <p>{entity.payload.SURVEY}</p>
 
-          <div>
-              <h3><span>Panchayat Name</span><span>Block Name</span><span>District Name</span></h3>
-             <SurveyorAggregate surveyor={surveyorData}  aggregate={householdStats}/>
+        <h4>District</h4>
+        <p>{entity.payload.DISTRICT_NAME}</p>
 
-          </div>
-      );
-    } else {
-      return super.render();
-    }
+        <h4>Block</h4>
+        <p>{entity.payload.BLOCK_NAME}</p>
+
+        <h4>Panchayat</h4>
+        <p>{entity.payload.PANCHAYAT_NAME}</p>
+      </div>
+    );
   }
-
 };
 Show.entityName = 'Surveyor';

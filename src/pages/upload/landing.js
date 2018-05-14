@@ -3,7 +3,7 @@ import React from 'react';
 import Responsive from '../../layout/Responsive';
 import ActionPanel from '../../layout/ActionPanel';
 
-import img_upload from '../../images/img_upload.png';
+// import img_upload from '../../images/img_upload.png';
 import plan from '../../images/plan.png';
 import upload from '../../images/upload.png';
 
