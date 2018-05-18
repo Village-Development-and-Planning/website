@@ -2,13 +2,18 @@
 
 :local .Table {
   min-width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
   th, td {
-    padding: 1ex 0.5em;
+    padding: 0.5ex 0.5em;
+    border: solid 1pt black;
   }
   thead {
     background-color: $secondary-color;
     max-height: 10ex;
     overflow: scroll;
+    font-weight: bold;
   }
 
   tbody {

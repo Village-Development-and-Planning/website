@@ -1,0 +1,11 @@
+@import "styles/theme";
+
+:local .ActionBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  :global .grow {
+    flex-grow: 1;
+  }
+}

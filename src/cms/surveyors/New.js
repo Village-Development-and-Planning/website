@@ -10,15 +10,11 @@ export default class NewPage extends NewBase {
           actionName="Upload"
         >
           <h4 className="title">Upload Surveyors Data</h4>
-          <label>
-            <p><input 
-              type="checkbox"
-              name="delete-existing" 
-              value="1"
-              defaultChecked="true"
-            />Delete existing surveyors?
-            </p>
-          </label>        
+          <input
+              type="hidden"
+              name="delete-existing"
+              value="0"
+          />
           <label>
             <p>Enumerators CSV file</p>
             <input type="file" name="surveyor-csv"/>

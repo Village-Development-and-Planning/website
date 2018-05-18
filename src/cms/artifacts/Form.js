@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from '../../layout/AppForm';
 import fetch from '../../utils/fetch';
+import {parse} from 'query-string';
 
 import Response from '../../layout/AppForm/Response';
 
@@ -38,7 +39,7 @@ export default class AnswerPage extends Form {
       formData.append('data', file);
 
       formData.delete('name');
-      let name = `${givenName || 'Image'}`;      
+      let name = `${givenName || 'Image'}`;
       if (this.uploadFileInput.files.length !== 1) {
         name = `${name}-${i+1}`;
       }
@@ -57,6 +58,9 @@ export default class AnswerPage extends Form {
   }
 
   render() {
+    const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'image';
+    const typeName = type[0].toUpperCase() + type.slice(1);
+
     if (this.props.multiple === undefined)
       this.multiple = true;
     else
@@ -81,14 +85,9 @@ export default class AnswerPage extends Form {
           placeholder="Enter  description"
         />
       </label>
-      <label key="type">
-        <p>Type</p>
-        <select name="type">
-          <option>image</option>
-        </select>
-      </label>
-      <label key="img-upload">
-        <p>Image(s) Upload</p>
+      <input name="type" type="hidden" value={type}/>
+      <label key="file">
+        <p>{typeName}(s) Upload</p>
         <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>
       </label>
     </React.Fragment>;

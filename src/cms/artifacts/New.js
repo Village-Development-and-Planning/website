@@ -8,6 +8,7 @@ export default class ArtifactPage extends NewPage {
         <Form
           action="/cms/artifacts"
           actionName="Upload"
+          location={this.props.location}
         />
       );
     }

@@ -1,6 +1,7 @@
 @import "styles/theme";
 
 :local .ActionPanel {
+  align-self: flex-start;
 
   display: flex;
   flex-direction: column;
@@ -13,8 +14,9 @@
   text-decoration: none;
   color: black;
   border: 1pt solid black;
-  margin: 1ex auto;
-  padding: 0.5ex 0.5em;
+  border-radius: 0.5em;
+  margin: 1ex 0.5em;
+  padding: 1ex 0.5em;
 
   cursor: pointer;
 

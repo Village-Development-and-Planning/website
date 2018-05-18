@@ -2,10 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import fetch from '../../utils/fetch';
 import Base from './Base';
-import Form from '../../layout/AppForm';
 
 import {Table} from '../../styles/Table.scss';
-// import {parse as queryParse} from 'query-string';
+import {ActionBar} from './style.scss';
+
+import Delete from './Delete';
 
 export default class ListPage extends Base {
 
@@ -14,13 +15,18 @@ export default class ListPage extends Base {
     this._setupVariable('createMessage', `Create new ${this.entityName}`);
     this._setupVariable('listMessage', `Existing ${this.routeName}`);
     this._setupVariable('columns', []);
+    this._setupVariable('columnsOrder', []);
+    this._setupVariable('actions', []);
+    this._setupVariable('actionsOrder', []);
+
     this._setupVariable('filterComponent', <input
+      style={{margin: '1ex 0.5em', fontSize: '1.2em', lineHeight: '1.5em'}}
+      className="grow"
       ref={e => this.searchInput = e}
       type="text"
       placeholder="Search"
       onChange={this.filterList.bind(this)}
     />);
-
   }
 
   setupObject() {
@@ -39,34 +45,37 @@ export default class ListPage extends Base {
   }
 
   render() {
+    const createMessage = this.props.createMessage || this.createMessage;
+    const listMessage = this.props.listMessage || this.listMessage;
+    const columnsOrder = this.props.columnsOrder || this.columnsOrder;
     if (this.state.filteredEntities) {
       return (
         <React.Fragment>
-          <div style={{display: 'flex', alignItems: 'center'}}>
-           <h3>{this.listMessage}</h3>
-            <form style={{padding: '0 0.5em'}}>
-              {this.filterComponent}
-            </form>
-            {this.createMessage &&
-              <Link to={`/${this.routeName}/new`}>
-                <button>{this.createMessage}</button>
+          <h3>{listMessage}</h3>
+          {this.props.disableActionBar || <div className={ActionBar}>
+            {this.filterComponent}
+            {createMessage &&
+              <Link to={`/${this.routeName}/new${this.props.location.search}`}>
+                <button>{createMessage}</button>
               </Link>
             }
-          </div>
+          </div>}
           <table className={Table}>
             <thead>
               <tr>
-                {this.columns.map(
-                  ({name}) => <td key={name}>{name}</td>
-                )}
+                {columnsOrder.map(key => {
+                  const name = this.columns[key].name;
+                  return <td key={name}>{name}</td>;
+                })}
               </tr>
             </thead>
             <tbody>
               {this.state.filteredEntities.map(
                 (e) => <tr key={e._id}>
-                  {this.columns.map(
-                    ({name, value}) => <td key={name}>{value.call(this, e)}</td>
-                  )}
+                  {columnsOrder.map(key => {
+                    const {name, value} = this.columns[key];
+                    return <td key={name}>{value.call(this, e)}</td>;
+                  })}
                 </tr>
               )}
             </tbody>
@@ -81,8 +90,8 @@ export default class ListPage extends Base {
 }
 
 Object.assign(ListPage, {
-  columns:[
-    {
+  columns: {
+    name: {
       name: 'Name',
       value: function(e) {
         return <Link to={`/${this.routeName}/${e._id}`}>
@@ -90,22 +99,31 @@ Object.assign(ListPage, {
         </Link>;
       }
     },
-    {
+    createdOn: {
       name: 'Created On',
       value: (e) => (new Date(e.modifiedAt)).toLocaleDateString()
     },
-    {
+    actions: {
       name: 'Actions',
       value(e) {
-        return <div style={{display: 'flex', alignItems: 'center'}}>
-          <Link to={`/${this.routeName}/${e._id}/edit`}><button>Edit</button></Link>
-          <Form
-            method="DELETE"
-            action={`/cms/${this.routeName}/${e._id}`}
-            submit={<button>Delete</button>}
-          />
+        const actionsOrder = this.props.actionsOrder || this.actionsOrder;
+        return <div style={{display: 'flex', alignItems: 'baseline'}}>
+          {actionsOrder.map(key => (this.actions[key]).call(this, e))}
         </div>;
       }
+    },
+  },
+  columnsOrder: ['name', 'createdOn', 'actions'],
+  actions: {
+    edit(e) {
+      return <Link key='edit' to={`/${this.routeName}/${e._id}/edit`}><button>Edit</button></Link>;
+    },
+    delete(e) {
+      return <Delete
+        key='delete'
+        action={`/cms/${this.routeName}/${e._id}`}
+      >Delete</Delete>;
     }
-  ],
+  },
+  actionsOrder: ['edit', 'delete']
 });

@@ -30,7 +30,7 @@ class Sidenav extends Component {
             text="Upload"
           />
           <ActionButton
-            href="/static/VDP-Android.apk"
+            href="/download?enabled=true"
             image={download}
             text="Download"
           />
@@ -50,7 +50,7 @@ class Sidenav extends Component {
             text="Visualizations"
           />
           <ActionButton
-            to="/surveys/new"
+            to="/artifacts?type=plan"
             image={plan}
             text="Plan"
           />

@@ -14,6 +14,7 @@ export default class Edit extends EditPage {
           multiple={false}
           method="PATCH"
           entity={entity}
+          location={this.props.location}
         />
       );
     } else {

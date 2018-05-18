@@ -5,10 +5,10 @@ export default [
     'locations/new',
     require('./New').default,
   ],
-  [
-    'locations/:entityId/edit',
-    require('./Edit').default,
-  ],
+  // [
+  //   'locations/:entityId/edit',
+  //   require('./Edit').default,
+  // ],
   [
     'locations/:entityId',
     require('./Show').default,
@@ -16,7 +16,7 @@ export default [
   [
     'locations',
     require('./List').default,
-  ],        
+  ],
 ].map(([key, component]) => {
   return <Route
   key={key} path={`/${key}`}

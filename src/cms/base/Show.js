@@ -11,14 +11,6 @@ export default class ShowPage extends Base {
       .then((entity) => ({entity}));
   }
 
-  setupUI() {
-    let topbar = this.context.topbar;
-    if (topbar) {
-      topbar().setTitle(`Showing ${this.entityName}`);
-      //topbar().setActions(this._actions());
-    }
-  }
-
   _actions() {
     const entityId = this.props.match.params.entityId;
     return [

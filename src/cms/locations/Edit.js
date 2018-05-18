@@ -22,9 +22,19 @@ export default class Edit extends EditPage {
           />
         </label>
         <label>
+          <p>Type</p>
+          <input
+            type="text" name="type"
+            disabled="true"
+            defaultValue={entity.type}
+            placeholder="Enter code"
+          />
+        </label>
+        <label>
           <p>Code</p>
           <input
             type="text" name="code"
+            disabled="true"
             defaultValue={entity.code}
             placeholder="Enter code"
           />

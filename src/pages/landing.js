@@ -24,7 +24,7 @@ export default () => <Responsive>
 
   <ActionPanel
     key="download-apps"
-    href="/static/VDP-Android.apk"
+    to="/download?enabled=true"
     image={download}
     text="Download Survey Application"
   >
@@ -78,7 +78,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/surveys/new"
+    to="/artifacts?type=plan"
     image={plan}
     key="planning"
     text="Planning"

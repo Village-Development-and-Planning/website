@@ -33,15 +33,11 @@ export default class BasePage extends Component {
         );
       }
     }
-    this.setupUI();
+    this.setupUI && this.setupUI();
   }
 
   shouldUpdate() {
     return (this.state.location !== this.props.location);
-  }
-
-  setupUI() {
-
   }
 
   _setupVariable(name, def) {

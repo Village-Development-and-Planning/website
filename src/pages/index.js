@@ -11,6 +11,10 @@ const landing = <Route
   path="/" exact key="/"
   component={require('./landing').default}
 />;
+const dLanding = <Route
+  path="/download" exact key="/download"
+  component={require('./download-landing').default}
+/>;
 
 export default class AppRouter extends Component {
   render() {
@@ -21,6 +25,7 @@ export default class AppRouter extends Component {
 
           ...uploadRoutes,
           ...validationRoutes,
+          dLanding,
           landing,
         ]}
       </Switch>
