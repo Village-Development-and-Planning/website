@@ -10,16 +10,11 @@ export default class NewPage extends NewBase {
           actionName="Upload"
         >
           <h4 className="title">Upload Location Data</h4>
-          <label>
-            <p><input
-              type="checkbox"
-              name="delete-existing"
-              value="1"
-              disabled="true"
-              defaultChecked="true"
-            />Delete existing locations?
-            </p>
-          </label>
+          <input
+            type="hidden"
+            name="delete-existing"
+            value="1"
+          />
           <label>
             <p>Locations CSV file</p>
             <input type="file" name="csv"/>

@@ -18,6 +18,7 @@ export default class ListPage extends Base {
     this._setupVariable('columnsOrder', []);
     this._setupVariable('actions', []);
     this._setupVariable('actionsOrder', []);
+    this._setupVariable('sortOrder', []);
 
     this._setupVariable('filterComponent', <input
       style={{margin: '1ex 0.5em', fontSize: '1.2em', lineHeight: '1.5em'}}
@@ -32,6 +33,7 @@ export default class ListPage extends Base {
   setupObject() {
     if (this.searchInput) this.searchInput.value = "";
     return fetch(`/cms/${this.routeName}${this.props.location.search}`)
+      .then(r => this._sortEntities(r))
       .then((r) => ({entities: r, filteredEntities: r}));
   }
 
@@ -87,6 +89,25 @@ export default class ListPage extends Base {
       return super.render();
     }
   }
+
+  _sortEntities(e) {
+    if (!this.sortOrder) return e;
+    return e.sort((a, b) => {
+      for(let key of this.sortOrder) {
+        let aVal, bVal;
+        if (typeof key === 'function') {
+          aVal = key.call(this, a);
+          bVal = key.call(this, b);
+        } else {
+          aVal = a[key];
+          bVal = b[key];
+        }
+        if (aVal < bVal) return -1;
+        if (aVal > bVal) return 1;
+      };
+      return 0;
+    });
+  }
 }
 
 Object.assign(ListPage, {
@@ -125,5 +146,6 @@ Object.assign(ListPage, {
       >Delete</Delete>;
     }
   },
-  actionsOrder: ['edit', 'delete']
+  actionsOrder: ['edit', 'delete'],
+  sortOrder: ['name']
 });

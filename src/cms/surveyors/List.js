@@ -2,6 +2,7 @@ import ListPage from '../base/List';
 
 export default class List extends ListPage {};
 
+List.createMessage = 'Upload Surveyors CSV';
 List.entityName = 'Surveyor';
 List.columns = Object.assign({}, List.columns, {
   code: {
@@ -25,4 +26,10 @@ List.columns = Object.assign({}, List.columns, {
     value: (e) => e.payload && e.payload.SURVEY
   }
 });
-List.columnsOrder = 'code name panchayat district survey actions'.split(' ');
+List.columnsOrder = 'district block panchayat code name survey actions'.split(' ');
+List.sortOrder = [
+  (e) => e.payload && e.payload.DISTRICT_NAME,
+  (e) => e.payload && e.payload.BLOCK_NAME,
+  (e) => e.payload && e.payload.PANCHAYAT_NAME,
+  (e) => e.username,
+];
