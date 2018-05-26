@@ -19,6 +19,12 @@ export default class ListPage extends Base {
     this._setupVariable('actions', []);
     this._setupVariable('actionsOrder', []);
     this._setupVariable('sortOrder', []);
+    this.state = {
+      sort: {
+        column: null,
+        direction: 'asc'
+      }
+    };
 
     this._setupVariable('filterComponent', <input
       style={{margin: '1ex 0.5em', fontSize: '1.2em', lineHeight: '1.5em'}}
@@ -46,6 +52,40 @@ export default class ListPage extends Base {
     });
   }
 
+  onSort(event, sortKey){
+    let filteredEntities = this.state.filteredEntities;
+    let direction = this.state.sort.column ? (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'desc';
+    
+    if(sortKey === 'createdOn'){
+      sortKey = 'modifiedAt';
+      filteredEntities.sort((a, b) => a[sortKey].toString().localeCompare(b[sortKey]));
+    }else{
+      filteredEntities.sort((a, b) => a[sortKey].toString().localeCompare(b[sortKey]));
+    }
+
+    if (direction === 'desc') {
+      filteredEntities.reverse();
+    }
+
+    let sort = {
+      column : sortKey,
+      direction : direction
+    }
+
+    this.setState({filteredEntities, sort});
+  }
+
+  setArrow (column){
+    let className = 'sort-direction';
+    if(column === 'createdOn'){
+      column = 'modifiedAt';
+    }
+    if (this.state.sort.column === column) {
+      className += this.state.sort.direction === 'asc' ? ' asc' : ' desc';
+    }
+    return className;
+  };
+
   render() {
     const createMessage = this.props.createMessage || this.createMessage;
     const listMessage = this.props.listMessage || this.listMessage;
@@ -67,7 +107,15 @@ export default class ListPage extends Base {
               <tr>
                 {columnsOrder.map(key => {
                   const name = this.columns[key].name;
-                  return <td key={name}>{name}</td>;
+                  if(key === 'actions'){
+                    return <td key={name}>{name}</td>;
+                  }
+
+                  return <td onClick={e => this.onSort(e, key)} key={name}>
+                          {name} 
+                          <span className={this.setArrow(key)}></span>
+                        </td>;
+                  
                 })}
               </tr>
             </thead>
@@ -147,5 +195,5 @@ Object.assign(ListPage, {
     }
   },
   actionsOrder: ['edit', 'delete'],
-  sortOrder: ['name']
+  sortOrder: ['name'],
 });

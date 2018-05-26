@@ -13,10 +13,11 @@ export default class Form extends React.Component {
       || 'POST';
     this.action = this.props.action;
     this.children = this.props.children;
-
+    const submitButtonClassName = this.props.formCustomStyle === ''? '' : 'action';
+    
     this.submit = this.props.submit
       || (
-            <button type="submit" className="action">
+            <button type="submit" className={submitButtonClassName}>
               {this.props.actionName || 'Submit'}
             </button>
     );

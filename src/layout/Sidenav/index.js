@@ -35,12 +35,12 @@ class Sidenav extends Component {
             text="Download"
           />
           <ActionButton
-            to="/validation"
+            to="/validation?enabled=true"
             image={validate}
             text="Validate"
           />
           <ActionButton
-            to="/surveys/new"
+            to="/export?enabled=true"
             image={exportImg}
             text="Export"
           />

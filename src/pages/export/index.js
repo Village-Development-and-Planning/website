@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Responsive from '../../layout/Responsive';
-import ValidationList from './List';
+import ExportList from './List';
 
 export default (props) => <React.Fragment>
-  <ValidationList
+  <ExportList
     location={props.location} disableActionBar={true}
     listMessage={'Surveys Currently Live'}
   />

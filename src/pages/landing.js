@@ -45,7 +45,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/validation"
+    to="/validation?enabled=true"
     key="validate-responses"
     image={validate}
     text="Validate Data"
