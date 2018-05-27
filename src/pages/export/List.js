@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ListPage from '../../cms/base/List';
-import Form, {Response} from '../../layout/AppForm';
 export default class ExportList extends ListPage {};
 Object.assign(ExportList, {
   entityName: 'Survey',
@@ -13,7 +12,7 @@ Object.assign(ExportList, {
     // </Form>;
     return <a href={`/cms/surveys/${e._id}/download?resp=${null}`}>
             Download
-          </a>
+          </a>;
     }
   },
   actionsOrder: ['download'],

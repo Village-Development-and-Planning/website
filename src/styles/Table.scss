@@ -14,29 +14,30 @@
     max-height: 10ex;
     overflow: scroll;
     font-weight: bold;
+
+    :global .sort-direction {
+      // height: 0;
+      // width: 0;
+      // border-left: 5px solid transparent;
+      // border-right: 5px solid transparent;
+      float: right;
+      width: 1em;
+      // margin: 10px;
+
+      &.asc:before {
+        content: "▼";
+      }
+
+      &.desc:before {
+        // border-top: 5px solid black;
+        content: "▲";
+      }
+    }
   }
 
   tbody {
     tr:nth-child(even) {
       background-color: $contrast-background-color;
     }
-  }
-}
-
-.sort-direction {
-  display: inline-block;
-  height: 0;
-  width: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  float: right;
-  margin: 10px;
-  
-  &.asc {
-    border-bottom: 5px solid black;
-  }
-  
-  &.desc {
-    border-top: 5px solid black;
   }
 }

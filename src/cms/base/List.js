@@ -54,8 +54,7 @@ export default class ListPage extends Base {
 
   onSort(event, sortKey){
     let filteredEntities = this.state.filteredEntities;
-    let direction = this.state.sort.column ? (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'desc';
-    
+    let direction = this.state.sort.column ? (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'asc';
     if(sortKey === 'createdOn'){
       sortKey = 'modifiedAt';
       filteredEntities.sort((a, b) => a[sortKey].toString().localeCompare(b[sortKey]));
@@ -70,7 +69,7 @@ export default class ListPage extends Base {
     let sort = {
       column : sortKey,
       direction : direction
-    }
+    };
 
     this.setState({filteredEntities, sort});
   }
@@ -112,10 +111,10 @@ export default class ListPage extends Base {
                   }
 
                   return <td onClick={e => this.onSort(e, key)} key={name}>
-                          {name} 
+                          {name}
                           <span className={this.setArrow(key)}></span>
                         </td>;
-                  
+
                 })}
               </tr>
             </thead>

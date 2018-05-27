@@ -1,6 +1,4 @@
 import React from 'react';
-
-import Responsive from '../../layout/Responsive';
 import ValidationList from './List';
 
 export default (props) => <React.Fragment>
