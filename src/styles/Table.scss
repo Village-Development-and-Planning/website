@@ -15,6 +15,10 @@
     overflow: scroll;
     font-weight: bold;
 
+    td {
+      cursor: pointer;
+    }
+
     :global .sort-direction {
       // height: 0;
       // width: 0;

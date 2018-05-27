@@ -40,7 +40,8 @@ export default class ListPage extends Base {
     if (this.searchInput) this.searchInput.value = "";
     return fetch(`/cms/${this.routeName}${this.props.location.search}`)
       .then(r => this._sortEntities(r))
-      .then((r) => ({entities: r, filteredEntities: r}));
+      .then((r) => ({entities: r, filteredEntities: r}))
+      .catch(e => console.log(e));
   }
 
   filterList(event) {
@@ -54,31 +55,21 @@ export default class ListPage extends Base {
 
   onSort(event, sortKey){
     let filteredEntities = this.state.filteredEntities;
-    let direction = this.state.sort.column ? (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'asc';
-    if(sortKey === 'createdOn'){
-      sortKey = 'modifiedAt';
-      filteredEntities.sort((a, b) => a[sortKey].toString().localeCompare(b[sortKey]));
-    }else{
-      filteredEntities.sort((a, b) => a[sortKey].toString().localeCompare(b[sortKey]));
-    }
+    let direction = (this.state.sort.column === sortKey) ?
+      (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'asc';
 
-    if (direction === 'desc') {
-      filteredEntities.reverse();
-    }
-
+    this.sortOrder = [`${direction === 'desc' ? '-' : ''}${sortKey}`];
     let sort = {
       column : sortKey,
       direction : direction
     };
-
-    this.setState({filteredEntities, sort});
+    this.setState({
+      filteredEntities: this._sortEntities(filteredEntities), sort
+    });
   }
 
   setArrow (column){
     let className = 'sort-direction';
-    if(column === 'createdOn'){
-      column = 'modifiedAt';
-    }
     if (this.state.sort.column === column) {
       className += this.state.sort.direction === 'asc' ? ' asc' : ' desc';
     }
@@ -141,16 +132,19 @@ export default class ListPage extends Base {
     if (!this.sortOrder) return e;
     return e.sort((a, b) => {
       for(let key of this.sortOrder) {
-        let aVal, bVal;
-        if (typeof key === 'function') {
-          aVal = key.call(this, a);
-          bVal = key.call(this, b);
-        } else {
-          aVal = a[key];
-          bVal = b[key];
+        let neg = 1;
+        if (key.startsWith('-')) {
+          neg = -1;
+          key = key.slice(1);
         }
-        if (aVal < bVal) return -1;
-        if (aVal > bVal) return 1;
+        const getter = this.columns[key].stringValue
+          || this.columns[key].value
+          || ((e) => e[key]);
+
+        const aVal = getter.call(this, a);
+        const bVal = getter.call(this, b);
+        if (aVal < bVal) return -1 * neg;
+        if (aVal > bVal) return 1 * neg;
       };
       return 0;
     });
@@ -165,7 +159,8 @@ Object.assign(ListPage, {
         return <Link to={`/${this.routeName}/${e._id}`}>
           {e.displayName || e.name || `[Unnamed / ${e._id}]`}
         </Link>;
-      }
+      },
+      stringValue: e => (e.displayName || e.name || e._id)
     },
     createdOn: {
       name: 'Created On',

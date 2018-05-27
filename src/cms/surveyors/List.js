@@ -27,9 +27,4 @@ List.columns = Object.assign({}, List.columns, {
   }
 });
 List.columnsOrder = 'district block panchayat code name survey actions'.split(' ');
-List.sortOrder = [
-  (e) => e.payload && e.payload.DISTRICT_NAME,
-  (e) => e.payload && e.payload.BLOCK_NAME,
-  (e) => e.payload && e.payload.PANCHAYAT_NAME,
-  (e) => e.username,
-];
+List.sortOrder = 'district block panchayat code'.split(' ');
