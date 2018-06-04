@@ -14,7 +14,7 @@ export default () => <Responsive>
     text="Surveys"
   >
     <div>
-      Create or edit surveys
+      Create a new survey or view and edit existing surveys
     </div>
   </ActionPanel>
 
@@ -25,7 +25,7 @@ export default () => <Responsive>
     text="Upload data"
   >
     <div>
-      Sync the data collected to the server
+      Sync data collected to the server
     </div>
   </ActionPanel>
 

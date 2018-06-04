@@ -20,10 +20,10 @@ export default () => <Responsive>
     key="list-survey"
     to="/surveys"
     image={upload}
-    text="List surveys"
+    text="Existing surveys"
   >
     <div>
-      View existing surveys
+      View and edit existing surveys
     </div>
   </ActionPanel>
 
@@ -31,7 +31,7 @@ export default () => <Responsive>
     key="new-artifact"
     to="/artifacts?type=image"
     image={upload}
-    text="Images &amp; other Artifacts"
+    text="Survey images and artifacts"
   >
     <div>
       View / edit / update images used in surveys
@@ -42,10 +42,10 @@ export default () => <Responsive>
     key="new-geographic"
     to="/locations?type=DISTRICT"
     image={upload}
-    text="Locations Data"
+    text="Geographic coverage"
   >
     <div>
-      View / edit / update locations
+      Upload or edit geographic data that specifies what area the survey will cover
     </div>
   </ActionPanel>
 
@@ -53,10 +53,10 @@ export default () => <Responsive>
     key="new-surveyor"
     to="/surveyors"
     image={upload}
-    text="Surveyors Data"
+    text="Surveyor Data"
   >
     <div>
-      View / edit / update surveyors
+      Upload and edit data regarding surveyors codes, what survey they will be administering and where they will administer it
     </div>
   </ActionPanel>
 

@@ -1,20 +1,23 @@
 import React from 'react';
 
 import ListPage from '../../cms/base/List';
-export default class ExportList extends ListPage {};
+export default class ExportList extends ListPage {
+
+  onDownload() {
+    console.log(this.selectInput.value);
+  }
+};
+
 Object.assign(ExportList, {
   entityName: 'Survey',
   actions: {
     download(e) {
-      if(e.downloadAvailable !== undefined && e.downloadAvailable !== null && e.downloadAvailable === true){
-        return <a href={`/cms/surveys/${e._id}/download?resp=${null}`}>
-            Download
-          </a>;
-      }
-      else{
+      if (!e.downloadAvailable || !e.downloadAvailable.length) {
         return <span>File not available</span>;
+      } else {
+        const number = e.downloadAvailable[0].number || null;
+        return <a href={`/cms/surveys/${e._id}/download?resp=${number}`}>Download CSV</a>;
       }
-    
     }
   },
   actionsOrder: ['download'],

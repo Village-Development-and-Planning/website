@@ -10,8 +10,8 @@ export default class SurvyeyPage extends NewPage {
       return (
         <Form
           action="/cms/surveys"
-          actionName="Create"
-          title="Creating Survey..."
+          actionName="Create survey"
+          title="Create a new survey"
         />
       );
     } else {

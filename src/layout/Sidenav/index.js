@@ -30,7 +30,7 @@ class Sidenav extends Component {
             text="Upload"
           />
           <ActionButton
-            href="/download?enabled=true"
+            to="/download?enabled=true"
             image={download}
             text="Download"
           />
@@ -45,7 +45,7 @@ class Sidenav extends Component {
             text="Export"
           />
           <ActionButton
-            to="/surveys/new"
+            to="/visualizations"
             image={visualization}
             text="Visualizations"
           />

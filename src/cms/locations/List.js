@@ -6,13 +6,16 @@ import {parse} from 'query-string';
 export default class List extends ListPage {
   constructor(...args) {
     super(...args);
-    this.createMessage = 'Upload Locations CSV';
+    this.listMessage = 'Geographic coverage';
+    this.createMessage = 'Upload geographic data';
     this.baseFilterComponent = this.filterComponent;
   }
 
   render() {
     const types = 'DISTRICT BLOCK PANCHAYAT HABITATION'.split(' ');
-    const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'DISTRICT';
+    const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'HABITATION';
+    const tIndex = types.indexOf(type);
+    this.columnsOrder =  this.constructor.columnsOrder.concat(types.slice(0, tIndex));
     this.filterComponent = <React.Fragment>
       <Select
         onChange={e => this.onTypeChange(e)}
@@ -33,6 +36,12 @@ export default class List extends ListPage {
 
 List.entityName = 'Location';
 List.columns = Object.assign({}, List.columns, {
-  type: {name: 'Type', value: (e)=> e.type}
-});
-List.columnsOrder = ['name', 'type', 'createdOn'];
+  type: {name: 'Type', value: (e)=> e.type},
+  path: {name: 'Code', value: (e) => e.uid},
+}, ['PANCHAYAT', 'BLOCK', 'DISTRICT'].reduce(
+  (acc, e) => Object.assign(acc, {
+    [e]: {name: e, value: (c) => c.payload && c.payload[`${e}_NAME`]}
+  }),
+  {}
+));
+List.columnsOrder = ['path', 'name'];

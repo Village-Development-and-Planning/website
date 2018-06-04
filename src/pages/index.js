@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 
 import uploadRoutes from './upload';
 import validationRoutes from './validation';
-
+import vizRoutes from './visualizations';
 import cmsRoutes from '../cms';
 
 
@@ -30,6 +30,7 @@ export default class AppRouter extends Component {
 
           ...uploadRoutes,
           ...validationRoutes,
+          ...vizRoutes,
           dLanding,
           landing,
           exportLanding,
