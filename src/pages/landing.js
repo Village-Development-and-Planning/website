@@ -56,7 +56,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/surveys/new"
+    to="/export?enabled=true"
     key="export-responses"
     image={exportImg}
     text="Export Data"

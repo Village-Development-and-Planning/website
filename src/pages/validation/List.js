@@ -8,7 +8,12 @@ Object.assign(ValidationList, {
   entityName: 'Survey',
   actions: {
     processSurvey(e) {
-      return <Form actionName="Process" action="/cms/processes" formCustomStyle=""
+      let disabledSubmitButton = false;
+      if(e.collectProcessId !== undefined && e.collectProcessId !== null && e.collectProcessId !== ""){
+        disabledSubmitButton = true;
+      }
+
+      return <Form actionName="Process" action="/cms/processes" formCustomStyle="" disabledSubmitButton={disabledSubmitButton}
         handleResponse={(res) => ({
               component: <Response
                 statusMessage={<React.Fragment>
@@ -21,7 +26,11 @@ Object.assign(ValidationList, {
     </Form>;
     },
     export(e) {
-      return <Form actionName="Export" action="/cms/processes" formCustomStyle="">
+      let disabledSubmitButton = false;
+      if(e.collectExportId !== undefined && e.collectExportId !== null && e.collectExportId !== ""){
+        disabledSubmitButton = true;
+      }
+      return <Form actionName="Export" action="/cms/processes" formCustomStyle="" disabledSubmitButton={disabledSubmitButton}>
       <input type="hidden" name="name" value="ExportResponses"/>
       <input type="hidden" name="args" value={e._id}/>
     </Form>;
@@ -31,7 +40,8 @@ Object.assign(ValidationList, {
 });
 ValidationList.entityName = 'Survey';
 ValidationList.columns = Object.assign({}, ValidationList.columns, {
-  enabled: {name: 'Live', value: (e) => e.enabled ? 'Yes' : 'No' },
+  answers: {name: 'Answers', value: (e) => (e.answerCount !== undefined && e.answerCount !== null) ?  e.answerCount : 0 },
+  processed : {name: 'Prccessed', value: (e) => (e.answerStats !== undefined && e.answerStats.processed !== undefined) ?  e.answerStats.processed : 0 },
   actions: {
     name: 'Actions',
     value(e) {
@@ -42,4 +52,4 @@ ValidationList.columns = Object.assign({}, ValidationList.columns, {
     }
   }
 });
-ValidationList.columnsOrder = ['name', 'enabled', 'createdOn', 'actions'];
+ValidationList.columnsOrder = ['name', 'answers', 'processed', 'actions'];
