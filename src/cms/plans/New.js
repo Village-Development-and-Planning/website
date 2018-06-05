@@ -7,11 +7,12 @@ export default class ArtifactPage extends NewPage {
       return (
         <Form
           action="/cms/artifacts"
-          actionName="Upload image"
+          actionName="Upload plan"
           location={this.props.location}
-          title="Create new image"
-          description="Upload images that are part of your survey. This should be the same name as what is in the survey CSV file."
-          fileInputMessage="Upload images that are part of your survey"
+          title="Upload plan"
+          description="Upload a new plan, this will allow you to view the plan and keep track of developments."
+          fileInputMessage="Upload plan"
+          multiple={false}
         />
       );
     }

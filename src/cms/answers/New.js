@@ -8,9 +8,9 @@ export default class AnswerPage extends NewPage {
   render() {
     if (this.state.entity) {
       return (
-        <Form 
+        <Form
           action="/cms/answers"
-          actionName="Upload"
+          actionName="Upload Data"
         />
       );
     } else {

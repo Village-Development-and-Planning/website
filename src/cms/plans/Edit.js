@@ -2,19 +2,21 @@ import React from 'react';
 import EditPage from '../base/Edit';
 import Form from './Form';
 
-export default class AnswerPage extends EditPage {
-
-
+export default class Edit extends EditPage {
   render() {
     const entityId = this.props.match.params.entityId;
     const entity = this.state.entity;
     if (entity) {
       return (
         <Form
+          action={`/cms/artifacts/${entityId}`}
+          actionName="Update plan"
+          multiple={false}
           method="PATCH"
-          action={`/cms/${this.cmsRouteName}/${entityId}`}
           entity={entity}
-          actionName='Update'
+          location={this.props.location}
+          title="Edit plan"
+          fileInputMessage="Edit plan"
         />
       );
     } else {
@@ -23,4 +25,4 @@ export default class AnswerPage extends EditPage {
   }
 
 };
-AnswerPage.entityName = 'Answer';
+Edit.entityName = 'Artifact';

@@ -12,10 +12,10 @@ export default class SurvyeyPage extends EditPage {
       return (
         <Form
           method="PATCH"
-          action={`/cms/${this.routeName}/${entityId}`}
+          action={`/cms/${this.cmsRouteName}/${entityId}`}
           entity={entity}
-          actionName='Update'
-          title={`Updating survey ${entityId}...`}
+          actionName='Update survey'
+          title={`Updating survey ${entity.name || '[Unnamed]'}`}
         />
       );
     } else {

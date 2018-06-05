@@ -4,7 +4,7 @@ import Base from './Base';
 export default class NewPage extends Base {
 
   setupObject() {
-    return fetch(`/cms/${this.routeName}/new`)
+    return fetch(`/cms/${this.cmsRouteName}/new`)
       .then((r) => ({entity: r}));
   }
 

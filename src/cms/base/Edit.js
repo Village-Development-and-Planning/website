@@ -5,7 +5,7 @@ export default class EditPage extends Base {
 
   setupObject() {
     const entityId = this.props.match.params.entityId;
-    return fetch(`/cms/${this.routeName}/${entityId}/edit`)
+    return fetch(`/cms/${this.cmsRouteName}/${entityId}/edit`)
       .then((r) => ({entity: r}));
   }
 

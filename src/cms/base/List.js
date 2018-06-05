@@ -38,7 +38,7 @@ export default class ListPage extends Base {
 
   setupObject() {
     if (this.searchInput) this.searchInput.value = "";
-    return fetch(`/cms/${this.routeName}${this.props.location.search}`)
+    return fetch(`/cms/${this.cmsRouteName}${this.props.location.search}`)
       .then(r => this._sortEntities(r))
       .then((r) => ({entities: r, filteredEntities: r}))
       .catch(e => console.log(e));
@@ -78,12 +78,13 @@ export default class ListPage extends Base {
 
   render() {
     const createMessage = this.props.createMessage || this.createMessage;
-    const listMessage = this.props.listMessage || this.listMessage;
+    let listMessage = this.props.listMessage || this.listMessage;
     const columnsOrder = this.props.columnsOrder || this.columnsOrder;
+    if (typeof listMessage === 'string') listMessage = <h3>{listMessage}</h3>;
     if (this.state.filteredEntities) {
       return (
         <React.Fragment>
-          <h3>{listMessage}</h3>
+          {listMessage}
           {this.props.disableActionBar || <div className={ActionBar}>
             {this.filterComponent}
             {createMessage &&
@@ -163,7 +164,7 @@ Object.assign(ListPage, {
       stringValue: e => (e.displayName || e.name || e._id)
     },
     createdOn: {
-      name: 'Created On',
+      name: 'Date Created',
       value: (e) => (new Date(e.modifiedAt)).toLocaleDateString()
     },
     actions: {
@@ -184,7 +185,7 @@ Object.assign(ListPage, {
     delete(e) {
       return <Delete
         key='delete'
-        action={`/cms/${this.routeName}/${e._id}`}
+        action={`/cms/${this.cmsRouteName}/${e._id}`}
       >Delete</Delete>;
     }
   },

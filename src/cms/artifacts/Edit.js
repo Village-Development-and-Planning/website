@@ -10,11 +10,13 @@ export default class Edit extends EditPage {
       return (
         <Form
           action={`/cms/artifacts/${entityId}`}
-          actionName="Update"
+          actionName="Update image"
           multiple={false}
           method="PATCH"
           entity={entity}
           location={this.props.location}
+          title="Edit survey image"
+          fileInputMessage="Edit Image"
         />
       );
     } else {

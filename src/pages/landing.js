@@ -67,7 +67,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/surveys/new"
+    to="/visualizations"
     image={visualization}
     key="visualization-responses"
     text="Visualize Data"
@@ -78,7 +78,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/artifacts?type=plan"
+    to="/plans"
     image={plan}
     key="planning"
     text="Planning"

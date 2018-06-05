@@ -11,6 +11,7 @@ export default class BasePage extends Component {
     this._setupVariable('entityName', 'Entity');
     this._setupVariable('collectionName', this.entityName + 's');
     this._setupVariable('routeName', this.collectionName.toLowerCase());
+    this._setupVariable('cmsRouteName', this.routeName);
     this._setupVariable('layout', false);
   }
 

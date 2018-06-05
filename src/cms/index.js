@@ -4,6 +4,7 @@ import cmsArtifactsRoutes from '../cms/artifacts';
 import cmsLocationsRoutes from '../cms/locations';
 import cmsSurveyorsRoutes from '../cms/surveyors';
 import cmsProcessesRoutes from '../cms/processes';
+import cmsPlanRoutes from '../cms/plans';
 
 export default [].concat(
   cmsSurveysRoutes,
@@ -12,4 +13,5 @@ export default [].concat(
   cmsLocationsRoutes,
   cmsSurveyorsRoutes,
   cmsProcessesRoutes,
+  cmsPlanRoutes,
 );

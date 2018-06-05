@@ -50,7 +50,7 @@ class Sidenav extends Component {
             text="Visualizations"
           />
           <ActionButton
-            to="/artifacts?type=plan"
+            to="/plans"
             image={plan}
             text="Plan"
           />

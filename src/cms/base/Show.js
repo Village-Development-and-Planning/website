@@ -7,7 +7,7 @@ export default class ShowPage extends Base {
 
   setupObject() {
     const entityId = this.props.match.params.entityId;
-    return fetch(`/cms/${this.routeName}/${entityId}`)
+    return fetch(`/cms/${this.cmsRouteName}/${entityId}`)
       .then((entity) => ({entity}));
   }
 

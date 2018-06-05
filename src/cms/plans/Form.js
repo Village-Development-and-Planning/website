@@ -67,21 +67,21 @@ export default class AnswerPage extends Form {
       <h4 key='header' className="title">{this.props.title}</h4>
       {this.props.description && <p>{this.props.description}</p>}
       <label key="name">
-        <p>Image name</p>
+        <p>Plan name</p>
         <input
           type="text"
           name="name"
           defaultValue={this.props.entity && this.props.entity.name}
-          placeholder="Enter image name"
+          placeholder="Enter plan name"
         />
       </label>
       <label key="description">
-        <p>Image description</p>
+        <p>Plan description</p>
         <input
           type="text"
           name="description"
           defaultValue={this.props.entity && this.props.entity.description}
-          placeholder="Enter a description of the image"
+          placeholder="Enter plan description"
         />
       </label>
       <input name="type" type="hidden" value={type}/>

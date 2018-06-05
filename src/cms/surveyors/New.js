@@ -7,9 +7,10 @@ export default class NewPage extends NewBase {
       return (
         <Form
           action="/cms/surveyors"
-          actionName="Upload"
+          actionName="Upload surveyor data"
         >
-          <h4 className="title">Upload Surveyors Data</h4>
+          <h4 className="title">Upload surveyor data</h4>
+          <p>This surveyor data needs to be in CSV format. This file should include geography details for each surveyor as well as each type of survey they will be administering. Surveyor codes should be unique.</p>
           <input
               type="hidden"
               name="delete-existing"
