@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from '../../layout/AppForm';
 import fetch from '../../utils/fetch';
-import {parse} from 'query-string';
 
 import Response from '../../layout/AppForm/Response';
 
@@ -58,7 +57,6 @@ export default class AnswerPage extends Form {
   }
 
   render() {
-    const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'image';
     if (this.props.multiple === undefined)
       this.multiple = true;
     else
@@ -84,7 +82,7 @@ export default class AnswerPage extends Form {
           placeholder="Enter plan description"
         />
       </label>
-      <input name="type" type="hidden" value={type}/>
+      <input name="type" type="hidden" value="plan"/>
       <label key="file">
         <p>{this.props.fileInputMessage}</p>
         <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>

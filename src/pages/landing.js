@@ -78,7 +78,7 @@ export default () => <Responsive>
   </ActionPanel>
 
   <ActionPanel
-    to="/plans"
+    to="/plans?type=plan"
     image={plan}
     key="planning"
     text="Planning"
