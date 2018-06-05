@@ -6,11 +6,11 @@ export default class NewPage extends NewBase {
     render() {
       return (
         <Form
-          action="/cms/surveyors"
+          action="/cms/users"
           actionName="Upload surveyor data"
         >
         </Form>
       );
     }
 };
-NewPage.entityName = 'Surveyor';;
+NewPage.entityName = 'User';;

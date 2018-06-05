@@ -20,13 +20,26 @@ export default class extends Component {
         </Link>
         <div className={Titles}>
           <h2>
-            Participatory Tracking
+            <span className="full">Participatory Tracking</span>
+            <span className="clip">P-Tracking</span>
           </h2>
           <h3>
-            Tamil Nadu Village Development Planning
+            <span className="full">
+              Tamil Nadu - Village Development Planning
+            </span>
+            <span className="clip">
+              TN - Village Development Planning
+            </span>
           </h3>
         </div>
-        <User/>
+        <div>
+          <User/>
+          <div>
+            Language:&nbsp;
+            <a href="">English</a>&nbsp;
+            <a href="">Tamil</a>
+          </div>
+        </div>
       </header>
     );
   }

@@ -2,12 +2,15 @@
 
 :local .Topbar {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   min-height: 64px;
   border-bottom: solid 1pt $primary-color;
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 0;
+  div {
+    padding: 0.5ex 0.5em;
+  }
 }
 
 :local .Logo {
@@ -34,18 +37,16 @@
     margin: 0 0;
   }
 
-  :global .full {
-    padding-left: 0.5em;
-    font-size: 0.9em;
-    &::before {
-      content: "/";
-      padding-right: 0.5em;
-    }
+  :global .clip {
+    display: none;
   }
 
   @media screen and (max-width: $bp-large-width - 1) {
     :global .full {
       display: none;
+    }
+    :global .clip {
+      display: initial;
     }
   }
 

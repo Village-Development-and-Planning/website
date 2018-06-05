@@ -14,9 +14,10 @@ export default class extends Component {
 
   render() {
     if (this.state.user && this.state.user.name) {
-      return <p className={User}>
-        {this.state.user.name} 
-      </p>;
+      return <div className={User}>
+        Logged in as {this.state.user.name}<br/>
+        <a href="/auth/out">Sign out</a>
+      </div>;
     } else {
       return <p className={User}>Guest</p>;
     }
