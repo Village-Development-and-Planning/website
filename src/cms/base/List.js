@@ -40,8 +40,7 @@ export default class ListPage extends Base {
     if (this.searchInput) this.searchInput.value = "";
     return fetch(`/cms/${this.cmsRouteName}${this.props.location.search}`)
       .then(r => this._sortEntities(r))
-      .then((r) => ({entities: r, filteredEntities: r}))
-      .catch(e => console.log(e));
+      .then((r) => ({entities: r, filteredEntities: r}));
   }
 
   filterList(event) {

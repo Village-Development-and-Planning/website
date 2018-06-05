@@ -4,7 +4,6 @@ import ListPage from '../../cms/base/List';
 export default class ExportList extends ListPage {
 
   onDownload() {
-    console.log(this.selectInput.value);
   }
 };
 

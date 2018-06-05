@@ -5,6 +5,7 @@ import cmsLocationsRoutes from '../cms/locations';
 import cmsSurveyorsRoutes from '../cms/surveyors';
 import cmsProcessesRoutes from '../cms/processes';
 import cmsPlanRoutes from '../cms/plans';
+import cmsUserRoutes from '../cms/users';
 
 export default [].concat(
   cmsSurveysRoutes,
@@ -14,4 +15,5 @@ export default [].concat(
   cmsSurveyorsRoutes,
   cmsProcessesRoutes,
   cmsPlanRoutes,
+  cmsUserRoutes,
 );

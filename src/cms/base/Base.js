@@ -26,7 +26,10 @@ export default class BasePage extends Component {
       let objPromise = this.setupObject();
       if (objPromise && objPromise.then) {
         objPromise.then(
-          (upd) => this.setState(Object.assign(upd, {location: this.props.location})),
+          (upd) => upd ?
+            this.setState(Object.assign(upd, {location: this.props.location}))
+            : Promise.reject({statusText: 'Cannot access entity.'})
+        ).catch(
           (res) => this.setState({
             message: `Error ${res.status || '???'}: ${res.statusText}`,
             location: this.props.location,

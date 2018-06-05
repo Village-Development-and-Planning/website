@@ -5,7 +5,6 @@ export default class Show extends ShowPage {
   render() {
     let entity = this.state.entity;
     if (!entity) return super.render();
-    console.log(entity);
     return (
       <div>
         <h4>Name</h4>

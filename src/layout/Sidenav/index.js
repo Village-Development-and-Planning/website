@@ -54,6 +54,11 @@ class Sidenav extends Component {
             image={plan}
             text="Plan"
           />
+          <ActionButton
+            to="/users"
+            image={plan}
+            text="Users"
+          />
         </div>
       </div>
     );
