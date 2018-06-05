@@ -15,7 +15,7 @@ export default class extends Component {
   render() {
     if (this.state.user && this.state.user.name) {
       return <div className={User}>
-        Logged in as {this.state.user.name}<br/>
+        <span className="full">Logged in as </span>{this.state.user.name}.&nbsp;
         <a href="/auth/out">Sign out</a>
       </div>;
     } else {

@@ -29,6 +29,17 @@
 
 }
 
+:local .Right {
+  text-align: right;
+  @media screen and (max-width: $bp-large-width - 1) {
+    font-size: 0.9em;
+  }
+  margin-top: auto;
+  div {
+    padding: 0ex 0.5em;
+  }
+}
+
 :local .Titles {
   flex-grow: 1;
   padding: 0.5ex 0.5em;
@@ -37,22 +48,22 @@
     margin: 0 0;
   }
 
-  :global .clip {
-    display: none;
-  }
-
-  @media screen and (max-width: $bp-large-width - 1) {
-    :global .full {
-      display: none;
-    }
-    :global .clip {
-      display: initial;
-    }
-  }
 
 }
 
 :local .Actions {
   align-self: flex-end;
   display: flex;
+}
+:global .clip {
+  display: none;
+}
+
+@media screen and (max-width: $bp-large-width - 1) {
+  :global .full {
+    display: none;
+  }
+  :global .clip {
+    display: initial;
+  }
 }

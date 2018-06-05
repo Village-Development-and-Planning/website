@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import { Topbar, Logo, Titles } from './Topbar.scss';
+import { Right, Topbar, Logo, Titles } from './Topbar.scss';
 import { Link } from 'react-router-dom';
 import imgLogo from '../../images/tn_logo.svg';
 import User from '../User';
@@ -32,7 +32,7 @@ export default class extends Component {
             </span>
           </h3>
         </div>
-        <div>
+        <div className={Right}>
           <User/>
           <div>
             Language:&nbsp;
