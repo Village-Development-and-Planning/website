@@ -78,7 +78,7 @@ export default class extends React.Component {
         if (!opts.length) disabled = true;
         opts = opts.concat({value: 'all', label: 'All'});
         return <label key={level} className={style.SelectBox}>
-          <h4>{level}</h4>
+          <h4>{level} NAME</h4>
           <Select name={level} disabled={disabled}
             onChange={e => this._onValueChange(level, e)}
             value={value}

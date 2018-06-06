@@ -73,7 +73,7 @@ export default class Panchayat extends ShowPage {
       <Responsive>
         <div className={Detail}>
           <h3>{entity.name}</h3>
-          {surveyor && <React.Fragment>
+          {entity.type === 'PANCHAYAT' && surveyor && <React.Fragment>
             <h4>Surveyor Code: <Link to={`/surveyors/${surveyor.username}`}>
               {surveyor.username}
             </Link></h4>

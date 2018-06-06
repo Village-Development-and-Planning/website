@@ -11,6 +11,8 @@ export default (props) => <React.Fragment>
     location={props.location} disableActionBar={true}
     listMessage={'Surveys Currently Live'}
   />
+  <hr/>
+  <h3>Data validation</h3>
   <Responsive>
     <ActionPanel
       to="/validation/mapping"
