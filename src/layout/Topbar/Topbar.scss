@@ -11,6 +11,9 @@
   div {
     padding: 0.5ex 0.5em;
   }
+  @media screen and (max-width: $bp-medium-width - 1) {
+    font-size: 0.8em;
+  }
 }
 
 :local .Logo {
@@ -20,7 +23,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4em;
+  min-width: 3em;
+  max-width: 4em;
 
   img {
     max-width: 100%;
@@ -47,8 +51,6 @@
   h1, h2, h3 {
     margin: 0 0;
   }
-
-
 }
 
 :local .Actions {
