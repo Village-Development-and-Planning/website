@@ -86,7 +86,9 @@ export default class AnswerPage extends Form {
       </label>
       <input name="type" type="hidden" value={type}/>
       <label key="file">
-        <p>{this.props.fileInputMessage}</p>
+        <p>{this.props.fileInputMessage}
+        <em>Note: Multiple files will be named as -1, -2, ... (Because they can't all have the same name provided)</em>
+        </p>
         <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>
       </label>
     </React.Fragment>;

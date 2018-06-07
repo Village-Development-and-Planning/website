@@ -18,7 +18,7 @@ Object.assign(PList, {
 
 PList.columns = Object.assign({}, PList.columns, {
   dName: {
-    name: 'Name',
+    name: 'Plan name',
     value: function(e) {
       return <a href={`/cms/${this.cmsRouteName}/${e._id}/download`}>
         {e.displayName || e.name || `[Unnamed / ${e._id}]`}
