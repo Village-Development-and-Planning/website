@@ -10,6 +10,7 @@ Object.assign(SurvyeyList, {
 });
 SurvyeyList.entityName = 'Survey';
 SurvyeyList.columns = Object.assign({}, SurvyeyList.columns, {
-  enabled: {name: 'Enabled?', value: (e) => e.enabled ? 'Yes' : 'No' }
+  enabled: {name: 'Enabled?', value: (e) => e.enabled ? 'Yes' : 'No' },
+  name: {name: 'Survey name', value: (e) => e.name }
 });
 SurvyeyList.columnsOrder = ['name', 'enabled', 'createdOn', 'actions'];

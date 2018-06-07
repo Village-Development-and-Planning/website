@@ -32,9 +32,9 @@ export default class Edit extends EditPage {
         actionName="Update"
         method="PATCH"
       >
-        <h4 className="title">Update Surveyor Information</h4>
+        <h4 className="title">Edit surveyor data</h4>
         <label>
-          <p>Name</p>
+          <p>Surveyor name</p>
           <input
             type="text" name="name"
             defaultValue={entity.name}
@@ -42,7 +42,7 @@ export default class Edit extends EditPage {
           />
         </label>
         <label>
-          <p>Code</p>
+          <p>Surveyor code</p>
           <input
             type="text" name="username"
             defaultValue={entity.username}
@@ -50,7 +50,7 @@ export default class Edit extends EditPage {
           />
         </label>
         <label>
-          <p>Panchayat</p>
+          <p>Panchayat name</p>
           <select
             name="panchayat"
             onChange={({value}) => this.setState({panchayat: value})}

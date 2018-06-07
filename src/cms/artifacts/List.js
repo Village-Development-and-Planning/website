@@ -9,6 +9,13 @@ export default class ArtifactsList extends ListPage {
     return super.render();
   }
 };
+
+ArtifactsList.columns = Object.assign({}, ArtifactsList.columns, {
+  name: {
+    name: 'Image name',
+    value: (e) => e.name
+  },
+});
 Object.assign(ArtifactsList, {
   entityName: 'Artifact',
   listMessage: <React.Fragment>

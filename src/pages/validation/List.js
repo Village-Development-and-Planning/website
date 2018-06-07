@@ -40,8 +40,9 @@ Object.assign(ValidationList, {
 });
 ValidationList.entityName = 'Survey';
 ValidationList.columns = Object.assign({}, ValidationList.columns, {
-  answers: {name: 'Answers', value: (e) => (e.answerCount !== undefined && e.answerCount !== null) ?  e.answerCount : 0 },
-  processed : {name: 'Prccessed', value: (e) => (e.answerStats !== undefined && e.answerStats.processed !== undefined) ?  e.answerStats.processed : 0 },
+  answers: {name: 'Answers collected', value: (e) => (e.answerCount !== undefined && e.answerCount !== null) ?  e.answerCount : 0 },
+  processed : {name: 'Answers processed', value: (e) => (e.answerStats !== undefined && e.answerStats.processed !== undefined) ?  e.answerStats.processed : 0 },
+  name: { name: 'Survey name', value: (e) => e.name},
   actions: {
     name: 'Actions',
     value(e) {

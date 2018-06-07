@@ -9,10 +9,10 @@ export default () => <Responsive>
     key="new-survey"
     to="/surveys/new"
     image={upload}
-    text="New Survey"
+    text="New survey"
   >
     <div>
-      Create new Survey
+      Create new survey
     </div>
   </ActionPanel>
 
@@ -34,7 +34,7 @@ export default () => <Responsive>
     text="Survey images and artifacts"
   >
     <div>
-      View / edit / update images used in surveys
+      Upload and edit images that are part of your survey
     </div>
   </ActionPanel>
 
@@ -56,7 +56,7 @@ export default () => <Responsive>
     text="Surveyor Data"
   >
     <div>
-      Upload and edit data regarding surveyors codes, what survey they will be administering and where they will administer it
+      Upload and edit data regarding surveyor.
     </div>
   </ActionPanel>
 

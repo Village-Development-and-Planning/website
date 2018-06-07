@@ -47,7 +47,7 @@ export default class extends Form {
     ,
         <label key="csv-upload">
           <p>Upload the survey<br/>
-          <em>Note: This survey needs to be in CSV format</em></p>
+          <em>Note: The survey needs to be in CSV format</em></p>
           <input ref={(r) => this.uploadFileInput = r} type="file" name="csv"/>
         </label>
     ];
