@@ -3,6 +3,13 @@ import {parse} from 'query-string';
 import React from 'react';
 
 export default class ArtifactsList extends ListPage {
+  constructor() {
+    super(...arguments);
+    this.columns = Object.assign({}, this.columns);
+    this.columns.name = Object.assign({}, this.columns.name);
+    this.columns.name.name = 'Image name';
+
+  }
   render() {
     const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'image';
     this.createMessage = 'Create new ' + type;
@@ -10,12 +17,6 @@ export default class ArtifactsList extends ListPage {
   }
 };
 
-ArtifactsList.columns = Object.assign({}, ArtifactsList.columns, {
-  name: {
-    name: 'Image name',
-    value: (e) => e.name
-  },
-});
 Object.assign(ArtifactsList, {
   entityName: 'Artifact',
   listMessage: <React.Fragment>

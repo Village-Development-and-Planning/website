@@ -17,7 +17,6 @@ export default class AnswerPage extends Form {
 
   handleRequest(action, opts) {
     const formData = opts.body;
-    const givenName = formData.get('name');
 
     if (!this.multiple) {
       if (!this.uploadFileInput.files.length) formData.delete('data');
@@ -37,13 +36,6 @@ export default class AnswerPage extends Form {
       let file = this.uploadFileInput.files[i];
       formData.delete('data');
       formData.append('data', file);
-
-      formData.delete('name');
-      let name = `${givenName || 'Image'}`;
-      if (this.uploadFileInput.files.length !== 1) {
-        name = `${name}-${i+1}`;
-      }
-      formData.append('name', name);
 
       promises.push(
         fetch(action, opts).then(() => {
@@ -66,15 +58,6 @@ export default class AnswerPage extends Form {
     this.children = this.props.children || <React.Fragment>
       <h4 key='header' className="title">{this.props.title}</h4>
       {this.props.description && <p>{this.props.description}</p>}
-      <label key="name">
-        <p>Image name</p>
-        <input
-          type="text"
-          name="name"
-          defaultValue={this.props.entity && this.props.entity.name}
-          placeholder="Enter image name"
-        />
-      </label>
       <label key="description">
         <p>Image description</p>
         <input
@@ -86,8 +69,8 @@ export default class AnswerPage extends Form {
       </label>
       <input name="type" type="hidden" value={type}/>
       <label key="file">
-        <p>{this.props.fileInputMessage}
-        <em>Note: Multiple files will be named as -1, -2, ... (Because they can't all have the same name provided)</em>
+        <p>{this.props.fileInputMessage}<br/>
+          <em>Note: Please name Images in this format - SurveyName_QuestionNumber_Answer.extension (Answer - good, bad, average, 1/2/3, etc.) - for example: Mapping_1.2.1_good.jpg</em>
         </p>
         <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>
       </label>

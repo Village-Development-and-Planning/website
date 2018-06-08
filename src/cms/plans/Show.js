@@ -10,17 +10,14 @@ export default class Show extends ShowPage {
       return (
         <div className={Artifact}>
           <h4>Name</h4>
-          <p>{entity.name}</p>
-
+          <p>
+            <a href={`/cms/${this.cmsRouteName}/${entity._id}/download`}>
+              {entity.name}
+            </a>
+            <br/>{`File type: ${entity.mimeType}`}
+          </p>
           <h4>Description</h4>
           <p>{entity.description}</p>
-
-          <h4>Image</h4>
-          <img 
-            src={`data:${entity.mimeType};base64,${entity.dataBase64}`}
-            alt={entity.name}
-          />
-          <p>Mime type: {entity.mimeType}</p>
         </div>
       );
     } else {
