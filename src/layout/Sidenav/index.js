@@ -52,7 +52,7 @@ class Sidenav extends Component {
           <ActionButton
             to="/plans?type=plan"
             image={plan}
-            text="Plan"
+            text="Plans"
           />
           <ActionButton
             to="/users"

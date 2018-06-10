@@ -106,11 +106,12 @@ export default class Block extends ShowPage {
         <div className={style.Detail}>
           <h3>{entity.name}</h3>
           {stats && <p>
-            Number of surveys: {numSurveys}<br/>
-            Answered: {numAnswered} ({ansPercentage} %)<br/>
-            Not willing: {numNotWilling} ({numNotWillingPercentage} %)<br/>
-            Not there: {numNotThere} ({numNotTherePercentage} %)<br />
-            Dead: {numNotAlive} ({numNotAlivePercentage} %)<br />
+            Total number of surveys completed: {numSurveys}<br/>
+            Number of surveys answered: {numAnswered} ({ansPercentage} %)<br/>
+
+            Percentage of households reported 'not willing': {numNotWillingPercentage} %<br/>
+            Percentage of households reported 'not there': {numNotTherePercentage} %<br />
+            Percentage of households reported 'dead': {numNotAlivePercentage} %<br />
           </p>}
         </div>
         {this.renderSecondComponent()}
@@ -130,7 +131,7 @@ export default class Block extends ShowPage {
 
   renderWeeklyStats() {
     const {weeklyStats} = this.state;
-    const message = this.weeklyStatsMessage || 'Surveyor Statistics';
+    const message = this.weeklyStatsMessage || 'Proportion of Surveyors that are flagged';
     if (!weeklyStats) return;
     return <React.Fragment>
       <h4>{message}</h4>

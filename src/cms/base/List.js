@@ -89,7 +89,7 @@ export default class ListPage extends Base {
             ? <p> <em>{this.props.listNote}</em></p>
             : null
           }
-          
+
           {this.props.disableActionBar || <div className={ActionBar}>
             {this.filterComponent}
             {createMessage &&
@@ -169,7 +169,7 @@ Object.assign(ListPage, {
       stringValue: e => (e.displayName || e.name || e._id)
     },
     createdOn: {
-      name: 'Date Created',
+      name: 'Date created',
       value: (e) => (new Date(e.modifiedAt)).toLocaleDateString()
     },
     actions: {
