@@ -3,6 +3,7 @@ import React from 'react';
 import ListPage from '../../cms/base/List';
 import Form, {Response} from '../../layout/AppForm';
 import {Link} from 'react-router-dom';
+
 export default class ValidationList extends ListPage {};
 Object.assign(ValidationList, {
   entityName: 'Survey',

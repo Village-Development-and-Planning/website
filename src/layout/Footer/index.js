@@ -9,7 +9,7 @@ export default class Footer extends Component {
           © 2018 Madras Institute of Development Studies.
         </p>
         <p>
-          Last Updated:  January, 2018.
+          Last Updated:  June, 2018.
         </p>
       </div>
     );

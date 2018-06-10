@@ -1,10 +1,33 @@
-let language = null;
-let currentLang = 'english';
+import React from 'react';
+
+let language = require('./translation-tamil.json');
+let currentLang = 'tamil';
 let notify = null;
 
+export function T(props) {
+  if (props && props.children) {
+    let children;
+    if (typeof props.children === 'string') {
+      children = t(props.children);
+      return React.createElement(React.Fragment, null, children);
+    } else {
+      children = props.children.map((c) => {
+        if (typeof c === 'string') {
+          return t(c);
+        }
+        return c;
+      });
+      return React.createElement(React.Fragment, null, ...children);
+    }
+
+  }
+  return false;
+}
+
 export function t(key) {
-  if (language && language[key]) {
-    return language[key];
+  const jKey = key.toLowerCase().trim();
+  if (language && language[jKey]) {
+    return language[jKey];
   }
   return key;
 }

@@ -1,5 +1,6 @@
 import ListPage from '../base/List';
 import React from 'react';
+import {t, T} from '../../translations';
 
 export default class PList extends ListPage {
   constructor(...args) {
@@ -11,14 +12,14 @@ export default class PList extends ListPage {
 Object.assign(PList, {
   entityName: 'Artifact',
   listMessage: <React.Fragment>
-    <h3>Village Panchayat development plans</h3>
+    <h3><T>Village Panchayat development plans</T></h3>
   </React.Fragment>,
   columnsOrder: ['dName', 'createdOn', 'actions'],
 });
 
 PList.columns = Object.assign({}, PList.columns, {
   dName: {
-    name: 'Plan name',
+    name: t('Plan name'),
     value: function(e) {
       return <a href={`/cms/${this.cmsRouteName}/${e._id}/download`}>
         {e.displayName || e.name || `[Unnamed / ${e._id}]`}

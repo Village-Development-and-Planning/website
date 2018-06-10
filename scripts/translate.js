@@ -6,7 +6,8 @@ const output = csvParser(input, {columns: true});
 console.log(JSON.stringify(
   output.reduce((acc, r) => {
     if (r.Key) {
-      acc[r.Key] = r.Translation;
+      const key = r.Key.toLowerCase().trim();
+      acc[key] = r.Translation;
     }
     return acc;
   }, {})

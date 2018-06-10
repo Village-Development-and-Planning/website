@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {ActionPanel} from './ActionPanel.scss';
 import { Link } from 'react-router-dom';
-import {t} from '../../translations';
+import {t, T} from '../../translations';
 
 export default class extends Component {
   render() {

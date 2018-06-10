@@ -1,7 +1,7 @@
 import React from 'react';
 import NewBase from '../base/New';
 import Form from '../../layout/AppForm';
-import {t} from '../../translations';
+import {t, T} from '../../translations';
 
 export default class NewPage extends NewBase {
     render() {
@@ -18,7 +18,7 @@ export default class NewPage extends NewBase {
             value="1"
           />
           <label>
-            <p>Locations CSV file</p>
+            <p><T>Locations CSV file</T></p>
             <input type="file" name="csv"/>
           </label>
 

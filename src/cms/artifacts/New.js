@@ -1,6 +1,7 @@
 import React from 'react';
 import NewPage from '../base/New';
 import Form from './Form';
+import {t} from '../../translations';
 
 export default class ArtifactPage extends NewPage {
     render() {

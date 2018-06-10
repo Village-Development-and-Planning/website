@@ -93,7 +93,6 @@ export default class Block extends ShowPage {
   render() {
     const {entity, stats} = this.state;
     if (!entity) return super.render();
-    console.log('test stats', stats);
     let {numAnswered, numSurveys, numNotWilling, numNotThere, numNotAlive} = stats || {};
     numAnswered = parseInt(numAnswered, 10);
     numSurveys = parseInt(numSurveys, 10);

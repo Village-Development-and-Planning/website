@@ -18,7 +18,6 @@ export default class MainLayout extends Component {
       this.props.location.search,
       {ignoreQueryPrefix: true}
     ).lang || null;
-
     this.state = {language};
   }
 

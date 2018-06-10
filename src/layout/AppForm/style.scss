@@ -7,15 +7,6 @@
     margin-bottom: 1ex;
   }
 
-  select, input[type="password"], input[type="text"], textarea {
-    font-size: 1.2em;
-    line-height: 1.5em;
-    margin-top: 0.5ex;
-    margin-bottom: 1ex;
-    padding: 0.5ex 0.5em;
-    border: inset 1pt $primary-color;
-  }
-
   :global button.action {
     margin: 1ex 0;
     font-size: 1.2em;

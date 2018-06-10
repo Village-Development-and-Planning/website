@@ -3,8 +3,6 @@ import NewPage from '../base/New';
 import Form from './Form';
 
 export default class AnswerPage extends NewPage {
-
-
   render() {
     if (this.state.entity) {
       return (
@@ -17,6 +15,6 @@ export default class AnswerPage extends NewPage {
       return super.render();
     }
   }
-
 };
+
 AnswerPage.entityName = 'Answer';

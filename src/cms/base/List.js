@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import fetch from '../../utils/fetch';
 import Base from './Base';
-import {t} from '../../translations';
+import {t, T} from '../../translations';
 
 import {Table} from '../../styles/Table.scss';
 import {ActionBar} from './style.scss';
@@ -13,8 +13,8 @@ export default class ListPage extends Base {
 
   constructor(...args) {
     super(...args);
-    this._setupVariable('createMessage', `Create new ${this.entityName}`);
-    this._setupVariable('listMessage', `Existing ${this.routeName}`);
+    this._setupVariable('createMessage', (`Create new ${this.entityName}`));
+    this._setupVariable('listMessage', (`Existing ${this.routeName}`));
     this._setupVariable('listNote', '');
     this._setupVariable('columns', []);
     this._setupVariable('columnsOrder', []);
@@ -28,14 +28,17 @@ export default class ListPage extends Base {
       }
     };
 
-    this._setupVariable('filterComponent', <input
-      style={{margin: '1ex 0.5em', fontSize: '1.2em', lineHeight: '1.5em'}}
+    this._setupVariable('filterComponent', null);
+  }
+
+  _defaultFilterComponent() {
+    return <input
       className="grow"
       ref={e => this.searchInput = e}
       type="text"
       placeholder={t("Search")}
       onChange={this.filterList.bind(this)}
-    />);
+    />;
   }
 
   setupObject() {
@@ -81,21 +84,21 @@ export default class ListPage extends Base {
     const createMessage = this.props.createMessage || this.createMessage;
     let listMessage = this.props.listMessage || this.listMessage;
     const columnsOrder = this.props.columnsOrder || this.columnsOrder;
-    if (typeof listMessage === 'string') listMessage = <h3>{listMessage}</h3>;
+    if (typeof listMessage === 'string') listMessage = <h3><T>{listMessage}</T></h3>;
     if (this.state.filteredEntities) {
       return (
         <React.Fragment>
           {listMessage}
           {(this.props.listNote !== undefined && this.props.listMessage !== '')
-            ? <p> <em>{this.props.listNote}</em></p>
+            ? <p> <em><T>{this.props.listNote}</T></em></p>
             : null
           }
 
           {this.props.disableActionBar || <div className={ActionBar}>
-            {this.filterComponent}
+            {this.filterComponent || this._defaultFilterComponent()}
             {createMessage &&
               <Link to={`/${this.routeName}/new${this.props.location.search}`}>
-                <button>{createMessage}</button>
+                <button><T>{createMessage}</T></button>
               </Link>
             }
           </div>}
@@ -105,11 +108,11 @@ export default class ListPage extends Base {
                 {columnsOrder.map(key => {
                   const name = this.columns[key].name;
                   if(key === 'actions'){
-                    return <td key={name}>{name}</td>;
+                    return <td key={name}><T>{name}</T></td>;
                   }
 
                   return <td onClick={e => this.onSort(e, key)} key={name}>
-                          {name}
+                          <T>{name}</T>
                           <span className={this.setArrow(key)}></span>
                         </td>;
 
@@ -186,13 +189,15 @@ Object.assign(ListPage, {
   columnsOrder: ['name', 'createdOn', 'actions'],
   actions: {
     edit(e) {
-      return <Link key='edit' to={`/${this.routeName}/${e._id}/edit`}><button>Edit</button></Link>;
+      return <Link key='edit' to={`/${this.routeName}/${e._id}/edit`}>
+        <button><T>Edit</T></button>
+      </Link>;
     },
     delete(e) {
       return <Delete
         key='delete'
         action={`/cms/${this.cmsRouteName}/${e._id}`}
-      >Delete</Delete>;
+      ><T>Delete</T></Delete>;
     }
   },
   actionsOrder: ['edit', 'delete'],

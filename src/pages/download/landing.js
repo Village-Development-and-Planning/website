@@ -6,17 +6,18 @@ import Responsive from '../../layout/Responsive';
 import download from '../../images/download.png';
 import SurveyList from '../../cms/surveys/List';
 import {Instructions} from './style.scss';
+import {T} from '../../translations';
 
 export default (props) => <React.Fragment>
   <SurveyList
     location={props.location} disableActionBar={true}
-    listMessage={'Surveys Currently Live'}
+    listMessage={'Enabled surveys'}
     columnsOrder={'name createdOn'.split(' ')}
   />
   <hr/>
   <Responsive>
     <div className={Instructions}>
-      <h3>Download and install the survey application on your tablet or mobile device</h3>
+      <h3><T>Download and install the survey application on your tablet or mobile device</T></h3>
       <ol>
         <li>Click the Download Application button. The survey app will be in .apk format.</li>
         <li>Save the VDP.apk file to your computer.</li>

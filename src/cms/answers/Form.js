@@ -3,6 +3,7 @@ import Form from '../../layout/AppForm';
 import fetch from '../../utils/fetch';
 
 import Response from '../../layout/AppForm/Response';
+import {t} from '../../translations';
 
 export default class AnswerForm extends Form {
 
@@ -60,10 +61,10 @@ export default class AnswerForm extends Form {
 
   render() {
     this.children = this.props.children || <React.Fragment>
-      <h4 key='header' className="title">Upload data collected</h4>
+      <h4 key='header' className="title">{t("Upload data collected")}</h4>
       <label key="json-files">
-        <p>Upload data<br/>
-          <em>Note: You can select multiple files, they must all be in JSON format</em></p>
+        <p>{t("Upload data")}<br/>
+          <em>{t("Note: You can select multiple files, they must all be in JSON format")}</em></p>
         <input
           ref={(r) => this.uploadFileInput = r}
           type="file" name="json" multiple

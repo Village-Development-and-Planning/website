@@ -1,4 +1,5 @@
 import ListPage from '../base/List';
+import {t} from '../../translations';
 export default class SurvyeyList extends ListPage {
   constructor() {
     super(...arguments);
@@ -16,6 +17,6 @@ Object.assign(SurvyeyList, {
 });
 SurvyeyList.entityName = 'Survey';
 SurvyeyList.columns = Object.assign({}, SurvyeyList.columns, {
-  enabled: {name: 'Enabled?', value: (e) => e.enabled ? 'Yes' : 'No' },
+  enabled: {name: 'Enabled?', value: (e) => e.enabled ? t('Yes') : t('No') },
 });
 SurvyeyList.columnsOrder = ['name', 'enabled', 'createdOn', 'actions'];

@@ -3,7 +3,7 @@ import fetch from '../../utils/fetch';
 
 import Response from './Response';
 import {AppForm} from './style.scss';
-import {t} from '../../translations';
+import {t, T} from '../../translations';
 
 export {Response};
 export default class Form extends React.Component {
@@ -16,11 +16,13 @@ export default class Form extends React.Component {
     this.children = this.props.children;
     const submitButtonClassName = this.props.formCustomStyle === ''? '' : 'action';
     const disabledSubmitButton = this.props.disabledSubmitButton === true ? true : false;
-    
+
     this.submit = this.props.submit
       || (
             <button type="submit" className={submitButtonClassName} disabled={disabledSubmitButton}>
-              {t(this.props.actionName) || t('Submit')}
+              <T>
+                {this.props.actionName || 'Submit'}
+              </T>
             </button>
     );
     this.state = {response: false};
@@ -68,7 +70,6 @@ export default class Form extends React.Component {
   }
 
   render() {
-    console.log(this.children);
     return (
       <form
         ref={(f) => (this.form = f)}

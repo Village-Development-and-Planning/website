@@ -9,7 +9,7 @@ import validate from '../../images/validate.png';
 export default (props) => <React.Fragment>
   <ValidationList
     location={props.location} disableActionBar={true}
-    listMessage={'Validate data'} listNote= {'Note: Validate data collected to monitor the quality of data collected.'}
+    listMessage={'Validate data'} listNote= {'Validate data collected to monitor the quality of data collected.'}
   />
   <hr/>
   <h3>Data validation</h3>
