@@ -2,12 +2,13 @@ import ListPage from '../base/List';
 import React from 'react';
 import Select from 'react-select';
 import {parse} from 'query-string';
+import {t} from '../../translations';
 
 export default class List extends ListPage {
   constructor(...args) {
     super(...args);
-    this.listMessage = 'Geographic coverage';
-    this.createMessage = 'Upload geographic data';
+    this.listMessage = t('Geographic coverage');
+    this.createMessage = t('Upload geographic data');
     this.baseFilterComponent = this.filterComponent;
   }
 

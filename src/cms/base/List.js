@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import fetch from '../../utils/fetch';
 import Base from './Base';
+import {t} from '../../translations';
 
 import {Table} from '../../styles/Table.scss';
 import {ActionBar} from './style.scss';
@@ -32,7 +33,7 @@ export default class ListPage extends Base {
       className="grow"
       ref={e => this.searchInput = e}
       type="text"
-      placeholder="Search"
+      placeholder={t("Search")}
       onChange={this.filterList.bind(this)}
     />);
   }

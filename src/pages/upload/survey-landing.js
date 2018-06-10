@@ -2,6 +2,7 @@ import React from 'react';
 
 import Responsive from '../../layout/Responsive';
 import ActionPanel from '../../layout/ActionPanel';
+import {t} from '../../translations';
 import upload from '../../images/upload.png';
 
 export default () => <Responsive>
@@ -12,7 +13,7 @@ export default () => <Responsive>
     text="New survey"
   >
     <div>
-      Create new survey
+      {t('Create a new survey')}
     </div>
   </ActionPanel>
 
@@ -23,7 +24,7 @@ export default () => <Responsive>
     text="Existing surveys"
   >
     <div>
-      View and edit existing surveys
+      {('View and edit existing surveys')}
     </div>
   </ActionPanel>
 
@@ -34,7 +35,7 @@ export default () => <Responsive>
     text="Survey images and artifacts"
   >
     <div>
-      Upload and edit images that are part of your survey
+      {('Upload and edit images that are part of your survey')}
     </div>
   </ActionPanel>
 
@@ -45,7 +46,7 @@ export default () => <Responsive>
     text="Geographic coverage"
   >
     <div>
-      Upload or edit geographic data that specifies what area the survey will cover
+      {('Upload or edit geographic data that specifies what area the survey will cover')}
     </div>
   </ActionPanel>
 
@@ -53,10 +54,10 @@ export default () => <Responsive>
     key="new-surveyor"
     to="/surveyors"
     image={upload}
-    text="Surveyor Data"
+    text="Surveyor data"
   >
     <div>
-      Upload and edit data regarding surveyor.
+      {('Upload and edit data regarding surveyor.')}
     </div>
   </ActionPanel>
 
