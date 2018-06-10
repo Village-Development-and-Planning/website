@@ -1,0 +1,244 @@
+Key,Translation
+Home,முகப்பு
+Upload,பதிவேற்றம்
+Download,பதிவிறக்கம்
+Validate,சரிபார்ப்பு
+Export,தகவல் வெளிக்கொணர்தல்
+Visualizations,காட்சிப் படம்
+Plans,திட்டங்கள்
+Surveys,கணக்கெடுப்புகள்
+Create a new survey or view and edit existing surveys,ஒரு புதிய கணக்கெடுப்பு உருவாக்க அல்லது ஏற்கனவே உள்ள கணக்கெடுப்பை பார்க்க மற்றும் மாற்றங்கள் செய்ய
+Upload data,தகவல் பதிவேற்றம்
+Sync data collected to the server,சேகரிக்கப்பட்ட தகவல்களை வலை தள சேவையகத்தில் ஒத்திசைவு செய்தல்
+New survey,புதிய கணக்கெடுப்பு
+Create a new survey,ஒரு புதிய கணக்கெடுப்பை உருவாக்க
+Geographic coverage,புவியமைப்பை பதிவு செய்தல்
+Upload or edit geographic data that specifies what area the survey will cover,கணக்கெடுப்பு எந்த பகுதியை குறிப்பிடுகிறது என்பதை குறிப்பிடும் புவியியல் தரவைப் பதிவேற்றவும் அல்லது திருத்தம் செய்வதற்கு
+Surveyor data,கணக்கெடுப்பாளரின் தகவல்
+Upload and edit data regarding surveyor.,கணக்கெடுப்பாளர் தொடர்பான தகவல் பதிவேற்றம்அல்லது திருத்தம் செய்வதற்கு
+Survey images and artifacts,கணக்கெடுப்பிற்கான படங்கள் மற்றும் கலைப்பொருட்கள்
+Upload and edit images that are part of your survey,கணக்கெடுப்பின் ஒரு பகுதியாக இருக்கும் படங்களை பதிவேற்றம் அல்லது திருத்தம் செய்வதற்கு
+Existing surveys,ஏற்கனவே உள்ள கணக்கெடுப்புகள்
+View and edit existing surveys,ஏற்கனவே உள்ள கணக்கெடுப்புகளை பார்க்க மற்றும் திருத்தம் செய்ய
+Create a new survey,ஒரு புதிய கணக்கெடுப்பை உருவாக்க
+Survey name,கணக்கெடுப்பின் பெயர்
+Enter survey name,கணக்கெடுப்பின் பெயரை பதிவு செய்யவும்
+Survey description,கணக்கெடுப்பின் விளக்கம்
+Enter a description of the survey,கணக்கெடுப்பின் விளக்கத்தை பதிவு செய்யவும்
+Do you want to enable this survey?,இந்த கணக்கெடுப்பை இயக்க விரும்புகிறீர்களா?
+ Note: This will activate this survey and make it live,குறிப்பு: இது இந்த கணக்கெடுப்பை செயல்படுத்துவதற்கும் மற்றும் தற்போதைய கணக்கெடுப்பிற்கான பட்டியலிலும் இடம் பெறும்.
+Upload the survey,கணக்கெடுப்பு பதிவேற்றம்
+ Note: The survey needs to be in CSV format,குறிப்பு: கணக்கெடுப்பு CSV வடிவத்தில் இருக்க வேண்டும்
+Choose File,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Create survey,கணக்கெடுப்பை உருவாக்க
+Geographic coverage,புவியியலை பதிவு செய்தல்
+,
+,
+,
+Search,தேடல்
+Upload geographic data,புவியமைப்புத்தகவலை பதிவேற்றம் செய்வதற்கு
+Upload geographic Data,புவியமைப்புத்தகவலை பதிவேற்றம் செய்வதற்கு
+This geographic data needs to be in CSV format. Changing this file will update all existing geographic data. Ensure that your file includes every level of the area you wish to cover.,"இந்த புவியியல் தரவு CSV வடிவமைப்பில் இருக்க வேண்டும். இந்த கோப்பினை மாற்றுவதன் மூலம், இருக்கும் அனைத்துபுவியமைப்பு தரவையும் புதுப்பிக்க. உங்கள் கோப்பை நீங்கள் சேர்க்க விரும்பும் பகுதியின் ஒவ்வொரு மட்டத்தையும் உள்ளடக்குகிறது என்பதை உறுதிப்படுத்தவும்."
+Choose File,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Upload geographic data,புவியமைப்புதகவலை பதிவேற்றம் செய்வதற்கு
+Surveyor data,கணக்கெடுப்பாளரின் தகவல்
+"Upload and edit data regarding surveyors codes, what survey they will be administering and where they will administer it","கண்கெடுப்பாளர்களின் குறியீடுகளைப் பற்றிய தரவைப் பதிவேற்றலாம் மற்றும் திருத்தலாம், அவர்கள் எங்கு மற்றும் எந்தப் கணக்கெடுப்பை அவர்கள் மேற்கொள்வார்கள் போன்ற விவரங்கள் அடங்கும்."
+Search,தேடல்
+Upload surveyor data,கணக்கெடுப்பாளரின் தகவலை பதிவேற்றம் செய்தல்
+District name,மாவட்டத்தின் பெயர்
+Block name,வட்டாரத்தின் பெயர்
+Panchayat name,ஊராட்சியின் பெயர்
+Surveyor code,கணக்கெடுப்பாளரின் குறியீடு
+Surveyor name,கணக்கெடுப்பாளரின் பெயர்
+Survey type,கணக்கெடுப்பின்வகை
+Actions,நடவடிக்கை
+Edit,திருத்தம்
+Delete,நீக்குதல்
+Upload surveyor data,கணக்கெடுப்பாளரின் தகவலை பதிவேற்றம் செய்தல்
+This surveyor data needs to be in CSV format. This file should include geography details for each surveyor as well as each type of survey they will be administering. Surveyor codes should be unique.,இந்த கணக்கெடுப்பாளருக்கான தரவு CSV வடிவமைப்பில் இருக்க வேண்டும். இந்த கோப்பு ஒவ்வொரு கணக்கெடுப்பாளருக்கான புவியியல் விவரங்கள் மற்றும் அவர்கள் நிர்வகிக்கும் ஒவ்வொரு வகையிலும் சேர்க்கப்பட வேண்டும். கணக்கெடுப்பாளரின் குறியீடுகள் தனிப்பட்டதாக இருக்க வேண்டும்.
+Choose File,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Upload surveyor data,கணக்கெடுப்பாளரின் தகவலை பதிவேற்றம் செய்தல்
+Edit surveyor data,கணக்கெடுப்பாளரின் தகவலை திருத்தம் செய்வதற்கு
+Surveyor name,கணக்கெடுப்பாளரின் பெயர்
+Surveyor code,கணக்கெடுப்பாளரின் குறியீடு
+Panchayat name,ஊராட்சியின் பெயர்
+Update,புதுப்பித்தல்
+Survey images,கணக்கெடுப்பிற்கான படங்கள்
+Upload images that are part of your survey. This should be the same name as what is in the survey CSV file.,உங்கள் கணக்கெடுப்பின் அங்கமாக இருக்கும் படங்களை பதிவேற்றலாம். இந்த கணக்கெடுப்பு CSV கோப்பு என்ன பெயரோ அதே பெயராக இருக்க வேண்டும்.
+Search,தேடல்
+Create new image,புதிய படங்கள் நிறுவுவதற்கு
+Image name,படத்தின் பெயர்
+Date created,உருவாக்கப்பட்ட தேதி
+Actions,நடவடிக்கை
+Edit,திருத்தம்
+Delete,நீக்குதல்
+Create a new image,புதிய படங்கள் நிறுவுவதற்கு
+Upload images that are part of your survey. This should be the same name as what is in the survey CSV file.,உங்கள் கணக்கெடுப்பின் அங்கமாக இருக்கும் படங்களை பதிவேற்றலாம். இந்த கணக்கெடுப்பு CSV கோப்பு என்ன பெயரோ அதே பெயராக இருக்க வேண்டும்.
+Image name,படத்தின் பெயர்
+Enter image name,படத்தின் பெயரை பதிவு செய்யவும்
+Image description,படத்தின் விளக்கம்
+Enter a description of the image,படத்தின் விளக்கத்தை பதிவு செய்யவும்
+Upload images that are part of your survey,உங்கள் கணக்கெடுப்பின் அங்கமாக இருக்கும் படங்களை பதிவேற்றலாம்
+"Note: Please name Images in this format - SurveyName_QuestionNumber_Answer.extension (Answer - good, bad, average, 1/2/3. etc.) - for example: Mapping_1.2.1_good.jpg","குறிப்பு: தயவு செய்து படங்களின் பெயரை இந்த வடிவத்தில் குறிப்பிடவும். SurveyName_QuestionNumber_Answer.extension (Answers Good, bad and Average 1/2/3.) - உதாரணமாக: Mapping_1.2.1_good.jpg"
+Choose File,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Upload image,படங்களை பதிவேற்றம் செய்தல்
+Edit survey image,கணக்கெடுப்பு படங்களை திருத்தம் செய்தல்
+Image name,படத்தின் பெயர்
+Image description,படத்தின் விளக்கம்
+Enter a description of the image,படத்தின் விளக்கத்தை பதிவு செய்யவும்
+Edit this image,இந்த படத்தை திருத்தம் செய்ய
+Choose File,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Update image,படங்களை புதுப்பித்தல்
+Existing surveys,ஏற்கனவே உள்ள கணக்கெடுப்புகள்
+Search,தேடல்
+Created new Survey,புதிய கணக்கெடுப்பு உருவாக்கப்பட்டது
+Survey name,கணக்கெடுப்பின் பெயர்
+Enabled?,இயக்கப்பட்டுள்ளதா?
+Date created,உருவாக்கப்பட்ட தேதி
+Actions,நடவடிக்கை
+Delete,நீக்குதல்
+Edit,திருத்தம்
+Update survey name,கணக்கெடுப்பின் பெயர் புதுப்பித்தல்
+Survey name,கணக்கெடுப்பின் பெயர்
+Survey description,கணக்கெடுப்பின் விளக்கம்
+Do you want to enable this survey?,இந்த கணக்கெடுப்பை இயக்க விரும்புகிறீர்களா?
+ Note: This will activate this survey and make it live,குறிப்பு: இது இந்த கணக்கெடுப்பை செயல்படுத்துவதற்கும் மற்றும் தற்போதைய கணக்கெடுப்பிற்கான பட்டியலிலும் இடம் பெறும்.
+Upload this survey,இந்த கணக்கெடுப்பு பதிவேற்றம் செய்ய
+Note: This survey needs to be in CSV format,குறிப்பு: கணக்கெடுப்பு CSV வடிவத்தில் இருக்க வேண்டும்
+Choose File,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Update survey,கணக்கெடுப்பை புதுப்பித்தல்
+Upload data collected,சேகரிக்கப்பட்ட தகவல்களை பதிவேற்றம் செய்தல்
+Upload data,தகவல்களை பதிவேற்றம் செய்தல்
+" Note: You can select multiple files, they must all be in JSON format","குறிப்பு: ஒன்றுக்கு மேற்பட்ட கோப்புகளை தேர்வு செய்யலாம், அனைத்து கோப்புகளும் கட்டாயமாகJSON வடிவத்Âல் இருக்கவேண்டும்"
+Choose Files,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Upload data,தகவல்களை பதிவேற்றம் செய்தல்
+Download survey application,கணக்கெடுப்பிற்கான மென்பொருளை பதிவிறக்கம் செய்தல்
+"Download and install the survey application on your tablet or mobile device. 
+ 1. Click the Download Application button. The survey app will be in .apk format.
+ 2. Save the VDP.apk file to your computer.
+ 3. Then copy the application file from your computer and paste into tablet drive.
+ 4. Then run the application file. Click the install button. The application will have a Government of Tamil Nadu logo in the name of “Village Development Plan”. 
+ 5. Open the application to set up the survey
+ 6. Enter the Surveyor Code and press Okay.
+ 7. Press the Download Survey button. This will automatically download the appropriate survey to the tablet. Return to the Home screen by pressing the Back button. 
+ 8. To administer the survey press Proceed.
+ 9. Ensure the tablet is connected to the internet, select Upload to sync data collected to the server. 
+ 10. After you press Upload and the data has synced, a summary page will show you details of data that has been synced to the server. Return to the Home screen by pressing the Back button.
+Note: You may have to prepare the tablet and computer. You will need to install the respective brand driver to connect the computer to the tablet. You can find the instructions for this here. You will also need to prepare the tablet for the application. You can find the instructions for this here.","""உங்கள் டேப்லெட் அல்லது மொபைலில் கணக்கெடுப்பிற்கான மென்பொருளை பதிவிறக்கம் செய்து நிறுவவும். 
+ 1. மென்பொருள் பதிவிறக்கம் பொத்தானை அழுத்தவும். கணக்கெடுப்பிற்கான மென்பொருள் .apk வடிவத்தில் இருக்கும்.
+ 2. .apk மென்பொருள் கோப்புவை உங்கள் கணிணியில் சேமித்து வைத்துக்கொள்ளவும்.
+ 3. பின்னர் உங்கள் கணினியிலிருந்து .apk மென்பொருள் கோப்புவை நகலெடுத்து, டேப்லெட் அல்லது மொபைலில் உள்ளிடவும்.
+ 4. பின்னர் .apk மென்பொருள் கோப்புவை இயக்கவும். நிறுவுதல் என்ற பொத்தானைக் அழுத்தவும். பின்னர் தமிழக அரசு சின்னம் கொண்ட மென்பொருள் “கிராம வளர்ச்சி திட்டம்” என்ற பெயரில் தங்கள் டேப்லெட் அல்லது மொபைலில் நிறுவப்பட்டிருக்கும். 
+ 5. கணக்கெடுப்பு செல்ல மென்பொருளை அழுத்தி இயக்கவும்.
+ 6. கணக்கெடுப்பாளரின் குறியீட்டை பதிவு செய்து “OK“ என்ற பொத்தானை அழுத்தவும்.
+ 7. கணக்கெடுப்பு பதிவிறக்கம் என்ற பொத்தானை அழுத்தவும். இது கணக்கெடுப்பாளரின் குறியீட்டிற்கு ஏற்ற சரியான கணக்கெடுப்பு படிவத்தை தானாகவே பதிவிறக்கம் செய்யும்.பின்னர் டேப்லெடில் உள்ள “BACK” என்ற பொத்தானை அழுத்தி முகப்புத் திரைக்கு திரும்பவேண்டும். 8. கணக்கெடுப்பு படிவத்தை செயலாக்கம் செய்ய “தொடர்க” என்ற பொத்தானை அழுத்தவும். 9. டேப்லெட் இணையத்துடன் இணைக்கப்பட்டுள்ளதா என்பதை உறுதி செய்து, சேகரிக்கப்பட்ட தகவல்களை வலைதள சேவையகத்தில் ஒத்திசைவு செய்ய பதிவேற்று என்பதைத் தேர்ந்தெடுக்கவும். 10. நீங்கள் பதிவேற்றவும் செய்த பிறகு, சேகரிக்கப்பட்ட தகவல்களை வலைதள சேவையகத்தில் ஒத்திசைவு நடைபெறும். பின்னர் வலைதள சேவையகத்தில் ஒத்திசைக்கப்பட்டுள்ள தரவிற்கான் விவரங்களின் சுருக்க பக்கம் தெரியவரும். குறிப்பு: நீங்கள் டேப்லெட் மற்றும் கணினியை தயார் செய்ய வேண்டும். கணினியை டேப்லெட்டில் இணைக்க நீங்கள் அந்த பிராண்டிற்கான டிரைவரை நிறுவ வேண்டும். இதற்கான வழிமுறைகளை இங்கே காணலாம். நீங்கள் டேப்லெட்டில் மென்பொருள் பயன்படுத்துவதற்க்கு டேப்லெட்டை தயார் செய்ய வேண்டும். இதற்கான வழிமுறைகளை இங்கே காணலாம்."""
+Download application,மென்பொருளை பதிவிறக்கம் செய்தல்
+Validate data,தகவலை சரிபார்தத்ல்
+Validate data collected to monitor the quality of data collected.,சேகரிக்கப்பட்ட தகவலின் தரத்தை கண்காணிக்க சேகரிக்கப்பட்ட தகவலை சரிபார்த்தல்
+Enabled surveys,செயல்பாட்டில் உள்ள கணக்கெடுப்புகள்
+Survey name,கணக்கெடுப்பின் பெயர்
+Enabled surveys,செயல்பாட்டில் உள்ள கணக்கெடுப்புகள்
+Date created,உருவாக்கப்பட்ட தேதி
+Answers collected,சேகரிக்கப்பட்ட பதில்கள்
+Answers processed,செயலாக்கப்பட்ட பதில்கள்
+Actions,நடவடிக்கை
+Process,செயலாக்கம்
+Export,தகவல் வெளிக்கொணர்தல்
+Validate,சரிபார்ப்பு
+Data validation,தகவலை சரிபார்த்தல்
+Mapping data,வரைபட கணக்கெடுப்பு தகவல்
+Check and monitor mapping data,வரைபடத் தகவலை சரிபார்த்தல் மற்றும் கண்காணித்தல்
+Household data,குடும்ப கணக்கெடுப்புத் தகவல்
+Check and monitor household data,குடும்ப கணக்கெடுப்புத் தகவலை சரிபார்த்தல் மற்றும் கண்காணித்தல்
+District name,மாவட்டத்தின் பெயர்
+Block name,வட்டாரத்தின் பெயர்
+Summary of infrastructure available,கிடைக்கப்பெற்றிருக்கும் உள்கட்டமைப்பின் விவரப்பட்டியல்
+Roads,சாலைகள்
+Street lights,தெருவிளக்குகள்
+Water sources,நீர் ஆதாரம்
+Public toilets,பொது கழிப்பிடம்
+PDS outlets,பொது விநியோக கடை
+Anganwadis,அங்கன்வாடி
+Bus stops,பேருந்து நிறுத்தங்கள்
+Schools,பள்ளிக் கூடங்கள்
+Place of worship,வழிபடும் இடம்
+Common land,பொதுவான நிலம்
+Communal halls,சமுதாயக் கூடம்
+Bridges or culverts,பாலம் அல்லது சாலையிலுள்ள வாய்கால் பாலம்
+Shops,கடைகள்
+Agricultural facilities,விவசாய வசதிகள்
+Government buildings,அரசாங்க கட்டிடங்கள்
+VPRC office,கிராம வறுமை ஒழிப்பு சங்க அலுவலகம்
+Village Panchayat office,கிராம ஊராட்சி அலுவலகம்
+Banks,வங்கிகள்
+ATMs,ATMs
+Garbage bins,குப்பை தொட்டிகள்
+District name,மாவட்டத்தின் பெயர்
+Block name,வட்டாரத்தின் பெயர்
+Village Panchayat name,கிராம ஊராட்சியின் பெயர்
+Surveyor Name,கணக்கெடுப்பாளரின் பெயர்
+Surveyor Code,கணக்கெடுப்பாளரின் குறியீடு
+Information about Household Confirmation:,குடும்பங்களின் உறுதிபடுத்துதல் பற்றிய தகவல்கள்
+Number of surveys answered,பதிலளிக்கப்பட்ட கணக்கெடுப்புகளின் மொத்த எண்ணிக்கை
+Total number of surveys completed,முடிவடைந்த கணக்கெடுப்புகளின் மொத்த எண்ணிக்கை
+Percentage of households reported 'not willing',விருப்பமில்லை என்று பதிவாகிருக்கும் குடும்பங்களின் சதவிகிதம்
+Percentage of households reported 'not there',குடும்பங்கள் இல்லை என்று பதிவாகிருக்கும் குடும்பங்களின் சதவிகிதம்
+Percentage of households reported 'dead',இறப்பு என்று பதிவாகிருக்கும் குடும்பங்களின் சதவிகிதம்
+Total,மொத்தம்
+Percentage of completed surveys done in less than 15 minutes,15 நிமிடங்களுக்கும் குறைவாக முடிக்கப்பட்ட கணக்கெடுப்புகளின் சதவீதம்
+Percentage of completed surveys done in less than 5 minutes,5 நிமிடங்களுக்கும் குறைவாக முடிக்கப்பட்ட கணக்கெடுப்புகளின் சதவீதம்
+Average time per survey,கணக்கெடுப்பின் சராசரி நேரம்
+Surveys answered,பதிலளிக்கப்பட்ட கணக்கெடுப்புகள்
+"Surveys that reported as 'not willing', 'dead' or 'not there'","விருப்பமில்லை, இறப்பு, குடும்பங்கள் இல்லை என்று பதிவாகிருக்கும் கணக்கெடுப்புகள்"
+Surveyor Information:,கணக்கெடுப்பாளரின் தகவல்
+Flags,கண்டறியப்பட்ட தவறுகள்
+Surveyor Name - Surveyor Code,கணக்கெடுப்பாளரின் பெயர் - கணக்கெடுப்பாளரின் குறியீடு
+Confirmation,உறுதிப்படுத்துதல்
+Time,நேரம்
+Percentage,சதவீதம்
+Week,வாரம்
+Proportion of Surveyors that are flagged,தவறுகள் கண்டறியப்பட்ட கணக்கெடுப்பாளர்களின்சதவீதம்
+Surveyors Flagged,தவறுகள் கண்டறியப்பட்ட கணக்கெடுப்பாளர்கள்
+Surveyors Not Flagged,தவறுகள் கண்டறியப்படாத கணக்கெடுப்பாளர்கள்
+Export data,தகவல் வெளிக்கொணர்தல்
+Download data collected in a CSV format.,சேகரிக்கப்பட்ட தகவல்களை CSV படிவத்தில் பதிவிறக்கம் செய்தல்
+Enabled surveys,இயக்கத்தில் உள்ள கணக்கெடுப்புகள்
+Survey name,கணக்கெடுப்பின் பெயர்
+Enabled surveys,இயக்கத்தில் உள்ள கணக்கெடுப்புகள்
+Date created,உருவாக்கப்பட்ட தேதி
+Answers collected,சேகரிக்கப்பட்ட பதில்கள்
+Answers processed,செயலாக்கப்பட்ட பதில்கள்
+Actions,நடவடிக்கை
+Process,செயலாக்கம்
+Export,தகவல் வெளிக்கொணர்தல்
+Download data,தகவல் பதிவிறக்கம்
+Visualizations,காட்சிப் படங்கள்
+Village Panchayat development plans,கிராம ஊராட்சி வளர்ச்சி திட்டங்கள்
+Search,தேடல்
+Upload plan,திட்டத்தை பதிவேற்றம் செய்தல்
+Plan name,திட்டத்தின் பெயர்
+Date created,உருவாக்கப்பட்ட தேதி
+Actions,நடவடிக்கை
+Download plan,திட்டத்தை பதிவிறக்கம் செய்தல்
+Upload plan,திட்டத்தை பதிவேற்றம் செய்தல்
+"Upload a new plan, this will allow you to view the plan and keep track of developments.","ஒரு புதிய திட்டத்தை பதிவேற்றம் செய்ய, இதன் மூலம் நீங்கள் திட்டம் பார்க்க மற்றும் முன்னேற்றங்கள் கண்காணிக்க இயலும்."
+Plan name,திட்டத்தின் பெயர்
+Enter plan name,திட்டத்தின் பெயரை பதிவு செய்யவும்
+Plan description,திட்டத்தின் விளக்கம்
+Enter plan description,திட்டத்தின் விளக்கத்தை பதிவு செய்யவும்
+Upload Plans,திட்டங்களை பதிவேற்றம் செய்தல்
+Choose Files,கோப்புகளை தேர்வு செய்யவும்
+No file chosen,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை
+Upload plan,திட்டத்தை பதிவேற்றம் செய்தல்
+Participatory Tracking,பங்கேற்புடன் கூடிய கண்காணிப்பு
+P-Tracking,ப-கண்காணிப்பு
+Tamil Nadu Village Development Planning,தமிழ்நாடு கிராம வளர்ச்சிக்கான திட்டமிடல்
+T.N.,த.நா.
+Village Development Planning,கிராம வளர்ச்சிக்கான திட்டமிடல்
