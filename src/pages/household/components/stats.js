@@ -21,7 +21,10 @@ export default class Block extends ShowPage {
     if (!data || !data.numAnswered) return;
     const numSurveys = data.numAnswered.count;
     const numAnswered = data.numAnswered.value;
-    return {mAgg, numSurveys, numAnswered};
+    const numNotWilling = data.numNotWilling.value;
+    const numNotThere = data.numNotHere.value;
+    const numNotAlive = data.numNotAlive.value;
+    return {mAgg, numSurveys, numAnswered, numNotWilling, numNotThere, numNotAlive};
   }
 
   _parseWeeklyStats(entity) {
@@ -90,17 +93,24 @@ export default class Block extends ShowPage {
   render() {
     const {entity, stats} = this.state;
     if (!entity) return super.render();
-    let {numAnswered, numSurveys} = stats || {};
+    console.log('test stats', stats);
+    let {numAnswered, numSurveys, numNotWilling, numNotThere, numNotAlive} = stats || {};
     numAnswered = parseInt(numAnswered, 10);
     numSurveys = parseInt(numSurveys, 10);
     let ansPercentage = Math.round(numAnswered / numSurveys * 1000) / 10;
+    let numNotWillingPercentage = Math.round(numNotWilling / numSurveys * 1000) / 10;
+    let numNotTherePercentage = Math.round(numNotThere / numSurveys * 1000) / 10;
+    let numNotAlivePercentage = Math.round(numNotAlive / numSurveys * 1000) / 10;
     return <div className={style.Stats}>
       <Responsive>
         <div className={style.Detail}>
           <h3>{entity.name}</h3>
           {stats && <p>
             Number of surveys: {numSurveys}<br/>
-            Answered: {numAnswered} ({ansPercentage} %)
+            Answered: {numAnswered} ({ansPercentage} %)<br/>
+            Not willing: {numNotWilling} ({numNotWillingPercentage} %)<br/>
+            Not there: {numNotThere} ({numNotTherePercentage} %)<br />
+            Dead: {numNotAlive} ({numNotAlivePercentage} %)<br />
           </p>}
         </div>
         {this.renderSecondComponent()}
