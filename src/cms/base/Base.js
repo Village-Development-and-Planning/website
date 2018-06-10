@@ -53,8 +53,4 @@ export default class BasePage extends Component {
   render() {
     return (<p>{this.state.message}</p>);
   }
-
-  static contextTypes = {
-    topbar: PropTypes.func,
-  }
 }

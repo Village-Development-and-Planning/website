@@ -5,11 +5,21 @@ import { Link } from 'react-router-dom';
 import imgLogo from '../../images/tn_logo.svg';
 import User from '../User';
 
+import {setLanguage, t} from '../../translations';
+
 export default class extends Component {
 
   setTitle(title) {
   }
   setActions(actions) {
+  }
+
+  onEnglish() {
+    setLanguage('english');
+  }
+
+  onTamil() {
+    setLanguage('tamil');
   }
 
   render() {
@@ -20,15 +30,15 @@ export default class extends Component {
         </Link>
         <div className={Titles}>
           <h2>
-            <span className="full">Participatory Tracking</span>
-            <span className="clip">P-Tracking</span>
+            <span className="full">{t("Participatory Tracking")}</span>
+            <span className="clip">{t("P-Tracking")}</span>
           </h2>
           <h3>
             <span className="full">
-              Tamil Nadu - Village Development Planning
+              {t("Tamil Nadu Village Development Planning")}
             </span>
             <span className="clip">
-              TN - Village Development Planning
+              {t("T.N.")} - {t("Village Development Planning")}
             </span>
           </h3>
         </div>
@@ -36,8 +46,8 @@ export default class extends Component {
           <User/>
           <div>
             Language:&nbsp;
-            <a href="">English</a>&nbsp;
-            <a href="">Tamil</a>
+            <button onClick={this.onEnglish}>English</button>&nbsp;
+            <button onClick={this.onTamil}>Tamil</button>
           </div>
         </div>
       </header>
