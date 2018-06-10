@@ -62,7 +62,8 @@
   "scripts": {
     "start": "PORT=3001 node scripts/start.js",
     "build": "PUBLIC_URL='/admin' node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "translate": "node scripts/translate.js > src/translations/translation-tamil.json"
   },
   "proxy": {
     "/cms": {
