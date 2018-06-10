@@ -53,4 +53,4 @@ ValidationList.columns = Object.assign({}, ValidationList.columns, {
     }
   }
 });
-ValidationList.columnsOrder = ['name', 'answers', 'processed', 'actions'];
+ValidationList.columnsOrder = ['name', 'answers', 'processed', 'createdOn', 'actions'];

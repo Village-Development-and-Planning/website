@@ -15,7 +15,7 @@ Object.assign(ExportList, {
         return <span>File not available</span>;
       } else {
         const number = e.downloadAvailable[0].number || null;
-        return <a href={`/cms/surveys/${e._id}/download?resp=${number}`}>Download CSV</a>;
+        return <a href={`/cms/surveys/${e._id}/download?resp=${number}`}>Download data</a>;
       }
     }
   },
@@ -36,4 +36,4 @@ ExportList.columns = Object.assign({}, ExportList.columns, {
     }
   }
 });
-ExportList.columnsOrder = ['name', 'answers', 'processed', 'actions'];
+ExportList.columnsOrder = ['name', 'answers', 'processed', 'createdOn', 'actions'];
