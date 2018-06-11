@@ -6,17 +6,17 @@ import {t, T} from '../../translations';
 export default class extends Component {
   render() {
     if (this.props.to) {
-      return <Link className={ActionPanel} to={this.props.to}>
-        {this.props.text && <h3>{t(this.props.text)}</h3>}
-        <img src={this.props.image} alt={this.props.text} />
+      return <T><Link className={ActionPanel} to={this.props.to}>
+        {this.props.text && <h3>{this.props.text}</h3>}
+        <img src={this.props.image} alt={t(this.props.text)} />
         {this.props.children}
-      </Link>;
+      </Link></T>;
     } else if (this.props.href) {
-      return <a className={ActionPanel} href={this.props.href}>
-        {this.props.text && <h3>{t(this.props.text)}</h3>}
-        <img src={this.props.image} alt={this.props.text} />
+      return <T><a className={ActionPanel} href={this.props.href}>
+        {this.props.text && <h3>{this.props.text}</h3>}
+        <img src={this.props.image} alt={t(this.props.text)} />
         {this.props.children}
-      </a>;
+      </a></T>;
     }
   }
 }
