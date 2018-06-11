@@ -2,14 +2,15 @@ import ListPage from '../base/List';
 import React from 'react';
 import Select from 'react-select';
 import {parse} from 'query-string';
-import {t} from '../../translations';
 
 export default class List extends ListPage {
   constructor(...args) {
     super(...args);
-    this.listMessage = t('Geographic coverage');
-    this.createMessage = t('Upload geographic data');
+    this.listMessage = 'Geographic coverage';
+    this.createMessage = 'Upload geographic data';
     this.baseFilterComponent = this.filterComponent;
+    this.columns = Object.assign({}, this.columns);
+    this.columns.name = Object.assign({}, this.columns.name);
   }
 
   render() {
@@ -17,6 +18,7 @@ export default class List extends ListPage {
     const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'HABITATION';
     const tIndex = types.indexOf(type);
     this.columnsOrder =  this.constructor.columnsOrder.concat(types.slice(0, tIndex));
+    this.columns.name.name = `${type} NAME`;
     this.filterComponent = <React.Fragment>
       <Select
         onChange={e => this.onTypeChange(e)}

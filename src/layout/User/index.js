@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import fetch from '../../utils/fetch';
 import {User} from './User.scss';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export default class extends Component {
   constructor(...args) {

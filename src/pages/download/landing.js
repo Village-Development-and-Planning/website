@@ -17,17 +17,17 @@ export default (props) => <React.Fragment>
   <hr/>
   <Responsive>
     <div className={Instructions}><T>
-      <h3>Download and install the survey application on your tablet or mobile device</h3>
+      <h3>Download and install the survey application on your tablet or mobile device{":"}</h3>
       <ol>
         <li>Click the Download Application button. The survey app will be in .apk format.</li>
         <li>Save the VDP.apk file to your computer.</li>
         <li>Then copy the application file from your computer and paste into tablet drive.</li>
         <li>Then run the application file. Click the install button. The application will have a Government of Tamil Nadu logo in the name of “Village Development Plan”.</li>
-        <li>Open the application to set up the survey</li>
+        <li>Open the application to set up the survey.</li>
         <li>Enter the Surveyor Code and press Okay.</li>
         <li>Press the Download Survey button. This will automatically download the appropriate survey to the tablet. Return to the Home screen by pressing the Back button.</li>
         <li>To administer the survey press Proceed.</li>
-        <li>Ensure the tablet is connected to the internet, select Upload to sync data collected to the server. </li>
+        <li>Ensure the tablet is connected to the internet, select Upload to sync data collected to the server.</li>
         <li>After you press Upload and the data has synced, a summary page will show you details of data that has been synced to the server. Return to the Home screen by pressing the Back button.</li>
       </ol>
       <p><em>
