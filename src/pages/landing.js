@@ -70,7 +70,7 @@ export default () => <Responsive>
     to="/visualizations"
     image={visualization}
     key="visualization-responses"
-    text="Visualize Data"
+    text="Visualizations"
   >
     <div>
       View pictorial representations of the data collected
@@ -81,7 +81,7 @@ export default () => <Responsive>
     to="/plans?type=plan"
     image={plan}
     key="planning"
-    text="Planning"
+    text="Plans"
   >
     <div>
       Upload and view village action plans

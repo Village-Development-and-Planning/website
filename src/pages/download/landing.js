@@ -16,8 +16,8 @@ export default (props) => <React.Fragment>
   />
   <hr/>
   <Responsive>
-    <div className={Instructions}>
-      <h3><T>Download and install the survey application on your tablet or mobile device</T></h3>
+    <div className={Instructions}><T>
+      <h3>Download and install the survey application on your tablet or mobile device</h3>
       <ol>
         <li>Click the Download Application button. The survey app will be in .apk format.</li>
         <li>Save the VDP.apk file to your computer.</li>
@@ -37,12 +37,12 @@ export default (props) => <React.Fragment>
         You will also need to prepare the tablet for the application.
         You can find the instructions for this <a href="/static/Instructions_Tablet_Preparation_English.pdf">here</a>.
       </em></p>
-    </div>
+    </T></div>
     <ActionPanel
       key="download-apps"
       href="/static/VDP-Android.apk"
       image={download}
-      text="Download Android Application"
+      text="Download application"
     >
       <div>
         Download and install application on your Android tablet
