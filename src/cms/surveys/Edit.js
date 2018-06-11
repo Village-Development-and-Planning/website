@@ -15,7 +15,7 @@ export default class SurvyeyPage extends EditPage {
           action={`/cms/${this.cmsRouteName}/${entityId}`}
           entity={entity}
           actionName='Update survey'
-          title={`Update survey name`}
+          title={`Updating survey ${entity.name || '[Unnamed]'}`}
         />
       );
     } else {

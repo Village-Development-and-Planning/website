@@ -27,7 +27,7 @@ export default (props) => <React.Fragment>
         <li>Enter the Surveyor Code and press Okay.</li>
         <li>Press the Download Survey button. This will automatically download the appropriate survey to the tablet. Return to the Home screen by pressing the Back button.</li>
         <li>To administer the survey press Proceed.</li>
-        <li>Ensure the tablet is connected to the internet, select Upload to sync data collected to the server.</li>
+        <li>Ensure the tablet is connected to the internet, select Upload to sync data collected to the server. </li>
         <li>After you press Upload and the data has synced, a summary page will show you details of data that has been synced to the server. Return to the Home screen by pressing the Back button.</li>
       </ol>
       <p><em>

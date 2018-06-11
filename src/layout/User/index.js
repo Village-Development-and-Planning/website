@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import fetch from '../../utils/fetch';
 import {User} from './User.scss';
+import {t, T} from '../../translations';
 
 export default class extends Component {
   constructor(...args) {
@@ -15,11 +16,11 @@ export default class extends Component {
   render() {
     if (this.state.user && this.state.user.name) {
       return <div className={User}>
-        <span className="full">Logged in as </span>{this.state.user.name}.&nbsp;
-        <a href="/auth/out">Sign out</a>
+        <span className="full"><T>Logged in as</T> </span>{this.state.user.name}.&nbsp;
+        <a href="/auth/out"><T>Sign out</T></a>
       </div>;
     } else {
-      return <p className={User}>Guest</p>;
+      return <p className={User}><T>Guest</T></p>;
     }
   }
 }

@@ -3,9 +3,11 @@ import ShowPage from '../../../cms/base/Show';
 import Responsive from '../../../layout/Responsive';
 import Bar from './bar-graph';
 import APBar from './answer-percentage-bar';
+import {t, T} from '../../../translations';
 
 import fetch from '../../../utils/fetch';
 import style from '../../validation/style.scss';
+
 
 export default class Block extends ShowPage {
   _parseStats(entity) {
@@ -103,14 +105,14 @@ export default class Block extends ShowPage {
     return <div className={style.Stats}>
       <Responsive>
         <div className={style.Detail}>
-          <h3>{entity.name}</h3>
+          <h3>{t(entity.name)}</h3>
           {stats && <p>
-            Total number of surveys completed: {numSurveys}<br/>
-            Number of surveys answered: {numAnswered} ({ansPercentage} %)<br/>
+            <T>Total number of surveys completed</T>: {numSurveys}<br/>
+            <T>Number of surveys answered</T>: {numAnswered} ({ansPercentage} %)<br/>
 
-            Percentage of households reported 'not willing': {numNotWillingPercentage} %<br/>
-            Percentage of households reported 'not there': {numNotTherePercentage} %<br />
-            Percentage of households reported 'dead': {numNotAlivePercentage} %<br />
+            <T>Percentage of households reported 'not willing'</T>: {numNotWillingPercentage} %<br/>
+            <T>Percentage of households reported 'not there'</T>: {numNotTherePercentage} %<br />
+            <T>Percentage of households reported 'dead'</T>: {numNotAlivePercentage} %<br />
           </p>}
         </div>
         {this.renderSecondComponent()}
@@ -133,7 +135,7 @@ export default class Block extends ShowPage {
     const message = this.weeklyStatsMessage || 'Proportion of Surveyors that are flagged';
     if (!weeklyStats) return;
     return <React.Fragment>
-      <h4>{message}</h4>
+      <h4>{t(message)}</h4>
       {weeklyStats &&
         <div className={style.Row}>
           {weeklyStats.map(this.renderWeekly.bind(this))}

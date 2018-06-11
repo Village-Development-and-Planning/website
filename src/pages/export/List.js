@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ListPage from '../../cms/base/List';
+import {t, T} from '../../translations';
 export default class ExportList extends ListPage {
 
   onDownload() {
@@ -12,10 +13,10 @@ Object.assign(ExportList, {
   actions: {
     download(e) {
       if (!e.downloadAvailable || !e.downloadAvailable.length) {
-        return <span>File not available</span>;
+        return <span><T>File not available</T></span>;
       } else {
         const number = e.downloadAvailable[0].number || null;
-        return <a href={`/cms/surveys/${e._id}/download?resp=${number}`}>Download data</a>;
+        return <a href={`/cms/surveys/${e._id}/download?resp=${number}`}><T>Download data</T></a>;
       }
     }
   },

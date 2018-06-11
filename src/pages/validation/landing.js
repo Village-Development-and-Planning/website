@@ -2,6 +2,7 @@ import React from 'react';
 import ValidationList from './List';
 import ActionPanel from '../../layout/ActionPanel';
 import Responsive from '../../layout/Responsive';
+import {t, T} from '../../translations';
 
 import home from '../../images/home.png';
 import validate from '../../images/validate.png';
@@ -12,7 +13,7 @@ export default (props) => <React.Fragment>
     listMessage={'Validate data'} listNote= {'Validate data collected to monitor the quality of data collected.'}
   />
   <hr/>
-  <h3>Data validation</h3>
+  <h3><T>Data validation</T></h3>
   <Responsive>
     <ActionPanel
       to="/validation/mapping"
@@ -21,7 +22,7 @@ export default (props) => <React.Fragment>
       text="Mapping Data"
     >
       <div>
-        Check and monitor mapping data
+        <T>Check and monitor mapping data</T>
       </div>
     </ActionPanel>
 
@@ -32,7 +33,7 @@ export default (props) => <React.Fragment>
       text="Household data"
     >
       <div>
-        Check and monitor household data
+        <T>Check and monitor household data</T>
       </div>
     </ActionPanel>
   </Responsive>

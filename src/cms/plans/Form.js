@@ -4,6 +4,8 @@ import fetch from '../../utils/fetch';
 
 import Response from '../../layout/AppForm/Response';
 
+import {t, T} from '../../translations';
+
 export default class AnswerPage extends Form {
   _statsComponent(done) {
     const className = done ? "success" : "progress";
@@ -62,29 +64,29 @@ export default class AnswerPage extends Form {
     else
       this.multiple = !!this.props.multiple;
     this.children = this.props.children || <React.Fragment>
-      <h4 key='header' className="title">{this.props.title}</h4>
-      {this.props.description && <p>{this.props.description}</p>}
+      <h4 key='header' className="title"><T>{this.props.title}</T></h4>
+      {this.props.description && <p><T>{this.props.description}</T></p>}
       <label key="name">
-        <p>Plan name</p>
+        <p><T>Plan name</T></p>
         <input
           type="text"
           name="name"
           defaultValue={this.props.entity && this.props.entity.name}
-          placeholder="Enter plan name"
+          placeholder={t("Enter plan name")}
         />
       </label>
       <label key="description">
-        <p>Plan description</p>
+        <p><T>Plan description</T></p>
         <input
           type="text"
           name="description"
           defaultValue={this.props.entity && this.props.entity.description}
-          placeholder="Enter plan description"
+          placeholder={t("Enter plan description")}
         />
       </label>
       <input name="type" type="hidden" value="plan"/>
       <label key="file">
-        <p>{this.props.fileInputMessage}</p>
+        <p><T>{this.props.fileInputMessage}</T></p>
         <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>
       </label>
     </React.Fragment>;

@@ -1,4 +1,5 @@
 import React from 'react';
+import {t, T} from '../../translations';
 
 import ShowPage from '../../cms/base/Show';
 import {Header} from './../validation/style.scss';
@@ -33,7 +34,7 @@ export default class MappingBlockPage extends ShowPage {
     const {children} = entity;
     return <React.Fragment>
       <div className={Header}>
-        <h3>{entity.name}</h3>
+        <h3><T>{entity.name}</T></h3>
       </div>
       <div>
         {children.map(
