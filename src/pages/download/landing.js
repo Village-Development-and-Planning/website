@@ -6,12 +6,12 @@ import Responsive from '../../layout/Responsive';
 import download from '../../images/download.png';
 import SurveyList from '../../cms/surveys/List';
 import {Instructions} from './style.scss';
-import {T} from '../../translations';
+import {t, T} from '../../translations';
 
 export default (props) => <React.Fragment>
   <SurveyList
     location={props.location} disableActionBar={true}
-    listMessage={'Enabled surveys'}
+    listMessage={'Download survey application'}
     columnsOrder={'name createdOn'.split(' ')}
   />
   <hr/>
@@ -45,7 +45,7 @@ export default (props) => <React.Fragment>
       text="Download application"
     >
       <div>
-        Download and install application on your Android tablet
+        {t('Download and install application on your Android tablet')}
       </div>
     </ActionPanel>
 

@@ -2,6 +2,7 @@ import React from 'react';
 
 import ActionPanel from '../layout/ActionPanel';
 import Responsive from '../layout/Responsive';
+import {t, T} from '../translations';
 
 import download from '../images/download.png';
 import upload from '../images/upload.png';
@@ -18,7 +19,7 @@ export default () => <Responsive>
     text="Surveys"
   >
     <div>
-      Upload survey, survey images, surveyors, and geographic area to be covered
+      {t('Upload survey, survey images, surveyors, and geographic area to be covered')}
     </div>
   </ActionPanel>
 
@@ -29,7 +30,7 @@ export default () => <Responsive>
     text="Download Survey Application"
   >
     <div>
-      Download and install application on your tablet or mobile device
+      {t('Download and install application on your tablet or mobile device')}
     </div>
   </ActionPanel>
 
@@ -40,7 +41,7 @@ export default () => <Responsive>
     text="Upload Data"
   >
     <div>
-      Sync the data collected to the server
+      {t('Sync the data collected to the server')}
     </div>
   </ActionPanel>
 
@@ -51,7 +52,7 @@ export default () => <Responsive>
     text="Validate Data"
   >
     <div>
-      Check and monitor the quality of data collected
+      {t('Check and monitor the quality of data collected')}
     </div>
   </ActionPanel>
 
@@ -62,7 +63,7 @@ export default () => <Responsive>
     text="Export Data"
   >
     <div>
-      Generate a CSV file that can be imported into various analytical tools
+      {t('Generate a CSV file that can be imported into various analytical tools')}
     </div>
   </ActionPanel>
 
@@ -73,7 +74,7 @@ export default () => <Responsive>
     text="Visualizations"
   >
     <div>
-      View pictorial representations of the data collected
+      {t('View pictorial representations of the data collected')}
     </div>
   </ActionPanel>
 
@@ -84,7 +85,7 @@ export default () => <Responsive>
     text="Plans"
   >
     <div>
-      Upload and view village action plans
+      {t('Upload and view village action plans')}
     </div>
   </ActionPanel>
 </Responsive>;

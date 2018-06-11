@@ -1,5 +1,6 @@
 import React from 'react';
 import ShowPage from '../base/Show';
+import {t, T} from '../../translations';
 
 export default class Show extends ShowPage {
   render() {
@@ -7,23 +8,23 @@ export default class Show extends ShowPage {
     if (!entity) return super.render();
     return (
       <div>
-        <h4>Name</h4>
-        <p>{entity.name}</p>
+        <h4><T>Name</T></h4>
+        <p><T>{entity.name}</T></p>
 
-        <h4>Code</h4>
-        <p>{entity.username}</p>
+        <h4><T>Code</T></h4>
+        <p><T>{entity.username}</T></p>
 
-        <h4>Survey</h4>
-        <p>{entity.payload.SURVEY}</p>
+        <h4><T>Survey</T></h4>
+        <p><T>{entity.payload.SURVEY}</T></p>
 
-        <h4>District</h4>
-        <p>{entity.payload.DISTRICT_NAME}</p>
+        <h4><T>District</T></h4>
+        <p><T>{entity.payload.DISTRICT_NAME}</T></p>
 
-        <h4>Block</h4>
-        <p>{entity.payload.BLOCK_NAME}</p>
+        <h4><T>Block</T></h4>
+        <p><T>{entity.payload.BLOCK_NAME}</T></p>
 
-        <h4>Panchayat</h4>
-        <p>{entity.payload.PANCHAYAT_NAME}</p>
+        <h4><T>Panchayat</T></h4>
+        <p><T>{entity.payload.PANCHAYAT_NAME}</T></p>
       </div>
     );
   }

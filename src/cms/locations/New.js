@@ -10,8 +10,8 @@ export default class NewPage extends NewBase {
           action="/cms/locations"
           actionName="Upload geographic data"
         >
-          <h4 className="title">{t('Upload geographic Data')}</h4>
-          <p>{t('This geographic data needs to be in CSV format. Changing this file will update all existing geographic data. Ensure that your file includes every level of the area you wish to cover.')}</p>
+          <h4 className="title"><T>Upload geographic Data</T></h4>
+          <p><T>This geographic data needs to be in CSV format. Changing this file will update all existing geographic data. Ensure that your file includes every level of the area you wish to cover.</T></p>
           <input
             type="hidden"
             name="delete-existing"

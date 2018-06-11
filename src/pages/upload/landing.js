@@ -26,7 +26,7 @@ export default () => <Responsive>
     text="Upload data"
   >
     <div>
-      {('Sync data collected to the server')}
+      {t('Sync data collected to the server')}
     </div>
   </ActionPanel>
 

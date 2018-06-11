@@ -2,6 +2,7 @@ import React from 'react';
 import EditPage from '../base/Edit';
 import Form from '../../layout/AppForm';
 import fetch from '../../utils/fetch';
+import {t, T} from '../../translations';
 
 export default class Edit extends EditPage {
   setupObject() {
@@ -32,25 +33,25 @@ export default class Edit extends EditPage {
         actionName="Update"
         method="PATCH"
       >
-        <h4 className="title">Edit surveyor data</h4>
+        <h4 className="title"><T>Edit surveyor data</T></h4>
         <label>
-          <p>Surveyor name</p>
+          <p><T>Surveyor name</T></p>
           <input
             type="text" name="name"
             defaultValue={entity.name}
-            placeholder="Enter name"
+            placeholder={t("Enter name")}
           />
         </label>
         <label>
-          <p>Surveyor code</p>
+          <p><T>Surveyor code</T></p>
           <input
             type="text" name="username"
             defaultValue={entity.username}
-            placeholder="Enter username"
+            placeholder={t("Enter username")}
           />
         </label>
         <label>
-          <p>Panchayat name</p>
+          <p><T>Panchayat name</T></p>
           <select
             name="panchayat"
             onChange={({value}) => this.setState({panchayat: value})}
@@ -58,7 +59,7 @@ export default class Edit extends EditPage {
           >{this.panchayats}</select>
         </label>
         <label>
-          <p>Survey</p>
+          <p><T>Survey</T></p>
           <select
             name="survey"
             onChange={({value}) => this.setState({survey: value})}

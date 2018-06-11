@@ -1,11 +1,12 @@
 import ListPage from '../base/List';
 import React from 'react';
+import {t, T} from '../../translations';
 
 export default class List extends ListPage {};
 
 List.listMessage = <React.Fragment>
-  <h3>Surveyor data</h3>
-  <p>Upload and edit data regarding surveyors codes, what survey they will be administering and where they will administer it</p>
+  <h3><T>Surveyor data</T></h3>
+  <p><T>Upload and edit data regarding surveyors codes, what survey they will be administering and where they will administer it</T></p>
 </React.Fragment>;
 List.createMessage = 'Upload surveyor data';
 List.entityName = 'Surveyor';

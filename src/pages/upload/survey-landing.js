@@ -24,7 +24,7 @@ export default () => <Responsive>
     text="Existing surveys"
   >
     <div>
-      {('View and edit existing surveys')}
+      {t('View and edit existing surveys')}
     </div>
   </ActionPanel>
 
@@ -35,7 +35,7 @@ export default () => <Responsive>
     text="Survey images and artifacts"
   >
     <div>
-      {('Upload and edit images that are part of your survey')}
+      {t('Upload and edit images that are part of your survey')}
     </div>
   </ActionPanel>
 
@@ -46,7 +46,7 @@ export default () => <Responsive>
     text="Geographic coverage"
   >
     <div>
-      {('Upload or edit geographic data that specifies what area the survey will cover')}
+      {t('Upload or edit geographic data that specifies what area the survey will cover')}
     </div>
   </ActionPanel>
 
@@ -57,7 +57,7 @@ export default () => <Responsive>
     text="Surveyor data"
   >
     <div>
-      {('Upload and edit data regarding surveyor.')}
+      {t('Upload and edit data regarding surveyor.')}
     </div>
   </ActionPanel>
 

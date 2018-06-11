@@ -3,6 +3,7 @@ import Form from '../../layout/AppForm';
 import fetch from '../../utils/fetch';
 
 import Response from '../../layout/AppForm/Response';
+import {t, T} from '../../translations';
 
 export default class AnswerPage extends Form {
   _statsComponent(done) {
@@ -58,31 +59,31 @@ export default class AnswerPage extends Form {
     this.children = this.props.children || <React.Fragment>
       <h4 key='header' className="title">{this.props.title}</h4>
       <label key="name">
-        <p>Name</p>
+        <p><T>Name</T></p>
         <input
           type="text"
           name="name"
           defaultValue={this.props.entity && this.props.entity.name}
-          placeholder="Enter name"
+          placeholder={t("Enter name")}
         />
       </label>
       <label key="description">
-        <p>Description</p>
+        <p><T>Description</T></p>
         <input
           type="text"
           name="description"
           defaultValue={this.props.entity && this.props.entity.description}
-          placeholder="Enter  description"
+          placeholder={t("Enter  description")}
         />
       </label>
       <label key="type">
-        <p>Type</p>
+        <p><T>Type</T></p>
         <select name="type">
-          <option>image</option>
+          <option><T>image</T></option>
         </select>
       </label>
       <label key="img-upload">
-        <p>Image(s) Upload</p>
+        <p><T>Image(s) Upload</T></p>
         <input ref={(r) => this.uploadFileInput = r} type="file" name="data" multiple={this.multiple}/>
       </label>
     </React.Fragment>;

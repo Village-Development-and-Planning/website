@@ -1,6 +1,7 @@
 import ListPage from '../base/List';
 import {parse} from 'query-string';
 import React from 'react';
+import {t, T} from '../../translations';
 
 export default class ArtifactsList extends ListPage {
   constructor() {
@@ -20,7 +21,7 @@ export default class ArtifactsList extends ListPage {
 Object.assign(ArtifactsList, {
   entityName: 'Artifact',
   listMessage: <React.Fragment>
-    <h3>Survey images</h3>
-    <p>Upload images that are part of your survey. This should be the same name as what is in the survey CSV file.</p>
+    <h3><T>Survey images</T></h3>
+    <p><T>Upload images that are part of your survey. This should be the same name as what is in the survey CSV file.</T></p>
   </React.Fragment>,
 });
