@@ -25,7 +25,7 @@ List.columns = Object.assign({}, List.columns, {
   },
   name: {
     name: 'Surveyor name',
-    value: (e) => e.payload && e.payload.BLOCK_NAME
+    value: (e) => e.name
   },
   district: {
     name: 'District Name',

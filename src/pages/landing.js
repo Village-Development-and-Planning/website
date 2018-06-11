@@ -19,7 +19,7 @@ export default () => <Responsive>
     text="Surveys"
   >
     <div>
-      {t('Upload survey, survey images, surveyors, and geographic area to be covered')}
+      Create a new survey or view and edit existing surveys
     </div>
   </ActionPanel>
 

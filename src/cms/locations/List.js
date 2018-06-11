@@ -41,7 +41,7 @@ List.columns = Object.assign({}, List.columns, {
   path: {name: 'Code', value: (e) => e.uid},
 }, ['PANCHAYAT', 'BLOCK', 'DISTRICT'].reduce(
   (acc, e) => Object.assign(acc, {
-    [e]: {name: e, value: (c) => c.payload && c.payload[`${e}_NAME`]}
+    [e]: {name: `${e} NAME`, value: (c) => c.payload && c.payload[`${e}_NAME`]}
   }),
   {}
 ));
