@@ -165,12 +165,7 @@ Object.assign(ListPage, {
   columns: {
     name: {
       name: 'Name',
-      value: function(e) {
-        return <Link to={`/${this.routeName}/${e._id}`}>
-          {e.displayName || e.name || `[Unnamed / ${e._id}]`}
-        </Link>;
-      },
-      stringValue: e => (e.displayName || e.name || e._id)
+      value: e => (e.displayName || e.name || e._id),
     },
     createdOn: {
       name: 'Date created',

@@ -1,9 +1,0 @@
-{
-  "presets": ["env"],
-  "plugins": [
-    ["transform-react-jsx", {"pragma": "window.reactHook"}],
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    "dynamic-import-node"
-  ]
-}

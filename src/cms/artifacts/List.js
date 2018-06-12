@@ -2,6 +2,7 @@ import ListPage from '../base/List';
 import {parse} from 'query-string';
 import React from 'react';
 import {T} from '../../translations';
+import {Link} from 'react-router-dom';
 
 export default class ArtifactsList extends ListPage {
   constructor() {
@@ -9,7 +10,10 @@ export default class ArtifactsList extends ListPage {
     this.columns = Object.assign({}, this.columns);
     this.columns.name = Object.assign({}, this.columns.name);
     this.columns.name.name = 'Image name';
-
+    this.columns.name.value = (e) => <Link to={`/${this.routeName}/${e._id}`}>
+      {e.name}
+    </Link>;
+    this.columns.name.stringvalue = (e) => e.name;
   }
   render() {
     const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'image';
