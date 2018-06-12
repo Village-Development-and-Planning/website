@@ -1,7 +1,7 @@
 import ListPage from '../base/List';
 import {parse} from 'query-string';
 import React from 'react';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export default class ArtifactsList extends ListPage {
   constructor() {

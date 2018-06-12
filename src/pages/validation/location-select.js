@@ -5,7 +5,7 @@ import style from './style.scss';
 import 'react-select/dist/react-select.css';
 
 import fetch from '../../utils/fetch';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export default class extends React.Component {
 

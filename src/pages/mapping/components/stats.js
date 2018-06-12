@@ -5,9 +5,10 @@ import Responsive from '../../../layout/Responsive';
 import Map from '../../validation/map';
 import L from 'leaflet';
 import {_locations} from '../../validation/map-helpers';
-
 import fetch from '../../../utils/fetch';
 import {Detail, FTable, Panchayat as PanchayatStyle} from '../../validation/style.scss';
+
+import {T} from '../../../translations';
 
 export default class Panchayat extends ShowPage {
   _parseSurveyors(entity) {
@@ -74,23 +75,27 @@ export default class Panchayat extends ShowPage {
         <div className={Detail}>
           <h3>{entity.name}</h3>
           {entity.type === 'PANCHAYAT' && surveyor && <React.Fragment>
-            <h4>Surveyor Code: <Link to={`/surveyors/${surveyor.username}`}>
+            <h4><T>Surveyor Code</T>: <Link to={`/surveyors/${surveyor.username}`}>
               {surveyor.username}
             </Link></h4>
-            <h4>Surveyor Name: <Link to={`/surveyors/${surveyor.username}`}>
+            <h4><T>Surveyor Name</T>: <Link to={`/surveyors/${surveyor.username}`}>
               {surveyor.name}
             </Link></h4>
           </React.Fragment>}
         </div>
         {locations && !!locations.length && <Map locations={locations}/>}
       </Responsive>
-      <p>Summary Sheet of infrastructure available in the village:</p>
-      {items.map(
-        ({key, name, data}) => <div className={FTable} key={key}>
-          <div>{name}</div>
-          <div>{(data && data.count) || 0}</div>
-        </div>
-      )}
+      <T>
+        <p>Summary of infrastructure available{':'}</p>
+        <React.Fragment>
+          {items.map(
+            ({key, name, data}) => <div className={FTable} key={key}>
+              <div>{name}</div>
+              <div>{(data && data.count) || 0}</div>
+            </div>
+          )}
+        </React.Fragment>
+      </T>
     </div>;
   }
 
@@ -145,7 +150,7 @@ Object.assign(Panchayat, {
     },
     {
       "key": "bridge_or_culvert",
-      "name": "Bridge or culvert"
+      "name": "Bridges or culverts"
     },
     {
       "key": "shop",
@@ -153,7 +158,7 @@ Object.assign(Panchayat, {
     },
     {
       "key": "agricultural_facility",
-      "name": "Agricultural facility"
+      "name": "Agricultural facilities"
     },
     {
       "key": "government_buildings",
@@ -173,7 +178,7 @@ Object.assign(Panchayat, {
     },
     {
       "key": "atm",
-      "name": "ATM"
+      "name": "ATMs"
     },
     {
       "key": "garbage_bin",

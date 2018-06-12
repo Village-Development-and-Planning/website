@@ -11,12 +11,13 @@ function normalizeChildren(children) {
 }
 
 function translateReactElement(element) {
-  if (!element) return element;
+  if (!element) return false;
   if (typeof element === 'string') return t(element);
   if (typeof element === 'object') {
     const children = normalizeChildren(element.props && element.props.children).map(
       c => translateReactElement(c)
     );
+    console.log(element.type);
     return React.createElement(element.type, element.props, ...children);
   }
   return element;
@@ -26,6 +27,7 @@ export function T(props) {
   const children = normalizeChildren(props && props.children).map(
     c => translateReactElement(c)
   );
+  console.log(children);
   return React.createElement(React.Fragment, null, ...children);
 }
 
@@ -33,7 +35,7 @@ export function t(key) {
   const jKey = key.toLowerCase().trim();
   if (language && language[jKey]) {
     return language[jKey];
-  } else {
+  } else if (/^[a-zA-Z0-9:_.\s]*$/.test(jKey)) {
     console.log('Translation not found: ', key);
   }
   return key;

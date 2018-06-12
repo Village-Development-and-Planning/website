@@ -3,7 +3,7 @@ import fetch from '../../utils/fetch';
 
 import Response from './Response';
 import {AppForm} from './style.scss';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export {Response};
 export default class Form extends React.Component {

@@ -2,7 +2,7 @@ import React from 'react';
 import ValidationList from './List';
 import ActionPanel from '../../layout/ActionPanel';
 import Responsive from '../../layout/Responsive';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 import home from '../../images/home.png';
 import validate from '../../images/validate.png';

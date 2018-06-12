@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from '../../layout/AppForm';
+import {T, t} from '../../translations';
 
 export default class UserForm extends Form {
   render() {
@@ -10,33 +11,33 @@ export default class UserForm extends Form {
     this.children = this.props.children || <React.Fragment>
       <h4 key='header' className="title">{this.props.title}</h4>
       <label key="name">
-        <p>Full Name</p>
+        <p><T>Full Name</T></p>
         <input
           type="text"
           name="name"
           defaultValue={this.props.entity && this.props.entity.name}
-          placeholder="Enter full name"
+          placeholder={t("Enter full name")}
         />
       </label>
       <label key="username">
-        <p>Username</p>
+        <p><T>Username</T></p>
         <input
           type="text"
           name="username"
           defaultValue={this.props.entity && this.props.entity.username}
-          placeholder="Enter username"
+          placeholder={t("Enter username")}
         />
       </label>
       <label key="passphrase">
-        <p>Passphrase</p>
+        <p><T>Passphrase</T></p>
         <input
           type="password"
           name="passphrase"
-          placeholder="Enter passphrase"
+          placeholder={t("Enter passphrase")}
         />
       </label>
       <label key="roles">
-        <p>User roles</p>
+        <p><T>User roles</T></p>
         <select
           type="text"
           multiple

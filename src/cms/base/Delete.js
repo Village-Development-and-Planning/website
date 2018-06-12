@@ -1,5 +1,6 @@
 import React from 'react';
 import fetch from '../../utils/fetch';
+import {t} from '../../translations';
 
 export default class extends React.Component {
   constructor(...args) {
@@ -11,7 +12,7 @@ export default class extends React.Component {
 
   onClick(event) {
     // eslint-disable-next-line no-restricted-globals
-    if (confirm('Are you sure about deleting this item?  This action cannot be undone.')) {
+    if (confirm(t('Are you sure about deleting this item?  This action cannot be undone.'))) {
       this.setState({status: 'progress'});
       fetch(this.props.action, {method: 'DELETE'}).then(
         () => this.setState({status: 'deleted'})

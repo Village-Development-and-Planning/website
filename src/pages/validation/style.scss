@@ -30,8 +30,13 @@
 :local .FTable {
     display: flex;
     flex-direction: row;
+    max-width: 50em;
     &> :first-child {
-        flex: 90% 0 0;
+        flex: 90% 0 1;
+    }
+    &> :last-child {
+        flex: 10% 1 0;
+        text-align: right;
     }
 }
 

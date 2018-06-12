@@ -7,7 +7,7 @@ export default class NewPage extends NewBase {
       return (
         <Form
           action="/cms/users"
-          actionName="Upload surveyor data"
+          actionName="Upload New User"
         >
         </Form>
       );

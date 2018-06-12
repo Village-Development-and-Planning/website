@@ -1,6 +1,6 @@
 import React from 'react';
 import ShowPage from '../base/Show';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export default class Show extends ShowPage {
   render() {
