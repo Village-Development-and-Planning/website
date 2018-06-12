@@ -15,18 +15,22 @@ export default class extends Component {
 
   render() {
     if (this.state.user && this.state.user.name) {
-      if(getLanguage() === 'tamil'){
+      if (getLanguage() === 'tamil') {
         return <div className={User}>
-          {this.state.user.name} - ஆக <span className="full"><T>Logged in as</T> </span>
+          {this.state.user.name}
+          <span className="full">-ஆக </span>
+          <span className="clip">. </span>
+          <span className="full"><T>Logged in as</T>.</span>
+          <span> </span>
           <a href="/auth/out"><T>Sign out</T></a>
         </div>;
-      }else{
+      } else {
         return <div className={User}>
           <span className="full"><T>Logged in as</T> </span>{this.state.user.name}.&nbsp;
           <a href="/auth/out"><T>Sign out</T></a>
         </div>;
       }
-      
+
     } else {
       return <p className={User}><T>Guest</T></p>;
     }

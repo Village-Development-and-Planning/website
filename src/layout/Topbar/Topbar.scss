@@ -35,7 +35,7 @@
 
 :local .Right {
   text-align: right;
-  flex-grow: 1;
+  flex-grow: 2;
   @media screen and (max-width: $bp-large-width - 1) {
     font-size: 0.9em;
   }

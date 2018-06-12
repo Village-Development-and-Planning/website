@@ -1,7 +1,16 @@
 import React from 'react';
 
-let language = require('./translation-tamil.json');
-let currentLang = 'tamil';
+let currentLang = navigator.language || navigator.userLanguage;
+let language;
+
+if (!currentLang || currentLang.startsWith('en')) {
+  currentLang = 'english';
+  language = null;
+} else {
+  currentLang = 'tamil';
+  language = require('./translation-tamil.json');
+}
+
 let notify = null;
 
 function normalizeChildren(children) {
