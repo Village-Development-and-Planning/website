@@ -5,7 +5,7 @@ export default class List extends ListPage {};
 
 List.listMessage = <React.Fragment>
   <h3>User data</h3>
-  <p>View and edit data regarding <em>admin</em> users of the system</p>
+  <p>View and edit data regarding admin users of the system</p>
 </React.Fragment>;
 List.createMessage = 'Create a user';
 List.entityName = 'User';

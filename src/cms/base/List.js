@@ -84,11 +84,11 @@ export default class ListPage extends Base {
     const createMessage = this.props.createMessage || this.createMessage;
     let listMessage = this.props.listMessage || this.listMessage;
     const columnsOrder = this.props.columnsOrder || this.columnsOrder;
-    if (typeof listMessage === 'string') listMessage = <h3><T>{listMessage}</T></h3>;
+    if (typeof listMessage === 'string') listMessage = <h3>{listMessage}</h3>;
     if (this.state.filteredEntities) {
       return (
         <React.Fragment>
-          {listMessage}
+          <T>{listMessage}</T>
           {(this.props.listNote !== undefined && this.props.listMessage !== '')
             ? <p> <em><T>{this.props.listNote}</T></em></p>
             : null
@@ -181,7 +181,10 @@ Object.assign(ListPage, {
       value(e) {
         const actionsOrder = this.props.actionsOrder || this.actionsOrder;
         return <div style={{display: 'flex', alignItems: 'baseline'}}>
-          {actionsOrder.map(key => (this.actions[key]).call(this, e))}
+          {actionsOrder.map(key => {
+            const el = (this.actions[key]).call(this, e);
+            return Object.assign({}, el, {key});
+          })}
         </div>;
       }
     },

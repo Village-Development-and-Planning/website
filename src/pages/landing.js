@@ -2,8 +2,6 @@ import React from 'react';
 
 import ActionPanel from '../layout/ActionPanel';
 import Responsive from '../layout/Responsive';
-import {t, T} from '../translations';
-
 import download from '../images/download.png';
 import upload from '../images/upload.png';
 import validate from '../images/validate.png';
@@ -30,7 +28,7 @@ export default () => <Responsive>
     text="Download Survey Application"
   >
     <div>
-      {t('Download and install application on your tablet or mobile device')}
+      Download and install the survey application on your tablet or mobile device
     </div>
   </ActionPanel>
 
@@ -41,7 +39,7 @@ export default () => <Responsive>
     text="Upload Data"
   >
     <div>
-      {t('Sync the data collected to the server')}
+      Sync data collected to the server
     </div>
   </ActionPanel>
 
@@ -52,7 +50,7 @@ export default () => <Responsive>
     text="Validate Data"
   >
     <div>
-      {t('Check and monitor the quality of data collected')}
+      Check and monitor the quality of data collected
     </div>
   </ActionPanel>
 
@@ -63,7 +61,7 @@ export default () => <Responsive>
     text="Export Data"
   >
     <div>
-      {t('Generate a CSV file that can be imported into various analytical tools')}
+      Generate a CSV file that can be imported into various analytical tools
     </div>
   </ActionPanel>
 
@@ -74,7 +72,7 @@ export default () => <Responsive>
     text="Visualizations"
   >
     <div>
-      {t('View pictorial representations of the data collected')}
+      View pictorial representations of the data collected
     </div>
   </ActionPanel>
 
@@ -85,7 +83,7 @@ export default () => <Responsive>
     text="Plans"
   >
     <div>
-      {t('Upload and view village action plans')}
+      Upload and view village development plans
     </div>
   </ActionPanel>
 </Responsive>;

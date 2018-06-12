@@ -1,6 +1,6 @@
 import ListPage from '../base/List';
 import React from 'react';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export default class List extends ListPage {};
 

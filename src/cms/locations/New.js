@@ -1,7 +1,7 @@
 import React from 'react';
 import NewBase from '../base/New';
 import Form from '../../layout/AppForm';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 export default class NewPage extends NewBase {
     render() {

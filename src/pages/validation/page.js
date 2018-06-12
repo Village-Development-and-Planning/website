@@ -1,5 +1,5 @@
 import React from 'react';
-import {t, T} from '../../translations';
+import {T} from '../../translations';
 
 import ShowPage from '../../cms/base/Show';
 import {Header} from './../validation/style.scss';
