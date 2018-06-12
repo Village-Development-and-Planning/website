@@ -11,7 +11,7 @@ List.createMessage = 'Create a user';
 List.entityName = 'User';
 List.columns = Object.assign({}, List.columns, {
   code: {
-    name: 'Username',
+    name: 'User Name',
     value: (e) => e.username
   },
   panchayat: {

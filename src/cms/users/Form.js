@@ -20,7 +20,7 @@ export default class UserForm extends Form {
         />
       </label>
       <label key="username">
-        <p><T>Username</T></p>
+        <p><T>User Name</T></p>
         <input
           type="text"
           name="username"
