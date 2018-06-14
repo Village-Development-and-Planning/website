@@ -6,7 +6,7 @@ import Responsive from '../../layout/Responsive';
 import download from '../../images/download.png';
 import SurveyList from '../../cms/surveys/List';
 import {Instructions} from './style.scss';
-import {t, T, getLanguage} from '../../translations';
+import {T, getLanguage} from '../../translations';
 
 export default (props) => <React.Fragment>
   <SurveyList
@@ -33,14 +33,14 @@ export default (props) => <React.Fragment>
       </ol>
       {
         (getLanguage() === 'tamil')
-        ? 
+        ?
         <p><em>
-          குறிப்பு: நீங்கள் டேப்லெட் மற்றும் கணினியை தயார் செய்ய வேண்டும். கணினியை டேப்லெட்டில் இணைக்க நீங்கள் அந்த பிராண்டிற்கான டிரைவரை நிறுவ வேண்டும். 
-          இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Driver_Eng.pdf">இங்கே</a> காணலாம். 
-          நீங்கள் டேப்லெட்டில் மென்பொருள் பயன்படுத்துவதற்க்கு டேப்லெட்டை தயார் செய்ய வேண்டும். 
+          குறிப்பு: நீங்கள் டேப்லெட் மற்றும் கணினியை தயார் செய்ய வேண்டும். கணினியை டேப்லெட்டில் இணைக்க நீங்கள் அந்த பிராண்டிற்கான டிரைவரை நிறுவ வேண்டும்.
+          இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Driver_Eng.pdf">இங்கே</a> காணலாம்.
+          நீங்கள் டேப்லெட்டில் மென்பொருள் பயன்படுத்துவதற்க்கு டேப்லெட்டை தயார் செய்ய வேண்டும்.
           இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Preparation_English.pdf">இங்கே</a> காணலாம்.
         </em></p>
-        : 
+        :
         <p><em>
           Note: You may have to prepare the tablet and computer.
           You will need to install the respective brand driver to connect the computer to the tablet.
@@ -49,7 +49,7 @@ export default (props) => <React.Fragment>
           You can find the instructions for this <a href="/static/Instructions_Tablet_Preparation_English.pdf">here</a>.
         </em></p>
       }
-      
+
     </T></div>
     <ActionPanel
       key="download-apps"
@@ -58,7 +58,7 @@ export default (props) => <React.Fragment>
       text="Download application"
     >
       <div>
-        {t('Download and install application on your Android tablet')}
+        Download and install the survey application on your tablet or mobile device
       </div>
     </ActionPanel>
 

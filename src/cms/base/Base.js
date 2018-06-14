@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import {parse, stringify} from 'query-string';
+
 export default class BasePage extends Component {
 
   constructor(...args) {
@@ -47,6 +49,14 @@ export default class BasePage extends Component {
     this[name] = this[name] ||
       this.constructor[name] ||
       def;
+  }
+
+  setQuery(params) {
+    const p = Object.assign(
+      parse(this.props.location.search, {ignoreQueryPrefix: true}) || {},
+      params
+    );
+    this.props.history.push(`${this.props.location.pathname}?${stringify(p)}`);
   }
 
   render() {

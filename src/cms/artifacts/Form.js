@@ -61,16 +61,25 @@ export default class AnswerPage extends Form {
       this.multiple = true;
     else
       this.multiple = !!this.props.multiple;
-
+    const entity = this.props.entity;
     return <React.Fragment>
       <h4 key='header' className="title"><T>{this.props.title}</T></h4>
       {this.props.description && <p><T>{this.props.description}</T></p>}
+
+      {entity && <label>
+        <p>Uploaded image<br/>
+        <img style={{maxHeight: '16ex'}}
+          src={`/cms/artifacts/${entity._id}/download`}
+          alt={entity.name}
+        /></p>
+      </label>}
+
       <label key="description">
         <p><T>Image description</T></p>
         <input
           type="text"
           name="description"
-          defaultValue={this.props.entity && this.props.entity.description}
+          defaultValue={entity && entity.description}
           placeholder={t("Enter a description of the image")}
         />
       </label>

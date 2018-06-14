@@ -5,6 +5,8 @@ import {parse} from 'query-string';
 import _ from 'lodash';
 import {t} from '../../translations';
 
+const types = 'DISTRICT BLOCK PANCHAYAT HABITATION'.split(' ');
+
 export default class List extends ListPage {
   constructor(...args) {
     super(...args);
@@ -13,13 +15,26 @@ export default class List extends ListPage {
     this.baseFilterComponent = this.filterComponent;
     this.columns = Object.assign({}, this.columns);
     this.columns.name = Object.assign({}, this.columns.name);
+
+    this.columns.name.value = (e) => <button
+      className="link"
+      onClick={() => this.onPrefixChange(`${e.uid}/`)}
+    >
+      {e.name}
+    </button>;
+    this.columns.name.stringvalue = (e) => e.name;
   }
 
   render() {
-    const types = 'DISTRICT BLOCK PANCHAYAT HABITATION'.split(' ');
     const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'HABITATION';
+    this.locationType = type;
     const tIndex = types.indexOf(type);
-    this.columnsOrder =  this.constructor.columnsOrder.concat(types.slice(0, tIndex));
+    this.columnsOrder =  [].concat(
+      'path',
+      types.slice(0, tIndex),
+      'name',
+    );
+
     this.columns.name.name = _.capitalize(`${type} NAME`);
     this.filterComponent = <React.Fragment>
       <Select
@@ -35,7 +50,18 @@ export default class List extends ListPage {
   }
 
   onTypeChange(e) {
-    this.props.history.push(`/${this.routeName}?type=${e.value}`);
+    this.setQuery({type: e.value});
+  }
+
+  onPrefixChange(prefix, type) {
+    type = type || this.locationType;
+    const tIndex = types.indexOf(type);
+    if (tIndex !== -1 && tIndex < types.length - 1) {
+      this.setQuery({
+        type: types[tIndex+1],
+        prefix,
+      });
+    }
   }
 };
 
@@ -43,10 +69,27 @@ List.entityName = 'Location';
 List.columns = Object.assign({}, List.columns, {
   type: {name: 'Type', value: (e)=> e.type},
   path: {name: 'Code', value: (e) => e.uid},
-}, ['PANCHAYAT', 'BLOCK', 'DISTRICT'].reduce(
-  (acc, e) => Object.assign(acc, {
-    [e]: {name: _.capitalize(`${e} NAME`), value: (c) => c.payload && c.payload[`${e}_NAME`]}
+  name: {
+    value(e) {
+      return <button
+        className="link"
+        onClick={this.onPrefixChange.bind(this, `${e.uid}/`)}
+      >{e.name}</button>;
+    }
+  }
+}, ['DISTRICT', 'BLOCK', 'PANCHAYAT',].reduce(
+  (acc, e, idx) => Object.assign(acc, {
+    [e]: {
+      name: _.capitalize(`${e} NAME`),
+      value(c) {
+        const prefix = c.uid.split('/').slice(0, idx+1).join('/');
+        return <button
+          className="link"
+          onClick={this.onPrefixChange.bind(this, `${prefix}/`, e)}
+        >{c.payload && c.payload[`${e}_NAME`]}</button>;
+      },
+      stringValue: (c) => c.payload && c.payload[`${e}_NAME`],
+    }
   }),
   {}
 ));
-List.columnsOrder = ['path', 'name'];

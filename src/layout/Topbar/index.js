@@ -46,8 +46,8 @@ export default class extends Component {
           <User/>
           <div>
             <span className="full">{t("Language")}:&nbsp;</span>
-            <button onClick={this.onEnglish}>English</button>&nbsp;
-            <button onClick={this.onTamil}>தமிழ்</button>
+            <button className="link" onClick={this.onEnglish}>English</button>&nbsp;
+            <button className="link" onClick={this.onTamil}>தமிழ்</button>
           </div>
         </div>
       </header>

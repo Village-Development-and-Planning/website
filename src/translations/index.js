@@ -3,7 +3,7 @@ import React from 'react';
 let currentLang = navigator.language || navigator.userLanguage;
 let language;
 
-if (!currentLang || currentLang.startsWith('en')) {
+if (currentLang && currentLang.startsWith('en')) {
   currentLang = 'english';
   language = null;
 } else {

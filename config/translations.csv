@@ -18,7 +18,7 @@ Surveys,Surveyors Data,Surveyor data,,கணக்கெடுப்பாளர
 Surveys,View / edit / update surveyors,Upload and edit data regarding surveyor.,,கணக்கெடுப்பாளர் தொடர்பான தகவல் பதிவேற்றம்அல்லது திருத்தம் செய்வதற்கு,This overflows. Can't adjust size for this alone.,Size of the text may be reduced for this.
 Surveys,Images & other Artifacts,Survey images and artifacts,,கணக்கெடுப்பிற்கான படங்கள் மற்றும் கலைப்பொருட்கள்,,
 Surveys,View / edit / update images used in surveys,Upload and edit images that are part of your survey,,கணக்கெடுப்பின் ஒரு பகுதியாக இருக்கும் படங்களை பதிவேற்றம் அல்லது திருத்தம் செய்வதற்கு,,
-Surveys,List surveys,Existing surveys,Remove hyperlinks on the list of surveys in these tables?,ஏற்கனவே உள்ள கணக்கெடுப்புகள்,"If we remove hyperlinks from all list,  for mapping style surveys, can't download other CSVs, and for Surveyors, can't see name.",
+Surveys,List surveys,Existing surveys,Remove hyperlinks on the list of surveys in these tables?,ஏற்கனவே உள்ள கணக்கெடுப்புகள்,Done,
 Surveys,View existing surveys,View and edit existing surveys,,ஏற்கனவே உள்ள கணக்கெடுப்புகளை பார்க்க மற்றும் திருத்தம் செய்ய,,
 New Survey,Creating Survey…,Create a new survey,,ஒரு புதிய கணக்கெடுப்பை உருவாக்க,,
 New Survey,Name,Survey name,,கணக்கெடுப்பின் பெயர்,,
@@ -33,9 +33,9 @@ New Survey,Choose File,Choose File,,கோப்புகளை தேர்வ�
 New Survey,No file chosen,No file chosen,,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை,,
 New Survey,Create,Create survey,,கணக்கெடுப்பை உருவாக்க,,
 Geographic coverage,Exisiting locations,Geographic coverage,,புவியியமைப்பை பதிவு செய்தல்,,
-Geographic coverage,Name,,"For this table can we see the whole table? Its good to see the links (District name, Block name, Village name and Habitation name) together not just single names. Can we keep it in this order. When I select Habitation it says Name not Habitation name. Same for the other selections. Great if we can keep District name consistent accross the website - in some tables it says DISTRICT some District Name - Please lets keep it District name for all tables. Same for Village name, Block name, Habitation name. ",,Done.,
-Geographic coverage,Name,,,பெயர்,,
-Geographic coverage,Code,,,குறியீடு,,
+Geographic coverage,Name,,"For this table can we see the whole table? Its good to see the links (District name, Block name, Village name and Habitation name) together not just single names. Can we keep it in this order. When I select Habitation it says Name not Habitation name. Same for the other selections. Great if we can keep District name consistent accross the website - in some tables it says DISTRICT some District Name - Please lets keep it District name for all tables. Same for Village name, Block name, Habitation name. ",,Done (fixed caps too),
+Geographic coverage,Name,Name,,பெயர்,,
+Geographic coverage,Code,Code,,குறியீடு,,
 Geographic coverage,Type,,Can remove this column,,Done,Ok
 Geographic coverage,Created on,,Can remove this column,,Done,Ok
 Geographic coverage,Search,Search,,தேடுக,,
@@ -49,7 +49,7 @@ Surveyor data,Existing surveyors,Surveyor data,,கணக்கெடுப்�
 Surveyor data,,"Upload and edit data regarding surveyors codes, what survey they will be administering and where they will administer it",Add this note below the page heading,"கண்கெடுப்பாளர்களின் குறியீடுகளைப் பற்றிய தரவைப் பதிவேற்றலாம் மற்றும் திருத்தலாம், அவர்கள் எங்கு மற்றும் எந்தப் கணக்கெடுப்பை அவர்கள் மேற்கொள்வார்கள் போன்ற விவரங்கள் அடங்கும்.",,
 Surveyor data,Search,Search,,தேடுக,,
 Surveyor data,Upload Surveyors CSV,Upload surveyor data,,கணக்கெடுப்பாளரின் தகவலை பதிவேற்றம் செய்தல்,,
-Surveyor data,District,District name,Please make this consistent across the website. See D36.,மாவட்டத்தின் பெயர்,Done,
+Surveyor data,District,District name,Please make this consistent across the website. See D36.,மாவட்டத்தின் பெயர்,Done,View G36
 Surveyor data,Block,Block name,,வட்டாரத்தின் பெயர்,Done,
 Surveyor data,Panchayat,Panchayat name,,ஊராட்சியின் பெயர்,Done,
 Surveyor data,Code,Surveyor code,,கணக்கெடுப்பாளரின் குறியீடு,Done,
@@ -97,6 +97,7 @@ Edit survey image,Image(s) Upload,Edit this image,,இந்த படத்த�
 Edit survey image,Choose Files,Choose File,,கோப்புகளை தேர்வு செய்க,,
 Edit survey image,No file chosen,No file chosen,,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை,,
 Edit survey image,Update,Update image,,படங்களை புதுப்பிக்க,,
+,,Uploaded image,,,This is to show the current image (in edit page),
 List surveys,Existing surveyors,Existing surveys,,ஏற்கனவே உள்ள கணக்கெடுப்புகள்,,
 List surveys,Search,Search,,தேடுக,,
 List surveys,,Created new survey,Can we remove this button?,புதிய கணக்கெடுப்பு உருவாக்கப்பட்டது,,
@@ -118,7 +119,7 @@ Edit Survey,No file chosen,No file chosen,,எந்த கோப்பும்
 Edit Survey,Update,Update survey,,கணக்கெடுப்பை புதுப்பிக்க,,
 Upload data,Uploading answers…,Upload data collected,,சேகரிக்கப்பட்ட தகவல்களை பதிவேற்றம் செய்க,,
 Upload data,Answer JSON files,Upload data,,தகவல்களை பதிவேற்றம் செய்க,,
-,,"Note: You can select multiple files, they must all be in JSON format",,"குறிப்பு: ஒன்றுக்கு மேற்பட்ட கோப்புகளை தேர்வு செய்யலாம், அனைத்து கோப்புகளும் கட்டாயமாகJSON வடிவத்தில் இருக்கவேண்டும்",,
+,,"Note: You can select multiple files, they must all be in JSON format",,"குறிப்பு: ஒன்றுக்கு மேற்பட்ட கோப்புகளை தேர்வு செய்யலாம், அனைத்து கோப்புகளும் கட்டாயமாக JSON வடிவத்தில் இருக்கவேண்டும்",,
 Upload data,Choose Files,Choose Files,,கோப்புகளை தேர்வு செய்க,Cannot change,ok
 Upload data,No file chosen,No file chosen,,எந்த கோப்பும் தேர்வு செய்யப்படவில்லை,,
 Upload data,Upload,Upload data,,தகவல்களை பதிவேற்றம் செய்க,,
@@ -171,7 +172,7 @@ Validate,,Answers processed,,செயலாக்கப்பட்ட பத�
 Validate,,Actions,,நடவடிக்கை,,
 Validate,,ProcessNoun,,செயலாக்கம்,,
 Validate,,Export,,தகவல் வெளிக்கொணர்க,,
-Validate,,Validate,"Can you please add this column - when i click validate for the mapping it should go to the mapping validations, same for household. Understand that these are custom made. ",சரிபார்க்க,What about new surveys then?  We can't do it only for mapping / household surveys (as it'll not work if the name is changed),
+Validate,,Validate,"Can you please add this column - when i click validate for the mapping it should go to the mapping validations, same for household. Understand that these are custom made. ",சரிபார்க்க,What about new surveys then?  We can't do it only for mapping / household surveys (as it'll not work if the name is changed),"As these are customized they will only work for these surveys. So it would be cleaner to just have it in the table - otherwise it might be confusing to people. Just asking for an additional column with links to these customized validations for the two surveys (Mapping, Household)."
 Data validation,,Data validation,Add this title to the page - Please add this below the table.,தகவலை சரிபார்த்தல்,,
 Data validation,,Mapping data,,வரைபட கணக்கெடுப்பு தகவல்,,
 Data validation,,Check and monitor mapping data,,வரைபடத் தகவலை சரிபார்த்தல் மற்றும் கண்காணித்தல்,,
@@ -200,7 +201,7 @@ Mapping data validation,Village Panchayat Office,Village Panchayat office,,க�
 Mapping data validation,Banks,Banks,,வங்கிகள்,,
 Mapping data validation,ATMs,ATMs,,ATMs,,
 Mapping data validation,Garbage bins,Garbage bins,,குப்பை தொட்டிகள்,,
-Household data validation,District,District name,The UIs do not look like what I have provided in mutliple emails over 6 months ago. Please see D36 as well. ,மாவட்டத்தின் பெயர்,These requirements were later changed to a new sheet midway in March.  We've followed that to the extent possible.,
+Household data validation,District,District name,The UIs do not look like what I have provided in mutliple emails over 6 months ago. Please see D36 as well. ,மாவட்டத்தின் பெயர்,These requirements were later changed to a new sheet midway in March.  We've followed that to the extent possible.,Replied in the email
 Household data validation,Block,Block name,,வட்டாரத்தின் பெயர்,,
 Household data validation,Village,Village Panchayat name,,கிராம ஊராட்சியின் பெயர்,,
 Household data validation,,Surveyor Name,,கணக்கெடுப்பாளரின் பெயர்,,
@@ -319,3 +320,11 @@ Visualizations,Visualizations,Visualizations,,காட்சிப் படங
 ,,,,,,
 Footer,,Last updated,,முந்தைய புதுப்பிற்பு,,
 ,,Madras Institute of Development Studies,,சென்னை வளர்ச்சி ஆராய்ச்சி நிறுவனம்,,
+,,,,,,
+,,District,"Need these translations (without ""name"")",மாவட்டம்,,
+,,Block,,வட்டாரம்,,
+,,Panchayat,,ஊராட்சி,,
+,,Habitation,,குடியிருப்பு,,
+,,Habitation Name,This is missing above,குடியிருப்பின் பெயர்,,
+,,Validated data,,சரிபார்க்கப்பட்ட தகவல்,,
+,,Report,,அறிக்கை,,

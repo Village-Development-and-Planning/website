@@ -29,4 +29,13 @@ body {
     padding: 0.5ex 0.5em;
     border: inset 1pt $primary-color;
   }
+
+  button.link {
+    font-size: inherit;
+    text-decoration: underline;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
 }
