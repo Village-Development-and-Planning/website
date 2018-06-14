@@ -85,7 +85,7 @@ export default class ListPage extends Base {
     let listMessage = this.props.listMessage || this.listMessage;
     const columnsOrder = this.props.columnsOrder || this.columnsOrder;
     if (typeof listMessage === 'string') listMessage = <h3>{listMessage}</h3>;
-    if (this.state.filteredEntities) {
+    if (!this.state.loading && this.state.filteredEntities) {
       return (
         <React.Fragment>
           <T>{listMessage}</T>
