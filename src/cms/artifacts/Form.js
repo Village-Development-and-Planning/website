@@ -67,7 +67,7 @@ export default class AnswerPage extends Form {
       {this.props.description && <p><T>{this.props.description}</T></p>}
 
       {entity && <label>
-        <p>Uploaded image<br/>
+        <p><T>Uploaded image</T><br/>
         <img style={{maxHeight: '16ex'}}
           src={`/cms/artifacts/${entity._id}/download`}
           alt={entity.name}

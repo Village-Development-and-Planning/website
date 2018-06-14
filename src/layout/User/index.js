@@ -14,25 +14,29 @@ export default class extends Component {
   }
 
   render() {
-    if (this.state.user && this.state.user.name) {
-      if (getLanguage() === 'tamil') {
-        return <div className={User}>
-          {this.state.user.name}
-          <span className="full">-ஆக </span>
-          <span className="clip">. </span>
-          <span className="full"><T>Logged in as</T>.</span>
-          <span> </span>
-          <a href="/auth/out"><T>Sign out</T></a>
-        </div>;
-      } else {
-        return <div className={User}>
-          <span className="full"><T>Logged in as</T> </span>{this.state.user.name}.&nbsp;
-          <a href="/auth/out"><T>Sign out</T></a>
-        </div>;
-      }
-
+    let username, signout;
+    if (this.state.user && this.state.user.name) username = this.state.user.name;
+    if (!username) {
+      username = <T>Guest</T>;
+      signout = false;
     } else {
-      return <p className={User}><T>Guest</T></p>;
+      signout = <a href="/auth/out"><T>Sign out</T></a>;
+    }
+
+    if (getLanguage() === 'tamil') {
+      return <div className={User}>
+        {username}
+        <span className="full">-ஆக </span>
+        <span className="clip">. </span>
+        <span className="full"><T>Logged in as</T>.</span>
+        <span> </span>
+        {signout}
+      </div>;
+    } else {
+      return <div className={User}>
+        <span className="full"><T>Logged in as</T> </span>{username}.&nbsp;
+        {signout}
+      </div>;
     }
   }
 }

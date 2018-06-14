@@ -15,8 +15,8 @@ export default class Edit extends EditPage {
           method="PATCH"
           entity={entity}
           location={this.props.location}
-          title="Edit plan"
-          fileInputMessage="Edit plan"
+          title="Update plan"
+          fileInputMessage="Update plan"
         />
       );
     } else {

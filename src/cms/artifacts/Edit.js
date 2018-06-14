@@ -16,7 +16,7 @@ export default class Edit extends EditPage {
           entity={entity}
           location={this.props.location}
           title="Edit survey image"
-          fileInputMessage="Edit Image"
+          fileInputMessage="Edit this image"
         />
       );
     } else {

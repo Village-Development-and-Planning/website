@@ -44,9 +44,9 @@ export default class UserForm extends Form {
           name="roles[]"
           defaultValue={this.props.entity && this.props.entity.roles}
         >
-          <option value='content-viewer'>Viewer</option>
-          <option value='content-manager'>Editor</option>
-          <option value='admin'>Admin</option>
+          <option value='content-viewer'><T>Viewer</T></option>
+          <option value='content-manager'><T>Editor</T></option>
+          <option value='admin'><T>Admin</T></option>
         </select>
       </label>
     </React.Fragment>;
