@@ -13,6 +13,7 @@ import visualization from '../../images/visualization.png';
 import exportImg from '../../images/export.png';
 import plan from '../../images/plan.png';
 import home from '../../images/home.png';
+import users from '../../images/users.png';
 
 class Sidenav extends Component {
   render() {
@@ -56,7 +57,7 @@ class Sidenav extends Component {
           />
           <ActionButton
             to="/users"
-            image={plan}
+            image={users}
             text="Users"
           />
         </div>

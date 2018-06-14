@@ -42,7 +42,7 @@ export function t(key) {
   const jKey = key.toLowerCase().trim();
   if (language && language[jKey]) {
     return language[jKey];
-  } else if (/^[a-zA-Z0-9:_.\s]*$/.test(jKey)) {
+  } else if (language && /^[a-zA-Z0-9:_.\s]*$/.test(jKey)) {
     (console.log('Translation not found: ', key));
   }
   return key;

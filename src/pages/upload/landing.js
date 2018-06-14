@@ -4,14 +4,13 @@ import Responsive from '../../layout/Responsive';
 import ActionPanel from '../../layout/ActionPanel';
 import {t} from '../../translations';
 
-// import img_upload from '../../images/img_upload.png';
-import plan from '../../images/plan.png';
 import upload from '../../images/upload.png';
+import survey from '../../images/survey.png';
 
 export default () => <Responsive>
   <ActionPanel
     to="/upload-survey"
-    image={plan}
+    image={survey}
     text="Surveys"
   >
     <div>

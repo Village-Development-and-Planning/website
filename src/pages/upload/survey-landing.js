@@ -4,12 +4,15 @@ import Responsive from '../../layout/Responsive';
 import ActionPanel from '../../layout/ActionPanel';
 import {t} from '../../translations';
 import upload from '../../images/upload.png';
+import geo from '../../images/geo.png';
+import users from '../../images/users.png';
+import survey from '../../images/survey.png';
 
 export default () => <Responsive>
   <ActionPanel
     key="new-survey"
     to="/surveys/new"
-    image={upload}
+    image={survey}
     text="New survey"
   >
     <div>
@@ -20,7 +23,7 @@ export default () => <Responsive>
   <ActionPanel
     key="list-survey"
     to="/surveys"
-    image={upload}
+    image={survey}
     text="Existing surveys"
   >
     <div>
@@ -42,7 +45,7 @@ export default () => <Responsive>
   <ActionPanel
     key="new-geographic"
     to="/locations?type=DISTRICT"
-    image={upload}
+    image={geo}
     text="Geographic coverage"
   >
     <div>
@@ -53,7 +56,7 @@ export default () => <Responsive>
   <ActionPanel
     key="new-surveyor"
     to="/surveyors"
-    image={upload}
+    image={users}
     text="Surveyor data"
   >
     <div>

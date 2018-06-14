@@ -32,7 +32,8 @@ export default class extends React.Component {
         component: <Page
           match={{params: {entityId: values[keyLevel].replace(/\//g, '_')}}}
           component={cComponent}
-        />
+          location={this.props.location}
+        />,
       });
     }
   }

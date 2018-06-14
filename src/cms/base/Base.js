@@ -42,7 +42,7 @@ export default class BasePage extends Component {
   }
 
   shouldUpdate() {
-    return (this.state.location !== this.props.location);
+    return !this.state.loading && (this.state.location !== this.props.location);
   }
 
   _setupVariable(name, def) {

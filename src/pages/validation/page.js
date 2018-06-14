@@ -7,7 +7,7 @@ import {Header} from './../validation/style.scss';
 export default class MappingBlockPage extends ShowPage {
   componentDidUpdate() {
     if (!this.props.match && !this.props.entity) return;
-
+    if (this.state.loading) return;
     if (this.props.entity) {
       if (this.state && this.state.entity && (this.state.entity === this.props.entity)) {
         return;

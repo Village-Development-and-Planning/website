@@ -8,12 +8,13 @@ import validate from '../images/validate.png';
 import visualization from '../images/visualization.png';
 import exportImg from '../images/export.png';
 import plan from '../images/plan.png';
+import survey from '../images/survey.png';
 
 export default () => <Responsive>
   <ActionPanel
     key="new-survey"
     to="/upload-survey"
-    image={plan}
+    image={survey}
     text="Surveys"
   >
     <div>

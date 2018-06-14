@@ -123,8 +123,8 @@ export default class ListPage extends Base {
               {this.state.filteredEntities.map(
                 (e) => <tr key={e._id}>
                   {columnsOrder.map(key => {
-                    const {name, value} = this.columns[key];
-                    return <td key={name}>{value.call(this, e)}</td>;
+                    const {name, value, style} = this.columns[key];
+                    return <td style={style} key={name}>{value.call(this, e)}</td>;
                   })}
                 </tr>
               )}
