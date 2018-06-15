@@ -3,6 +3,7 @@ import React from 'react';
 import ListPage from '../../cms/base/List';
 import Form, {Response} from '../../layout/AppForm';
 import {Link} from 'react-router-dom';
+import { T } from '../../translations' ;
 
 export default class ValidationList extends ListPage {};
 Object.assign(ValidationList, {
@@ -58,5 +59,20 @@ ValidationList.columns = Object.assign({}, ValidationList.columns, {
     style: {textAlign: 'right'}
   },
   name: { name: 'Survey name', value: (e) => e.name},
+  validatedData: { 
+    name: 'Validated data',
+    value: (e) => {
+      let name = e.name;
+      if(name === 'Mapping'){
+        return <Link to="/validation/mapping"><T>Report</T></Link>;
+      }else if(name === 'Household'){
+        return <Link to="/validation/household"><T>Report</T></Link>;
+      }
+      else{
+        return null;
+      }
+
+    }
+  }
 });
-ValidationList.columnsOrder = ['name', 'answers', 'processed', 'createdOn', 'actions'];
+ValidationList.columnsOrder = ['name', 'answers', 'processed', 'createdOn', 'actions', 'validatedData'];
