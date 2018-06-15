@@ -114,3 +114,10 @@
         border-bottom: 1pt solid black;
     }
 }
+
+:local .InlineForm {
+    align-self: stretch;
+    :global .action {
+        height: 100%;
+    }
+}

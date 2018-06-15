@@ -1,9 +1,10 @@
 import React from 'react';
 
 import ListPage from '../../cms/base/List';
-import Form, {Response} from '../../layout/AppForm';
+import Form from '../../layout/AppForm';
 import {Link} from 'react-router-dom';
 import { T } from '../../translations' ;
+import {InlineForm} from './style.scss';
 
 export default class ValidationList extends ListPage {};
 Object.assign(ValidationList, {
@@ -18,15 +19,16 @@ Object.assign(ValidationList, {
       return <Form
         actionName="Process"
         action="/cms/processes"
-        formCustomStyle=""
+        className={InlineForm}
+        actionOnce={true}
         disabledSubmitButton={disabledSubmitButton}
-        handleResponse={(res) => ({
-          component: <Response
-            statusMessage={<React.Fragment>
-              Created <Link to={`/processes/${res.Process._id}`}>process</Link>
-            </React.Fragment>}
-          />
-        })}
+        handleResponse={() => ({component: <div/>})}
+        //   component: <Response
+        //     statusMessage={<React.Fragment>
+        //       Created <Link to={`/processes/${res.Process._id}`}>process</Link>
+        //     </React.Fragment>}
+        //   />
+        // })}
       >
         <input key="proc-name" type="hidden" name="name" value="CollectResponses"/>
         <input key="proc-args" type="hidden" name="args" value={e._id}/>
@@ -38,7 +40,14 @@ Object.assign(ValidationList, {
       if(e.collectExportId !== undefined && e.collectExportId !== null && e.collectExportId !== ""){
         disabledSubmitButton = true;
       }
-      return <Form actionName="Export" action="/cms/processes" formCustomStyle="" disabledSubmitButton={disabledSubmitButton}>
+      return <Form
+        actionName="Export"
+        action="/cms/processes"
+        actionOnce={true}
+        className={InlineForm}
+        disabledSubmitButton={disabledSubmitButton}
+        handleResponse={() => ({component: <div/>})}
+      >
         <input key="proc-name" type="hidden" name="name" value="ExportResponses"/>
         <input key="proc-args" type="hidden" name="args" value={e._id}/>
       </Form>;
@@ -59,7 +68,7 @@ ValidationList.columns = Object.assign({}, ValidationList.columns, {
     style: {textAlign: 'right'}
   },
   name: { name: 'Survey name', value: (e) => e.name},
-  validatedData: { 
+  validatedData: {
     name: 'Validated data',
     value: (e) => {
       let name = e.name;

@@ -4,7 +4,7 @@ import fetch from '../../utils/fetch';
 import Base from './Base';
 import {t, T} from '../../translations';
 
-import {Table} from '../../styles/Table.scss';
+import Table from '../../layout/Table';
 import {ActionBar} from './style.scss';
 
 import Delete from './Delete';
@@ -48,7 +48,7 @@ export default class ListPage extends Base {
       .then((r) => ({entities: r, filteredEntities: r}));
   }
 
-  filterList(event) {
+  filterList() {
     const search = this.searchInput.value.toLowerCase();
     this.setState({
       filteredEntities: this.state.entities.filter(
@@ -57,7 +57,7 @@ export default class ListPage extends Base {
     });
   }
 
-  onSort(event, sortKey){
+  onSort(sortKey){
     let filteredEntities = this.state.filteredEntities;
     let direction = (this.state.sort.column === sortKey) ?
       (this.state.sort.direction === 'asc' ? 'desc' : 'asc') : 'asc';
@@ -102,35 +102,14 @@ export default class ListPage extends Base {
               </Link>
             }
           </div>}
-          <table className={Table}>
-            <thead>
-              <tr>
-                {columnsOrder.map(key => {
-                  const name = this.columns[key].name;
-                  if(key === 'actions'){
-                    return <td key={name}><T>{name}</T></td>;
-                  }
-
-                  return <td onClick={e => this.onSort(e, key)} key={name}>
-                          <T>{name}</T>
-                          <span className={this.setArrow(key)}></span>
-                        </td>;
-
-                })}
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.filteredEntities.map(
-                (e) => <tr key={e._id}>
-                  {columnsOrder.map(key => {
-                    const {name, value, style} = this.columns[key];
-                    return <td style={style} key={name}>{value.call(this, e)}</td>;
-                  })}
-                </tr>
-              )}
-            </tbody>
-          </table>
-
+          <Table
+            ctx={this}
+            columns={this.columns}
+            columnsOrder={columnsOrder}
+            onSort={this.onSort.bind(this)}
+            entities={this.state.filteredEntities}
+            sort={this.state.sort}
+          />
         </React.Fragment>
       );
     } else {

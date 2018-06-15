@@ -14,17 +14,15 @@ export default class Form extends React.Component {
       || 'POST';
     this.action = this.props.action;
     this.children = this.props.children;
-    const submitButtonClassName = this.props.formCustomStyle === ''? '' : 'action';
+    const submitButtonClassName = 'action';
     const disabledSubmitButton = this.props.disabledSubmitButton === true ? true : false;
 
     this.submit = this.props.submit
-      || (
-            <button type="submit" className={submitButtonClassName} disabled={disabledSubmitButton}>
-              <T>
-                {this.props.actionName || 'Submit'}
-              </T>
-            </button>
-    );
+    || (<button type="submit" className={submitButtonClassName} disabled={disabledSubmitButton}>
+      <T>
+        {this.props.actionName || 'Submit'}
+      </T>
+    </button>);
     this.state = {response: false};
 
   }
@@ -49,7 +47,8 @@ export default class Form extends React.Component {
         statusMessage="Success!"
       />;
     }
-    this._disableSubmit(false);
+    if (!this.props.actionOnce)
+      this._disableSubmit(false);
     this.setState({response: res.component});
   }
 

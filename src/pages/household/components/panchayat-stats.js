@@ -1,12 +1,13 @@
 import Stats from './stats';
 import React from 'react';
 import style from '../../validation/style.scss';
-
+import {t} from '../../../translations';
 import {_locations} from '../../validation/map-helpers';
 import L from 'leaflet';
 import Map from '../../validation/map';
-
+import Table from '../../../layout/Table';
 import { Link } from 'react-router-dom';
+import fetch from '../../../utils/fetch';
 
 export default class extends Stats {
 
@@ -34,6 +35,30 @@ export default class extends Stats {
     return {key, year, week, answerFlagged, timeFlagged};
   }
 
+  async fetchSurveyorNames(codes) {
+    if (!codes) return codes;
+    let output=[];
+    for(let a of codes) {
+      let name = await fetch(`/cms/surveyors/${a}`).then((e) => e && e.name);
+      output.push(`${a} - ${name}`);
+    }
+    return output;
+  }
+
+  async fetchSurveyorInfo(data) {
+    const {weeklyStats} = data;
+    if (!weeklyStats) return data;
+    for(let w of weeklyStats) {
+      w.timeFlagged = await this.fetchSurveyorNames(w.timeFlagged);
+      w.answerFlagged = await this.fetchSurveyorNames(w.answerFlagged);
+    }
+    return data;
+  }
+
+  setupObject() {
+    return super.setupObject().then((data) => this.fetchSurveyorInfo(data));
+  }
+
   renderWeekly({key, year, week, answerFlagged, timeFlagged}) {
     return <div key={key} className={style.FlagColumn}>
       <h5>{week}/{year}</h5>
@@ -47,9 +72,33 @@ export default class extends Stats {
   }
 
   renderWeeklyStats() {
-    this.weeklyStatsMessage = 'Flagged Surveyors';
-    return super.renderWeeklyStats();
+    let {weeklyStats} = this.state;
+    if (!weeklyStats) weeklyStats = [];
+    return <React.Fragment>
+      <h4>{t('Flagged Surveyors')}</h4>
+      <Table
+        ctx={this}
+        columns={{
+          week: {
+            name: 'Week No. / Year',
+            value: ({year, week}) => `${week}/${year}`,
+          },
+          answerFlagged: {
+            name: 'Surveyors flagged for answer',
+            value: ({answerFlagged: flags}) => flags
+              && flags.map((e, idx) => (<span key={idx}>{e}<br/></span>)),
+          },
+          timeFlagged: {
+            name: 'Surveyors flagged for time',
+            value: ({timeFlagged: flags}) => flags
+              && flags.map((e, idx) => (<span key={idx}>{e}<br/></span>)),
+          }
+        }}
+        entities={weeklyStats}
+      />
+    </React.Fragment>;
   }
+
   renderSecondComponent() {
     const locations = this.state.stats && this.state.stats.locations;
     if (!locations || !locations.length) return;
