@@ -1831,6 +1831,16 @@ csv-parse@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-2.5.0.tgz#65748997ecc3719c594622db1b9ea0e2eb7d56bb"
 
+csv-stringify@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-3.1.1.tgz#3a4e180a84f9c45a6a0a0401c1b41b315b9131f0"
+  dependencies:
+    lodash.get "~4.4.2"
+
+csv.js@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/csv.js/-/csv.js-1.0.4.tgz#3eb8b6c34b00def7c65fd7f80301a3bbfb28baec"
+
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
@@ -4346,6 +4356,10 @@ lodash.cond@^4.3.0:
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
+
+lodash.get@~4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"

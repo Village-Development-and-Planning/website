@@ -9,10 +9,10 @@ export default class ArtifactsList extends ListPage {
     this.columns = Object.assign({}, this.columns);
     this.columns.name = Object.assign({}, this.columns.name);
     this.columns.name.name = 'Image name';
-    // this.columns.name.value = (e) => <Link to={`/${this.routeName}/${e._id}`}>
-    //   {e.name}
-    // </Link>;
-    // this.columns.name.stringvalue = (e) => e.name;
+    this.columns.name.value = (e) => <a href={`/cms/${this.cmsRouteName}/${e._id}/download`}>
+      {e.name}
+    </a>;
+    this.columns.name.rawValue = (e) => e.name;
   }
   render() {
     const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'image';

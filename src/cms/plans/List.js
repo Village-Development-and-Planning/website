@@ -25,6 +25,6 @@ PList.columns = Object.assign({}, PList.columns, {
         {e.displayName || e.name || `[Unnamed / ${e._id}]`}
       </a>;
     },
-    stringValue: e => (e.displayName || e.name || e._id)
+    rawValue: e => (e.displayName || e.name || e._id)
   },
 });

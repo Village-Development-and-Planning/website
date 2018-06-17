@@ -77,11 +77,11 @@ ValidationList.columns = Object.assign({}, ValidationList.columns, {
       }else if(name === 'Household'){
         return <Link to="/validation/household"><T>Report</T></Link>;
       }
-      else{
+      else {
         return null;
       }
-
-    }
+    },
+    noCSV: true,
   }
 });
 ValidationList.columnsOrder = ['name', 'answers', 'processed', 'createdOn', 'actions', 'validatedData'];

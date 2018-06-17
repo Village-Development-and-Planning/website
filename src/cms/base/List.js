@@ -109,6 +109,7 @@ export default class ListPage extends Base {
             onSort={this.onSort.bind(this)}
             entities={this.state.filteredEntities}
             sort={this.state.sort}
+            csvName={this.routeName}
           />
         </React.Fragment>
       );
@@ -126,7 +127,7 @@ export default class ListPage extends Base {
           neg = -1;
           key = key.slice(1);
         }
-        const getter = this.columns[key].stringValue
+        const getter = this.columns[key].rawValue
           || this.columns[key].value
           || ((e) => e[key]);
 

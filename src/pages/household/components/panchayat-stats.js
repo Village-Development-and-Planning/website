@@ -75,7 +75,7 @@ export default class extends Stats {
     let {weeklyStats} = this.state;
     if (!weeklyStats) weeklyStats = [];
     return <React.Fragment>
-      <h4>{t('Flagged Surveyors')}</h4>
+      <h4>{t('Surveyors flagged')}</h4>
       <Table
         ctx={this}
         columns={{
@@ -87,11 +87,16 @@ export default class extends Stats {
             name: 'Surveyors flagged for answer',
             value: ({answerFlagged: flags}) => flags
               && flags.map((e, idx) => (<span key={idx}>{e}<br/></span>)),
+            rawValue: ({answerFlagged: flags}) => flags
+              && flags.join('\n'),
+
           },
           timeFlagged: {
             name: 'Surveyors flagged for time',
             value: ({timeFlagged: flags}) => flags
               && flags.map((e, idx) => (<span key={idx}>{e}<br/></span>)),
+            rawValue: ({answerFlagged: flags}) => flags
+              && flags.join('\n'),
           }
         }}
         entities={weeklyStats}

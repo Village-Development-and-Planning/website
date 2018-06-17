@@ -75,7 +75,8 @@ List.columns = Object.assign({}, List.columns, {
         className="link"
         onClick={this.onPrefixChange.bind(this, `${e.uid}/`)}
       >{e.name}</button>;
-    }
+    },
+    rawValue: (e) => e.name
   }
 }, ['DISTRICT', 'BLOCK', 'PANCHAYAT',].reduce(
   (acc, e, idx) => Object.assign(acc, {
@@ -88,7 +89,7 @@ List.columns = Object.assign({}, List.columns, {
           onClick={this.onPrefixChange.bind(this, `${prefix}/`, e)}
         >{c.payload && c.payload[`${e}_NAME`]}</button>;
       },
-      stringValue: (c) => c.payload && c.payload[`${e}_NAME`],
+      rawValue: (c) => c.payload && c.payload[`${e}_NAME`],
     }
   }),
   {}
