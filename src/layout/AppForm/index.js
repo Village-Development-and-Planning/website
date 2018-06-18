@@ -33,7 +33,9 @@ export default class Form extends React.Component {
     }
     return {component: err.component || <Response
       statusClass="error" key="status"
-      statusMessage={`${err.status}: ${err.statusText}`}
+      statusMessage={<React.Fragment>
+        {err.status}: <T>{err.statusText}</T>
+      </React.Fragment>}
     />};
   }
 

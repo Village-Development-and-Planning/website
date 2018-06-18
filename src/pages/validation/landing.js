@@ -9,7 +9,10 @@ import ValidationList from './List';
 export default (props) => <React.Fragment>
   <ValidationList
     location={props.location} disableActionBar={true}
-    listMessage={'Validate data'} listNote= {'Validate data collected to monitor the quality of data collected.'}
+    listMessage={<React.Fragment>
+      <h3>Validate data</h3>
+      <p>Validate data collected to monitor the quality of data collected.</p>
+    </React.Fragment>}
   />
 </React.Fragment>;
 

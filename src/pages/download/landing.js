@@ -15,7 +15,6 @@ export default (props) => <React.Fragment>
     columnsOrder={'name createdOn'.split(' ')}
   />
   <hr/>
-  {getLanguage}
   <Responsive>
     <div className={Instructions}><T>
       <h3>Download and install the survey application on your tablet or mobile device{":"}</h3>

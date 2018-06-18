@@ -15,7 +15,6 @@ export default class ListPage extends Base {
     super(...args);
     this._setupVariable('createMessage', (`Create new ${this.entityName}`));
     this._setupVariable('listMessage', (`Existing ${this.routeName}`));
-    this._setupVariable('listNote', '');
     this._setupVariable('columns', []);
     this._setupVariable('columnsOrder', []);
     this._setupVariable('actions', []);
@@ -89,11 +88,6 @@ export default class ListPage extends Base {
       return (
         <React.Fragment>
           <T>{listMessage}</T>
-          {(this.props.listNote !== undefined && this.props.listMessage !== '')
-            ? <p> <em><T>{this.props.listNote}</T></em></p>
-            : null
-          }
-
           {this.props.disableActionBar || <div className={ActionBar}>
             {this.filterComponent || this._defaultFilterComponent()}
             {createMessage &&

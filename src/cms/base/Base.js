@@ -52,11 +52,21 @@ export default class BasePage extends Component {
   }
 
   setQuery(params) {
+    this.props.history.push(
+      `${this.props.location.pathname}?${this.mergeQuery(params)}`
+    );
+  }
+
+  mergeQuery(params) {
     const p = Object.assign(
       parse(this.props.location.search, {ignoreQueryPrefix: true}) || {},
       params
     );
-    this.props.history.push(`${this.props.location.pathname}?${stringify(p)}`);
+    return stringify(p);
+  }
+
+  getQuery() {
+    return parse(this.props.location.search, {ignoreQueryPrefix: true}) || {};
   }
 
   render() {

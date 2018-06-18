@@ -2,7 +2,6 @@ import React from 'react';
 import {Table as TableStyle} from './style.scss';
 import {T} from '../../translations';
 import CSV from 'csv-stringify/lib/es5/sync';
-// import CSV from 'csv.js';
 
 export default class Table extends React.Component {
 
@@ -46,7 +45,7 @@ export default class Table extends React.Component {
     return <React.Fragment>
       <a href={window.URL.createObjectURL(
         new Blob([this.renderCSV()], {type: 'text/csv'})
-      )} download={`${csvName}.csv`}>Download table as CSV</a>
+      )} download={`${csvName}.csv`}><T>Download table as CSV</T></a>
       <table className={TableStyle}>
         <thead>
           <tr>

@@ -1,16 +1,19 @@
 import ListPage from '../base/List';
 import React from 'react';
 import Select from 'react-select';
-import {parse} from 'query-string';
 import _ from 'lodash';
 import {t} from '../../translations';
+import fetch from '../../utils/fetch';
+import {Link} from 'react-router-dom';
+
 
 const types = 'DISTRICT BLOCK PANCHAYAT HABITATION'.split(' ');
 
 export default class List extends ListPage {
   constructor(...args) {
     super(...args);
-    this.listMessage = 'Geographic coverage';
+    this.listMessageHeading = <Link to={`/${this.routeName}?type=DISTRICT`}>Geographic coverage</Link>;
+    this.listMessage = this.listMessageHeading;
     this.createMessage = 'Upload geographic data';
     this.baseFilterComponent = this.filterComponent;
     this.columns = Object.assign({}, this.columns);
@@ -25,8 +28,22 @@ export default class List extends ListPage {
     this.columns.name.stringvalue = (e) => e.name;
   }
 
+  setupObject() {
+    this.listMessage = <h3>{this.listMessageHeading}</h3>;
+    return super.setupObject().then(e => {
+      let prefix = this.getQuery().prefix || '';
+      if (prefix.endsWith('/')) prefix = prefix.slice(0, -1);
+      if (!prefix) return e;
+      prefix = prefix.replace(/\//g, '_');
+      return fetch(`/cms/${this.cmsRouteName}/${prefix}`).then((loc) => {
+        this.listMessage = <h3>{this.listMessageHeading} - {loc.name}</h3>;
+        return e;
+      });
+    });
+  }
+
   render() {
-    const type = parse(this.props.location.search, {ignoreQueryPrefix: true}).type || 'HABITATION';
+    const type = this.getQuery().type || 'HABITATION';
     this.locationType = type;
     const tIndex = types.indexOf(type);
     this.columnsOrder =  [].concat(

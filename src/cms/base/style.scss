@@ -3,7 +3,12 @@
 :local .ActionBar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
+  margin-bottom: 1ex;
+
+  a button {
+    height: 100%;
+  }
 
   :global .grow {
     flex-grow: 1;
