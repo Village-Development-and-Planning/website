@@ -143,7 +143,8 @@ Object.assign(ListPage, {
     },
     createdOn: {
       name: 'Date created',
-      value: (e) => (new Date(e.modifiedAt)).toLocaleDateString()
+      value: (e) => (new Date(e.modifiedAt)).toLocaleDateString(),
+      rawValue: (e) => e.modifiedAt,
     },
     actions: {
       name: 'Actions',
