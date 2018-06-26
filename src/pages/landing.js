@@ -5,7 +5,7 @@ import Responsive from '../layout/Responsive';
 import download from '../images/download.png';
 import upload from '../images/upload.png';
 import validate from '../images/validate.png';
-import visualization from '../images/visualization.png';
+// import visualization from '../images/visualization.png';
 import exportImg from '../images/export.png';
 import plan from '../images/plan.png';
 import survey from '../images/survey.png';
@@ -66,7 +66,7 @@ export default () => <Responsive>
     </div>
   </ActionPanel>
 
-  <ActionPanel
+  {/* <ActionPanel
     to="/visualizations"
     image={visualization}
     key="visualization-responses"
@@ -75,7 +75,7 @@ export default () => <Responsive>
     <div>
       View pictorial representations of the data collected
     </div>
-  </ActionPanel>
+  </ActionPanel> */}
 
   <ActionPanel
     to="/plans?type=plan"

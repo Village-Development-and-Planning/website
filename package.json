@@ -71,6 +71,12 @@
     "/cms": {
       "target": "http://localhost:3000"
     },
+    "/upload": {
+      "target": "http://localhost:3000"
+    },
+    "/db": {
+      "target": "http://localhost:3000"
+    },
     "/auth": {
       "target": "http://localhost:3000"
     }

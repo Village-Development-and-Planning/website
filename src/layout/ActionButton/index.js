@@ -14,7 +14,7 @@ export default class extends Component {
         </Link>
       );
     } else if (this.props.href) {
-      return <a className={ActionButton} href={this.props.href}>
+      return <a className={ActionButton} href={this.props.href} target={this.props.target}>
         <img src={this.props.image} alt={this.props.text}/>
         <div>{t(this.props.text)}</div>
       </a>;

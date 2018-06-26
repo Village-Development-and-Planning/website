@@ -35,15 +35,15 @@ export default (props) => <React.Fragment>
         ?
         <p><em>
           குறிப்பு: நீங்கள் டேப்லெட் மற்றும் கணினியை தயார் செய்ய வேண்டும். கணினியை டேப்லெட்டில் இணைக்க நீங்கள் அந்த பிராண்டிற்கான டிரைவரை நிறுவ வேண்டும்.
-          இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Driver_Eng.pdf">இங்கே</a> காணலாம்.
+          இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Driver_Tamil.pdf">இங்கே</a> காணலாம்.
           நீங்கள் டேப்லெட்டில் மென்பொருள் பயன்படுத்துவதற்க்கு டேப்லெட்டை தயார் செய்ய வேண்டும்.
-          இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Preparation_English.pdf">இங்கே</a> காணலாம்.
+          இதற்கான வழிமுறைகளை <a href="/static/Instructions_Tablet_Preparation_Tamil.pdf">இங்கே</a> காணலாம்.
         </em></p>
         :
         <p><em>
           Note: You may have to prepare the tablet and computer.
           You will need to install the respective brand driver to connect the computer to the tablet.
-          You can find the instructions for this <a href="/static/Instructions_Tablet_Driver_Eng.pdf">here</a>.
+          You can find the instructions for this <a href="/static/Instructions_Tablet_Driver_English.pdf">here</a>.
           You will also need to prepare the tablet for the application.
           You can find the instructions for this <a href="/static/Instructions_Tablet_Preparation_English.pdf">here</a>.
         </em></p>

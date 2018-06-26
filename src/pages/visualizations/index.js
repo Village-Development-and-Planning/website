@@ -1,11 +1,11 @@
-import React from 'react';
-import {Route} from 'react-router-dom';
+// import React from 'react';
+// import {Route} from 'react-router-dom';
 
-const routeName = '/visualizations';
+// const routeName = '/visualizations';
 
 export default [
-  <Route
-    path={routeName} key={routeName}
-    component={require('./landing.js').default}
-  />,
+  // <Route
+  //   path={routeName} key={routeName}
+  //   component={require('./landing.js').default}
+  // />,
 ];

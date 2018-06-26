@@ -80,7 +80,7 @@ export default class extends Stats {
         ctx={this}
         columns={{
           week: {
-            name: 'Week No. / Year',
+            name: `${t('Week')} / ${t('Year')}`,
             value: ({year, week}) => `${week}/${year}`,
           },
           answerFlagged: {

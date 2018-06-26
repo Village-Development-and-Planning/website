@@ -46,7 +46,8 @@ class Sidenav extends Component {
             text="Export"
           />
           <ActionButton
-            to="/visualizations"
+            href="/static/viz/index-demo.html"
+            target="_blank"
             image={visualization}
             text="Visualizations"
           />
